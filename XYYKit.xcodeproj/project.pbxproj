@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D735C91420BD4D1A000D4A79 /* XYYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D735C91320BD4D1A000D4A79 /* XYYKit.m */; };
 		D735C91520BD4D1A000D4A79 /* XYYKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D735C91220BD4D1A000D4A79 /* XYYKit.h */; };
+		DAB8BED3CBFE5DD5E29FE120 /* libPods-XYYKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85200BD1C0C8462C43FAA4 /* libPods-XYYKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +26,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D85200BD1C0C8462C43FAA4 /* libPods-XYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B27961D6F9ACE23ACAD4B4A3 /* Pods-XYYKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYKit/Pods-XYYKit.debug.xcconfig"; sourceTree = "<group>"; };
 		D735C90F20BD4D1A000D4A79 /* libXYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D735C91220BD4D1A000D4A79 /* XYYKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYKit.h; sourceTree = "<group>"; };
 		D735C91320BD4D1A000D4A79 /* XYYKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYYKit.m; sourceTree = "<group>"; };
+		F7B1B83E075778BC69F6FE1B /* Pods-XYYKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYKit/Pods-XYYKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB8BED3CBFE5DD5E29FE120 /* libPods-XYYKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6399C03EAB79F3EEDE2CECD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B27961D6F9ACE23ACAD4B4A3 /* Pods-XYYKit.debug.xcconfig */,
+				F7B1B83E075778BC69F6FE1B /* Pods-XYYKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C2BA7A3A95922AEE4D5787BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D85200BD1C0C8462C43FAA4 /* libPods-XYYKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D735C90620BD4D1A000D4A79 = {
 			isa = PBXGroup;
 			children = (
 				D735C91120BD4D1A000D4A79 /* XYYKit */,
 				D735C91020BD4D1A000D4A79 /* Products */,
+				6399C03EAB79F3EEDE2CECD4 /* Pods */,
+				C2BA7A3A95922AEE4D5787BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +97,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D735C91820BD4D1A000D4A79 /* Build configuration list for PBXNativeTarget "XYYKit" */;
 			buildPhases = (
+				5F9D808911503CFFF93EABB0 /* [CP] Check Pods Manifest.lock */,
 				D735C90B20BD4D1A000D4A79 /* Sources */,
 				D735C90C20BD4D1A000D4A79 /* Frameworks */,
 				D735C90D20BD4D1A000D4A79 /* CopyFiles */,
@@ -116,6 +141,27 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F9D808911503CFFF93EABB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D735C90B20BD4D1A000D4A79 /* Sources */ = {
@@ -241,6 +287,7 @@
 		};
 		D735C91920BD4D1A000D4A79 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B27961D6F9ACE23ACAD4B4A3 /* Pods-XYYKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZCF4M4UX4;
@@ -253,6 +300,7 @@
 		};
 		D735C91A20BD4D1A000D4A79 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7B1B83E075778BC69F6FE1B /* Pods-XYYKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZCF4M4UX4;
