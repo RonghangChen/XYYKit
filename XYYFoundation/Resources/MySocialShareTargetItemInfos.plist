@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WeChat</key>
+	<dict>
+		<key>title</key>
+		<string>微信</string>
+		<key>icon</key>
+		<string>icon_share_wechat.png</string>
+		<key>shadowColor</key>
+		<string>#15cf77</string>
+		<key>icon_ed</key>
+		<string>ic_share_wechat</string>
+		<key>icon_alert</key>
+		<string>icon_share_alert_wechat</string>
+	</dict>
+	<key>WeChatCircle</key>
+	<dict>
+		<key>title</key>
+		<string>朋友圈</string>
+		<key>icon</key>
+		<string>icon_share_wechat_circle.png</string>
+		<key>shadowColor</key>
+		<string>#15cf77</string>
+		<key>icon_ed</key>
+		<string>ic_share_wechat_circle</string>
+		<key>icon_alert</key>
+		<string>icon_share_alert_wechat_circle</string>
+	</dict>
+	<key>Weibo</key>
+	<dict>
+		<key>title</key>
+		<string>微博</string>
+		<key>icon</key>
+		<string>icon_share_weibo.png</string>
+		<key>shadowColor</key>
+		<string>#ed5c5c</string>
+		<key>icon_ed</key>
+		<string>ic_share_weibo</string>
+	</dict>
+	<key>QQ</key>
+	<dict>
+		<key>title</key>
+		<string>QQ</string>
+		<key>icon</key>
+		<string>icon_share_qq.png</string>
+		<key>shadowColor</key>
+		<string>#35c6ea</string>
+		<key>icon_ed</key>
+		<string>ic_share_qq</string>
+	</dict>
+	<key>QQZone</key>
+	<dict>
+		<key>title</key>
+		<string>QQ空间</string>
+		<key>icon</key>
+		<string>icon_share_qq_zone.png</string>
+		<key>shadowColor</key>
+		<string>#f6c43c</string>
+		<key>icon_ed</key>
+		<string>ic_share_qq_zone</string>
+	</dict>
+</dict>
+</plist>

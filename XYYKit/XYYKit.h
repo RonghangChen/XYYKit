@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XYYKit : NSObject
+#ifndef XYYKit_h
+#define XYYKit_h
 
-@end
+#import "XYYFoundation.h"
+#import "XYYNetConnection.h"
+#import "XYYNetImage.h"
+#import "XYYAppComponent.h"
+#import "XYYImagePicker.h"
+
+
+#endif
