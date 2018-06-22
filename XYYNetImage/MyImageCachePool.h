@@ -10,6 +10,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XYYFoundation.h"
+#import "XYYCache.h"
 
 //----------------------------------------------------------
 

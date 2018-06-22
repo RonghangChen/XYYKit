@@ -10,7 +10,7 @@
 
 #import "MyContextManager.h"
 #import <pthread.h>
-#import "XYYBaseDef.h"
+#import "XYYFoundation.h"
 
 //----------------------------------------------------------
 

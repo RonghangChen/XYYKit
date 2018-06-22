@@ -11,7 +11,6 @@
 
 #import "XYYUtil.h"
 #import "XYYCategories.h"
-#import "XYYCache.h"
 #import "XYYView.h"
 #import "XYYController.h"
 #import "XYYViewController.h"

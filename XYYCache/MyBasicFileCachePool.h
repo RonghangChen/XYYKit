@@ -9,8 +9,8 @@
 //----------------------------------------------------------
 
 #import <UIKit/UIKit.h>
-#import "MyPathManager.h"
 #import <pthread.h>
+#import "XYYFoundation.h"
 
 //----------------------------------------------------------
 

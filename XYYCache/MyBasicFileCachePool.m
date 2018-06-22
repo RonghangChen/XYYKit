@@ -10,9 +10,6 @@
 //----------------------------------------------------------
 
 #import "MyBasicFileCachePool.h"
-#import "UIImage+Representation.h"
-#import "NSString+Extend.h"
-#import "NSString+Hash.h"
 
 //----------------------------------------------------------
 

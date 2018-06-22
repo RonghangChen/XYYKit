@@ -10,6 +10,13 @@
 		01F283809CC0FB2DF8227B09 /* libPods-XYYNetConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C520CD5C14CB019176E1A9E /* libPods-XYYNetConnection.a */; };
 		180545D44D42ADF7D34E9C0E /* libPods-XYYNetImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C4AB4C2D72BB82D677F6D9 /* libPods-XYYNetImage.a */; };
 		2E194A8B5780361C6D5E534D /* libPods-XYYImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25249C4B801AB60EAA6B1DAD /* libPods-XYYImagePicker.a */; };
+		3DFF147895243F037880EA83 /* libPods-XYYScanImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 539AB96D5F43113B55011FC8 /* libPods-XYYScanImage.a */; };
+		5E15149DC71B3DFC0097A84D /* libPods-XYYPageLoad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099B7D6C4CC2FDB19BF5C8BB /* libPods-XYYPageLoad.a */; };
+		73215F777850AE259C506831 /* libPods-XYYSocialSNS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 347694FEE78B8A47A0DE3B82 /* libPods-XYYSocialSNS.a */; };
+		75F1E944D8C5177718135B14 /* libPods-XYYUserGuidePage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA29823E34FB05DD46E30A4 /* libPods-XYYUserGuidePage.a */; };
+		7656D63B4CC4A467B72311A0 /* libPods-XYYCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8534831A7DBA473D53E5A3 /* libPods-XYYCache.a */; };
+		95EFBD5A5BC01240259EB0EB /* libPods-XYYCodeScan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B37D401C8EC68B606A5A98 /* libPods-XYYCodeScan.a */; };
+		B51917EE723BDA77DC372C2E /* libPods-XYYDeclineMenu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D38CD46ACB8355A0F0E5BB13 /* libPods-XYYDeclineMenu.a */; };
 		C0FA761BEE1395CAFE3ACC1D /* libPods-XYYFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D94B7C8D7FA6B8446D9F0A /* libPods-XYYFoundation.a */; };
 		D735C91520BD4D1A000D4A79 /* XYYKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D735C91220BD4D1A000D4A79 /* XYYKit.h */; };
 		D7BAF57820DB775000982A63 /* XYYFoundation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF57520DB775000982A63 /* XYYFoundation.h */; };
@@ -48,9 +55,6 @@
 		D7BAF5EA20DB932A00982A63 /* MyNetReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF5E820DB932900982A63 /* MyNetReachability.m */; };
 		D7BAF60220DB94F000982A63 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF5FF20DB94F000982A63 /* UIImage+ImageEffects.m */; };
 		D7BAF60320DB94F000982A63 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF60120DB94F000982A63 /* UIImageView+LBBlurredImage.m */; };
-		D7BAF60C20DB953100982A63 /* MyDocumentCachePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF60620DB953100982A63 /* MyDocumentCachePool.m */; };
-		D7BAF60D20DB953100982A63 /* MyBasicFileCachePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF60920DB953100982A63 /* MyBasicFileCachePool.m */; };
-		D7BAF60E20DB953100982A63 /* MyContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF60A20DB953100982A63 /* MyContextManager.m */; };
 		D7BAF65220DB96AF00982A63 /* MyContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF61120DB96AE00982A63 /* MyContentView.m */; };
 		D7BAF65320DB96AF00982A63 /* MyGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF61320DB96AE00982A63 /* MyGradientView.m */; };
 		D7BAF65420DB96AF00982A63 /* UIView+IBDesignable.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF61420DB96AE00982A63 /* UIView+IBDesignable.m */; };
@@ -152,6 +156,39 @@
 		D7BAF79320DBAFB100982A63 /* DNBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF77B20DBAFB000982A63 /* DNBrowserCell.m */; };
 		D7BAF79420DBAFB100982A63 /* MyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF78220DBAFB000982A63 /* MyImagePickerViewController.m */; };
 		D7BAF79520DBAFB100982A63 /* MyMultipleImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF78420DBAFB100982A63 /* MyMultipleImagePickerController.m */; };
+		D7BAF79720DC8C6B00982A63 /* XYYKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF79620DC8C6B00982A63 /* XYYKit-dummy.m */; };
+		D7BAF7A120DC8D1B00982A63 /* XYYCodeScan.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF79E20DC8D1B00982A63 /* XYYCodeScan.h */; };
+		D7BAF7AF20DC8D8F00982A63 /* MyCodeScanActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7A620DC8D8E00982A63 /* MyCodeScanActivityView.m */; };
+		D7BAF7B020DC8D8F00982A63 /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7A720DC8D8E00982A63 /* QRCodeGenerator.m */; };
+		D7BAF7B120DC8D8F00982A63 /* MyCodeScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7AC20DC8D8F00982A63 /* MyCodeScanController.m */; };
+		D7BAF7B220DC8D8F00982A63 /* MyCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7AE20DC8D8F00982A63 /* MyCodeReaderView.m */; };
+		D7BAF7BC20DC8E5500982A63 /* XYYScanImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF7B920DC8E5500982A63 /* XYYScanImage.h */; };
+		D7BAF7C720DC8ECE00982A63 /* MyScanImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7C320DC8ECD00982A63 /* MyScanImageCell.m */; };
+		D7BAF7C820DC8ECE00982A63 /* MyScanImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7C420DC8ECE00982A63 /* MyScanImageView.m */; };
+		D7BAF7C920DC8ECE00982A63 /* MyScanImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7C520DC8ECE00982A63 /* MyScanImageData.m */; };
+		D7BAF7D320DC8F8400982A63 /* XYYSocialSNS.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF7D020DC8F8400982A63 /* XYYSocialSNS.h */; };
+		D7BAF7E520DC8FD800982A63 /* MySocialShareTargetItemsPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7DA20DC8FD600982A63 /* MySocialShareTargetItemsPopoverView.m */; };
+		D7BAF7E620DC8FD800982A63 /* MySocialShareTargetItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7DD20DC8FD700982A63 /* MySocialShareTargetItemCell.m */; };
+		D7BAF7E720DC8FD800982A63 /* MySocialSNSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7DE20DC8FD700982A63 /* MySocialSNSManager.m */; };
+		D7BAF7E820DC8FD800982A63 /* MySocialShareBaseMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7DF20DC8FD700982A63 /* MySocialShareBaseMessage.m */; };
+		D7BAF7E920DC8FD800982A63 /* MySocialSNSTargetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7E220DC8FD700982A63 /* MySocialSNSTargetItem.m */; };
+		D7BAF7EA20DC8FD800982A63 /* MySocialShareTargetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7E420DC8FD800982A63 /* MySocialShareTargetItem.m */; };
+		D7BAF7FF20DC991800982A63 /* XYYPageLoad.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF7FC20DC991800982A63 /* XYYPageLoad.h */; };
+		D7BAF80F20DC995A00982A63 /* MyArrayPageLoadController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF80620DC995900982A63 /* MyArrayPageLoadController.m */; };
+		D7BAF81020DC995A00982A63 /* MySectionArrayPageLoadController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF80820DC995900982A63 /* MySectionArrayPageLoadController.m */; };
+		D7BAF81120DC995A00982A63 /* MyPageLoadManagerForTableAndCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF80A20DC995900982A63 /* MyPageLoadManagerForTableAndCollectionView.m */; };
+		D7BAF81220DC995A00982A63 /* MyPageLoadContentPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF80C20DC995900982A63 /* MyPageLoadContentPageCell.m */; };
+		D7BAF81320DC995A00982A63 /* MyBasicPageLoadController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF80E20DC995A00982A63 /* MyBasicPageLoadController.m */; };
+		D7BAF81D20DC9A7500982A63 /* XYYUserGuidePage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF81A20DC9A7500982A63 /* XYYUserGuidePage.h */; };
+		D7BAF82620DC9AB300982A63 /* MyUserGuidePageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF82220DC9AB200982A63 /* MyUserGuidePageManager.m */; };
+		D7BAF82720DC9AB300982A63 /* MyUserGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF82420DC9AB200982A63 /* MyUserGuideView.m */; };
+		D7BAF83120DC9B5900982A63 /* XYYCache.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF82E20DC9B5900982A63 /* XYYCache.h */; };
+		D7BAF83B20DC9BBE00982A63 /* MyContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF83520DC9BBD00982A63 /* MyContextManager.m */; };
+		D7BAF83C20DC9BBE00982A63 /* MyBasicFileCachePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF83720DC9BBD00982A63 /* MyBasicFileCachePool.m */; };
+		D7BAF83D20DC9BBE00982A63 /* MyDocumentCachePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF83920DC9BBD00982A63 /* MyDocumentCachePool.m */; };
+		D7BAF84720DC9CA300982A63 /* XYYDeclineMenu.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF84420DC9CA300982A63 /* XYYDeclineMenu.h */; };
+		D7BAF85020DC9CCE00982A63 /* MyBasicDeclineMenuContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF84C20DC9CCE00982A63 /* MyBasicDeclineMenuContentView.m */; };
+		D7BAF85120DC9CCE00982A63 /* MyDeclineMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF84D20DC9CCE00982A63 /* MyDeclineMenuContainerView.m */; };
 		DAB8BED3CBFE5DD5E29FE120 /* libPods-XYYKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85200BD1C0C8462C43FAA4 /* libPods-XYYKit.a */; };
 		F2CC5A3DD00E362C843BBF23 /* libPods-XYYAppComponent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3D65EE619E8ECF39DAF013 /* libPods-XYYAppComponent.a */; };
 /* End PBXBuildFile section */
@@ -217,25 +254,115 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7BAF79A20DC8D1B00982A63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D7BAF7A120DC8D1B00982A63 /* XYYCodeScan.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF7B520DC8E5500982A63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D7BAF7BC20DC8E5500982A63 /* XYYScanImage.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF7CC20DC8F8400982A63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D7BAF7D320DC8F8400982A63 /* XYYSocialSNS.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF7F820DC991800982A63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D7BAF7FF20DC991800982A63 /* XYYPageLoad.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF81620DC9A7500982A63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D7BAF81D20DC9A7500982A63 /* XYYUserGuidePage.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF82A20DC9B5900982A63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D7BAF83120DC9B5900982A63 /* XYYCache.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF84020DC9CA300982A63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D7BAF84720DC9CA300982A63 /* XYYDeclineMenu.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		099B7D6C4CC2FDB19BF5C8BB /* libPods-XYYPageLoad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYPageLoad.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A148BB5C8BDE39FE7E1D229 /* Pods-XYYAppComponent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYAppComponent.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYAppComponent/Pods-XYYAppComponent.release.xcconfig"; sourceTree = "<group>"; };
+		0ADDFE99AE1D8773D210CB5A /* Pods-XYYCodeScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCodeScan.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCodeScan/Pods-XYYCodeScan.release.xcconfig"; sourceTree = "<group>"; };
+		1793719532289EB0218331C3 /* Pods-XYYDeclineMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYDeclineMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYDeclineMenu/Pods-XYYDeclineMenu.release.xcconfig"; sourceTree = "<group>"; };
 		22EEC9FA388F6EBD9B1380D5 /* Pods-XYYImagePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYImagePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYImagePicker/Pods-XYYImagePicker.debug.xcconfig"; sourceTree = "<group>"; };
 		23C4AB4C2D72BB82D677F6D9 /* libPods-XYYNetImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYNetImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25249C4B801AB60EAA6B1DAD /* libPods-XYYImagePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYImagePicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD684112AEF1D054D04A539 /* Pods-XYYAppComponent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYAppComponent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYAppComponent/Pods-XYYAppComponent.debug.xcconfig"; sourceTree = "<group>"; };
+		2EC44E7F8374D1CC0838F08E /* Pods-XYYUserGuidePage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYUserGuidePage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYUserGuidePage/Pods-XYYUserGuidePage.debug.xcconfig"; sourceTree = "<group>"; };
+		32A41C9C467118E573902F96 /* Pods-XYYPageLoad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYPageLoad.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYPageLoad/Pods-XYYPageLoad.release.xcconfig"; sourceTree = "<group>"; };
+		33795FB0CA401C8ABD76F5F0 /* Pods-XYYDeclineMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYDeclineMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYDeclineMenu/Pods-XYYDeclineMenu.debug.xcconfig"; sourceTree = "<group>"; };
+		347694FEE78B8A47A0DE3B82 /* libPods-XYYSocialSNS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYSocialSNS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F75039E29D7A2ED0095E67 /* Pods-XYYFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYFoundation/Pods-XYYFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		3B3D65EE619E8ECF39DAF013 /* libPods-XYYAppComponent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYAppComponent.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CA29823E34FB05DD46E30A4 /* libPods-XYYUserGuidePage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYUserGuidePage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D85200BD1C0C8462C43FAA4 /* libPods-XYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42AC1D8A69E8F13AD8B05833 /* Pods-XYYSocialSNS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYSocialSNS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYSocialSNS/Pods-XYYSocialSNS.debug.xcconfig"; sourceTree = "<group>"; };
+		4881537F54278DE345FB5C23 /* Pods-XYYCache.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCache.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCache/Pods-XYYCache.release.xcconfig"; sourceTree = "<group>"; };
+		539AB96D5F43113B55011FC8 /* libPods-XYYScanImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYScanImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5708FA00A5EABDB62EBB5223 /* Pods-XYYCodeScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCodeScan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCodeScan/Pods-XYYCodeScan.debug.xcconfig"; sourceTree = "<group>"; };
+		5A198B9E2D37419C1D74F818 /* Pods-XYYSocialSNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYSocialSNS.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYSocialSNS/Pods-XYYSocialSNS.release.xcconfig"; sourceTree = "<group>"; };
+		6F6B46FB3E6482539628686C /* Pods-XYYScanImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYScanImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYScanImage/Pods-XYYScanImage.release.xcconfig"; sourceTree = "<group>"; };
 		73D6CF702E79AEB96042E683 /* Pods-XYYFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYFoundation/Pods-XYYFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		7B842A07EBEDC6E26764E6E1 /* Pods-XYYNetConnection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYNetConnection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYNetConnection/Pods-XYYNetConnection.debug.xcconfig"; sourceTree = "<group>"; };
 		91D94B7C8D7FA6B8446D9F0A /* libPods-XYYFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYFoundation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99B37D401C8EC68B606A5A98 /* libPods-XYYCodeScan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYCodeScan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C520CD5C14CB019176E1A9E /* libPods-XYYNetConnection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYNetConnection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0895D369C22277822FB598 /* Pods-XYYNetImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYNetImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYNetImage/Pods-XYYNetImage.release.xcconfig"; sourceTree = "<group>"; };
 		A5B6EABA2FEDBD450D8B60F7 /* Pods-XYYNetImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYNetImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYNetImage/Pods-XYYNetImage.debug.xcconfig"; sourceTree = "<group>"; };
+		AB5A95DEA638FF0CE8CADB07 /* Pods-XYYPageLoad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYPageLoad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYPageLoad/Pods-XYYPageLoad.debug.xcconfig"; sourceTree = "<group>"; };
 		B27961D6F9ACE23ACAD4B4A3 /* Pods-XYYKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYKit/Pods-XYYKit.debug.xcconfig"; sourceTree = "<group>"; };
 		B4F356A2DB37F1AF9A0374AE /* Pods-XYYNetConnection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYNetConnection.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYNetConnection/Pods-XYYNetConnection.release.xcconfig"; sourceTree = "<group>"; };
+		BBB5797EBA0B1CC05FC2C944 /* Pods-XYYScanImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYScanImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYScanImage/Pods-XYYScanImage.debug.xcconfig"; sourceTree = "<group>"; };
+		CF8534831A7DBA473D53E5A3 /* libPods-XYYCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYCache.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38CD46ACB8355A0F0E5BB13 /* libPods-XYYDeclineMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYDeclineMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C6E6E7617A23E436E158F2 /* Pods-XYYCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCache.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCache/Pods-XYYCache.debug.xcconfig"; sourceTree = "<group>"; };
 		D735C90F20BD4D1A000D4A79 /* libXYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D735C91220BD4D1A000D4A79 /* XYYKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYKit.h; sourceTree = "<group>"; };
 		D7BAF57320DB775000982A63 /* libXYYFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,34 +438,16 @@
 		D7BAF5E820DB932900982A63 /* MyNetReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNetReachability.m; sourceTree = "<group>"; };
 		D7BAF5E920DB932A00982A63 /* MyNetReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNetReachability.h; sourceTree = "<group>"; };
 		D7BAF5EC20DB93A300982A63 /* error_reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error_reload@2x.png"; sourceTree = "<group>"; };
-		D7BAF5ED20DB93A300982A63 /* icon_share_weibo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_weibo@2x.png"; sourceTree = "<group>"; };
 		D7BAF5EE20DB93A300982A63 /* error_msg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error_msg@2x.png"; sourceTree = "<group>"; };
-		D7BAF5EF20DB93A300982A63 /* MySocialShareTargetItemInfos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MySocialShareTargetItemInfos.plist; sourceTree = "<group>"; };
 		D7BAF5F020DB93A300982A63 /* success_msg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "success_msg@2x.png"; sourceTree = "<group>"; };
-		D7BAF5F120DB93A300982A63 /* MySocialSNSManagerLocalizedString.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MySocialSNSManagerLocalizedString.strings; sourceTree = "<group>"; };
-		D7BAF5F220DB93A300982A63 /* scan_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_line@2x.png"; sourceTree = "<group>"; };
-		D7BAF5F320DB93A300982A63 /* scan_line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_line@3x.png"; sourceTree = "<group>"; };
-		D7BAF5F420DB93A300982A63 /* icon_share_qq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_qq@2x.png"; sourceTree = "<group>"; };
 		D7BAF5F520DB93A300982A63 /* ic_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_arrow_down@2x.png"; sourceTree = "<group>"; };
-		D7BAF5F620DB93A300982A63 /* icon_share_wechat_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_wechat_circle@2x.png"; sourceTree = "<group>"; };
-		D7BAF5F720DB93A300982A63 /* icon_share_qq_zone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_qq_zone@3x.png"; sourceTree = "<group>"; };
 		D7BAF5F820DB93A300982A63 /* error_tap_reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error_tap_reload@2x.png"; sourceTree = "<group>"; };
-		D7BAF5F920DB93A300982A63 /* icon_share_qq_zone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_qq_zone@2x.png"; sourceTree = "<group>"; };
-		D7BAF5FA20DB93A300982A63 /* icon_share_wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_wechat@2x.png"; sourceTree = "<group>"; };
-		D7BAF5FB20DB93A300982A63 /* icon_bottom_swipe_indicater@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_bottom_swipe_indicater@2x.png"; sourceTree = "<group>"; };
 		D7BAF5FC20DB93A300982A63 /* ic_arrow_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_arrow_down@3x.png"; sourceTree = "<group>"; };
 		D7BAF5FD20DB93A300982A63 /* error_no_network@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error_no_network@2x.png"; sourceTree = "<group>"; };
 		D7BAF5FE20DB94F000982A63 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		D7BAF5FF20DB94F000982A63 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		D7BAF60020DB94F000982A63 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
 		D7BAF60120DB94F000982A63 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
-		D7BAF60520DB953100982A63 /* MyBasicFileCachePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBasicFileCachePool.h; sourceTree = "<group>"; };
-		D7BAF60620DB953100982A63 /* MyDocumentCachePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDocumentCachePool.m; sourceTree = "<group>"; };
-		D7BAF60720DB953100982A63 /* MyContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContextManager.h; sourceTree = "<group>"; };
-		D7BAF60820DB953100982A63 /* XYYCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYYCache.h; sourceTree = "<group>"; };
-		D7BAF60920DB953100982A63 /* MyBasicFileCachePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBasicFileCachePool.m; sourceTree = "<group>"; };
-		D7BAF60A20DB953100982A63 /* MyContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyContextManager.m; sourceTree = "<group>"; };
-		D7BAF60B20DB953100982A63 /* MyDocumentCachePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDocumentCachePool.h; sourceTree = "<group>"; };
 		D7BAF61020DB96AE00982A63 /* UIScrollView+ScrollToBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ScrollToBorder.h"; sourceTree = "<group>"; };
 		D7BAF61120DB96AE00982A63 /* MyContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyContentView.m; sourceTree = "<group>"; };
 		D7BAF61320DB96AE00982A63 /* MyGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGradientView.m; sourceTree = "<group>"; };
@@ -557,7 +666,86 @@
 		D7BAF78220DBAFB000982A63 /* MyImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImagePickerViewController.m; sourceTree = "<group>"; };
 		D7BAF78320DBAFB000982A63 /* MyMultipleImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMultipleImagePickerController.h; sourceTree = "<group>"; };
 		D7BAF78420DBAFB100982A63 /* MyMultipleImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMultipleImagePickerController.m; sourceTree = "<group>"; };
+		D7BAF79620DC8C6B00982A63 /* XYYKit-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XYYKit-dummy.m"; sourceTree = "<group>"; };
+		D7BAF79C20DC8D1B00982A63 /* libXYYCodeScan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYCodeScan.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BAF79E20DC8D1B00982A63 /* XYYCodeScan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYCodeScan.h; sourceTree = "<group>"; };
+		D7BAF7A520DC8D8E00982A63 /* MyCodeTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCodeTypeDef.h; sourceTree = "<group>"; };
+		D7BAF7A620DC8D8E00982A63 /* MyCodeScanActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCodeScanActivityView.m; sourceTree = "<group>"; };
+		D7BAF7A720DC8D8E00982A63 /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
+		D7BAF7A820DC8D8E00982A63 /* MyCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCodeReaderView.h; sourceTree = "<group>"; };
+		D7BAF7AA20DC8D8E00982A63 /* MyCodeScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCodeScanController.h; sourceTree = "<group>"; };
+		D7BAF7AB20DC8D8F00982A63 /* MyCodeScanActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCodeScanActivityView.h; sourceTree = "<group>"; };
+		D7BAF7AC20DC8D8F00982A63 /* MyCodeScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCodeScanController.m; sourceTree = "<group>"; };
+		D7BAF7AD20DC8D8F00982A63 /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
+		D7BAF7AE20DC8D8F00982A63 /* MyCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCodeReaderView.m; sourceTree = "<group>"; };
+		D7BAF7B720DC8E5500982A63 /* libXYYScanImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYScanImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BAF7B920DC8E5500982A63 /* XYYScanImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYScanImage.h; sourceTree = "<group>"; };
+		D7BAF7C020DC8ECD00982A63 /* MyScanImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScanImageCell.h; sourceTree = "<group>"; };
+		D7BAF7C120DC8ECD00982A63 /* MyScanImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScanImageView.h; sourceTree = "<group>"; };
+		D7BAF7C320DC8ECD00982A63 /* MyScanImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScanImageCell.m; sourceTree = "<group>"; };
+		D7BAF7C420DC8ECE00982A63 /* MyScanImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScanImageView.m; sourceTree = "<group>"; };
+		D7BAF7C520DC8ECE00982A63 /* MyScanImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScanImageData.m; sourceTree = "<group>"; };
+		D7BAF7C620DC8ECE00982A63 /* MyScanImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScanImageData.h; sourceTree = "<group>"; };
+		D7BAF7CE20DC8F8400982A63 /* libXYYSocialSNS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYSocialSNS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BAF7D020DC8F8400982A63 /* XYYSocialSNS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYSocialSNS.h; sourceTree = "<group>"; };
+		D7BAF7D820DC8FD600982A63 /* MySocialShareTargetItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySocialShareTargetItemCell.h; sourceTree = "<group>"; };
+		D7BAF7D920DC8FD600982A63 /* MySocialShareBaseMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySocialShareBaseMessage.h; sourceTree = "<group>"; };
+		D7BAF7DA20DC8FD600982A63 /* MySocialShareTargetItemsPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySocialShareTargetItemsPopoverView.m; sourceTree = "<group>"; };
+		D7BAF7DC20DC8FD600982A63 /* MySocialShareTargetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySocialShareTargetItem.h; sourceTree = "<group>"; };
+		D7BAF7DD20DC8FD700982A63 /* MySocialShareTargetItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySocialShareTargetItemCell.m; sourceTree = "<group>"; };
+		D7BAF7DE20DC8FD700982A63 /* MySocialSNSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySocialSNSManager.m; sourceTree = "<group>"; };
+		D7BAF7DF20DC8FD700982A63 /* MySocialShareBaseMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySocialShareBaseMessage.m; sourceTree = "<group>"; };
+		D7BAF7E020DC8FD700982A63 /* MySocialShareTargetItemsPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySocialShareTargetItemsPopoverView.h; sourceTree = "<group>"; };
+		D7BAF7E120DC8FD700982A63 /* MySocialSNSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySocialSNSManager.h; sourceTree = "<group>"; };
+		D7BAF7E220DC8FD700982A63 /* MySocialSNSTargetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySocialSNSTargetItem.m; sourceTree = "<group>"; };
+		D7BAF7E320DC8FD800982A63 /* MySocialSNSTargetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySocialSNSTargetItem.h; sourceTree = "<group>"; };
+		D7BAF7E420DC8FD800982A63 /* MySocialShareTargetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySocialShareTargetItem.m; sourceTree = "<group>"; };
+		D7BAF7EB20DC976300982A63 /* icon_share_wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_wechat@2x.png"; sourceTree = "<group>"; };
+		D7BAF7EC20DC976400982A63 /* MySocialSNSManagerLocalizedString.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MySocialSNSManagerLocalizedString.strings; sourceTree = "<group>"; };
+		D7BAF7ED20DC976400982A63 /* MySocialShareTargetItemInfos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MySocialShareTargetItemInfos.plist; sourceTree = "<group>"; };
+		D7BAF7EE20DC976400982A63 /* icon_share_qq_zone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_qq_zone@2x.png"; sourceTree = "<group>"; };
+		D7BAF7EF20DC976400982A63 /* icon_share_qq_zone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_qq_zone@3x.png"; sourceTree = "<group>"; };
+		D7BAF7F020DC976400982A63 /* icon_share_wechat_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_wechat_circle@2x.png"; sourceTree = "<group>"; };
+		D7BAF7F120DC976400982A63 /* icon_share_qq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_qq@2x.png"; sourceTree = "<group>"; };
+		D7BAF7F220DC976400982A63 /* icon_share_weibo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_share_weibo@2x.png"; sourceTree = "<group>"; };
+		D7BAF7F420DC97D700982A63 /* scan_line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_line@3x.png"; sourceTree = "<group>"; };
+		D7BAF7F520DC97D700982A63 /* scan_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scan_line@2x.png"; sourceTree = "<group>"; };
+		D7BAF7FA20DC991800982A63 /* libXYYPageLoad.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYPageLoad.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BAF7FC20DC991800982A63 /* XYYPageLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYPageLoad.h; sourceTree = "<group>"; };
+		D7BAF80320DC995800982A63 /* MyArrayPageLoadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyArrayPageLoadController.h; sourceTree = "<group>"; };
+		D7BAF80420DC995800982A63 /* MyBasicPageLoadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBasicPageLoadController.h; sourceTree = "<group>"; };
+		D7BAF80520DC995800982A63 /* MyPageLoadControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageLoadControllerProtocol.h; sourceTree = "<group>"; };
+		D7BAF80620DC995900982A63 /* MyArrayPageLoadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyArrayPageLoadController.m; sourceTree = "<group>"; };
+		D7BAF80720DC995900982A63 /* MyPageLoadManagerForTableAndCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageLoadManagerForTableAndCollectionView.h; sourceTree = "<group>"; };
+		D7BAF80820DC995900982A63 /* MySectionArrayPageLoadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySectionArrayPageLoadController.m; sourceTree = "<group>"; };
+		D7BAF80A20DC995900982A63 /* MyPageLoadManagerForTableAndCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageLoadManagerForTableAndCollectionView.m; sourceTree = "<group>"; };
+		D7BAF80B20DC995900982A63 /* MyPageLoadContentPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageLoadContentPageCell.h; sourceTree = "<group>"; };
+		D7BAF80C20DC995900982A63 /* MyPageLoadContentPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageLoadContentPageCell.m; sourceTree = "<group>"; };
+		D7BAF80D20DC995A00982A63 /* MySectionArrayPageLoadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySectionArrayPageLoadController.h; sourceTree = "<group>"; };
+		D7BAF80E20DC995A00982A63 /* MyBasicPageLoadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBasicPageLoadController.m; sourceTree = "<group>"; };
+		D7BAF81820DC9A7500982A63 /* libXYYUserGuidePage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYUserGuidePage.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BAF81A20DC9A7500982A63 /* XYYUserGuidePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYUserGuidePage.h; sourceTree = "<group>"; };
+		D7BAF82120DC9AB200982A63 /* MyUserGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUserGuideView.h; sourceTree = "<group>"; };
+		D7BAF82220DC9AB200982A63 /* MyUserGuidePageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUserGuidePageManager.m; sourceTree = "<group>"; };
+		D7BAF82420DC9AB200982A63 /* MyUserGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUserGuideView.m; sourceTree = "<group>"; };
+		D7BAF82520DC9AB200982A63 /* MyUserGuidePageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUserGuidePageManager.h; sourceTree = "<group>"; };
+		D7BAF82C20DC9B5900982A63 /* libXYYCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYCache.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BAF82E20DC9B5900982A63 /* XYYCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYCache.h; sourceTree = "<group>"; };
+		D7BAF83520DC9BBD00982A63 /* MyContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyContextManager.m; sourceTree = "<group>"; };
+		D7BAF83620DC9BBD00982A63 /* MyContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContextManager.h; sourceTree = "<group>"; };
+		D7BAF83720DC9BBD00982A63 /* MyBasicFileCachePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBasicFileCachePool.m; sourceTree = "<group>"; };
+		D7BAF83820DC9BBD00982A63 /* MyDocumentCachePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDocumentCachePool.h; sourceTree = "<group>"; };
+		D7BAF83920DC9BBD00982A63 /* MyDocumentCachePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDocumentCachePool.m; sourceTree = "<group>"; };
+		D7BAF83A20DC9BBD00982A63 /* MyBasicFileCachePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBasicFileCachePool.h; sourceTree = "<group>"; };
+		D7BAF84220DC9CA300982A63 /* libXYYDeclineMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYDeclineMenu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BAF84420DC9CA300982A63 /* XYYDeclineMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYDeclineMenu.h; sourceTree = "<group>"; };
+		D7BAF84B20DC9CCD00982A63 /* MyBasicDeclineMenuContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBasicDeclineMenuContentView.h; sourceTree = "<group>"; };
+		D7BAF84C20DC9CCE00982A63 /* MyBasicDeclineMenuContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBasicDeclineMenuContentView.m; sourceTree = "<group>"; };
+		D7BAF84D20DC9CCE00982A63 /* MyDeclineMenuContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDeclineMenuContainerView.m; sourceTree = "<group>"; };
+		D7BAF84E20DC9CCE00982A63 /* MyDeclineMenuContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDeclineMenuContainerView.h; sourceTree = "<group>"; };
+		D7BAF85520DC9D6000982A63 /* icon_bottom_swipe_indicater@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_bottom_swipe_indicater@2x.png"; sourceTree = "<group>"; };
 		EC3D660718FF048A45519DF1 /* Pods-XYYImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYImagePicker/Pods-XYYImagePicker.release.xcconfig"; sourceTree = "<group>"; };
+		ECDC9B64E0E01474EC001EC6 /* Pods-XYYUserGuidePage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYUserGuidePage.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYUserGuidePage/Pods-XYYUserGuidePage.release.xcconfig"; sourceTree = "<group>"; };
 		F7B1B83E075778BC69F6FE1B /* Pods-XYYKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYKit/Pods-XYYKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -610,6 +798,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7BAF79920DC8D1B00982A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95EFBD5A5BC01240259EB0EB /* libPods-XYYCodeScan.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF7B420DC8E5500982A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFF147895243F037880EA83 /* libPods-XYYScanImage.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF7CB20DC8F8400982A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73215F777850AE259C506831 /* libPods-XYYSocialSNS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF7F720DC991800982A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E15149DC71B3DFC0097A84D /* libPods-XYYPageLoad.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF81520DC9A7500982A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75F1E944D8C5177718135B14 /* libPods-XYYUserGuidePage.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF82920DC9B5900982A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7656D63B4CC4A467B72311A0 /* libPods-XYYCache.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF83F20DC9CA300982A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51917EE723BDA77DC372C2E /* libPods-XYYDeclineMenu.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -628,6 +872,20 @@
 				0A148BB5C8BDE39FE7E1D229 /* Pods-XYYAppComponent.release.xcconfig */,
 				22EEC9FA388F6EBD9B1380D5 /* Pods-XYYImagePicker.debug.xcconfig */,
 				EC3D660718FF048A45519DF1 /* Pods-XYYImagePicker.release.xcconfig */,
+				5708FA00A5EABDB62EBB5223 /* Pods-XYYCodeScan.debug.xcconfig */,
+				0ADDFE99AE1D8773D210CB5A /* Pods-XYYCodeScan.release.xcconfig */,
+				BBB5797EBA0B1CC05FC2C944 /* Pods-XYYScanImage.debug.xcconfig */,
+				6F6B46FB3E6482539628686C /* Pods-XYYScanImage.release.xcconfig */,
+				42AC1D8A69E8F13AD8B05833 /* Pods-XYYSocialSNS.debug.xcconfig */,
+				5A198B9E2D37419C1D74F818 /* Pods-XYYSocialSNS.release.xcconfig */,
+				AB5A95DEA638FF0CE8CADB07 /* Pods-XYYPageLoad.debug.xcconfig */,
+				32A41C9C467118E573902F96 /* Pods-XYYPageLoad.release.xcconfig */,
+				2EC44E7F8374D1CC0838F08E /* Pods-XYYUserGuidePage.debug.xcconfig */,
+				ECDC9B64E0E01474EC001EC6 /* Pods-XYYUserGuidePage.release.xcconfig */,
+				D3C6E6E7617A23E436E158F2 /* Pods-XYYCache.debug.xcconfig */,
+				4881537F54278DE345FB5C23 /* Pods-XYYCache.release.xcconfig */,
+				33795FB0CA401C8ABD76F5F0 /* Pods-XYYDeclineMenu.debug.xcconfig */,
+				1793719532289EB0218331C3 /* Pods-XYYDeclineMenu.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -641,6 +899,13 @@
 				23C4AB4C2D72BB82D677F6D9 /* libPods-XYYNetImage.a */,
 				3B3D65EE619E8ECF39DAF013 /* libPods-XYYAppComponent.a */,
 				25249C4B801AB60EAA6B1DAD /* libPods-XYYImagePicker.a */,
+				99B37D401C8EC68B606A5A98 /* libPods-XYYCodeScan.a */,
+				539AB96D5F43113B55011FC8 /* libPods-XYYScanImage.a */,
+				347694FEE78B8A47A0DE3B82 /* libPods-XYYSocialSNS.a */,
+				099B7D6C4CC2FDB19BF5C8BB /* libPods-XYYPageLoad.a */,
+				3CA29823E34FB05DD46E30A4 /* libPods-XYYUserGuidePage.a */,
+				CF8534831A7DBA473D53E5A3 /* libPods-XYYCache.a */,
+				D38CD46ACB8355A0F0E5BB13 /* libPods-XYYDeclineMenu.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -650,10 +915,17 @@
 			children = (
 				D735C91120BD4D1A000D4A79 /* XYYKit */,
 				D7BAF57420DB775000982A63 /* XYYFoundation */,
+				D7BAF82D20DC9B5900982A63 /* XYYCache */,
 				D7BAF70420DBA82400982A63 /* XYYNetConnection */,
 				D7BAF72120DBAAB200982A63 /* XYYNetImage */,
 				D7BAF73B20DBAC9E00982A63 /* XYYAppComponent */,
 				D7BAF75220DBAF5400982A63 /* XYYImagePicker */,
+				D7BAF79D20DC8D1B00982A63 /* XYYCodeScan */,
+				D7BAF7B820DC8E5500982A63 /* XYYScanImage */,
+				D7BAF7CF20DC8F8400982A63 /* XYYSocialSNS */,
+				D7BAF7FB20DC991800982A63 /* XYYPageLoad */,
+				D7BAF81920DC9A7500982A63 /* XYYUserGuidePage */,
+				D7BAF84320DC9CA300982A63 /* XYYDeclineMenu */,
 				D735C91020BD4D1A000D4A79 /* Products */,
 				6399C03EAB79F3EEDE2CECD4 /* Pods */,
 				C2BA7A3A95922AEE4D5787BC /* Frameworks */,
@@ -669,6 +941,13 @@
 				D7BAF72020DBAAB200982A63 /* libXYYNetImage.a */,
 				D7BAF73A20DBAC9E00982A63 /* libXYYAppComponent.a */,
 				D7BAF75120DBAF5400982A63 /* libXYYImagePicker.a */,
+				D7BAF79C20DC8D1B00982A63 /* libXYYCodeScan.a */,
+				D7BAF7B720DC8E5500982A63 /* libXYYScanImage.a */,
+				D7BAF7CE20DC8F8400982A63 /* libXYYSocialSNS.a */,
+				D7BAF7FA20DC991800982A63 /* libXYYPageLoad.a */,
+				D7BAF81820DC9A7500982A63 /* libXYYUserGuidePage.a */,
+				D7BAF82C20DC9B5900982A63 /* libXYYCache.a */,
+				D7BAF84220DC9CA300982A63 /* libXYYDeclineMenu.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -677,6 +956,7 @@
 			isa = PBXGroup;
 			children = (
 				D735C91220BD4D1A000D4A79 /* XYYKit.h */,
+				D7BAF79620DC8C6B00982A63 /* XYYKit-dummy.m */,
 			);
 			path = XYYKit;
 			sourceTree = "<group>";
@@ -687,13 +967,12 @@
 				D7BAF57520DB775000982A63 /* XYYFoundation.h */,
 				D7BAF57C20DB7B4B00982A63 /* XYYUtil */,
 				D7BAF58C20DB7B4B00982A63 /* XYYCategories */,
-				D7BAF60420DB953100982A63 /* XYYCache */,
 				D7BAF60F20DB96AE00982A63 /* XYYView */,
 				D7BAF66F20DB986600982A63 /* XYYController */,
 				D7BAF68620DB9B4A00982A63 /* XYYViewController */,
 				D7BAF6C920DB9D6A00982A63 /* XYYCell */,
 				D7BAF6AB20DB9D6A00982A63 /* XYYInfoCell */,
-				D7BAF6A620DB9CA400982A63 /* Lib */,
+				D7BAF6A620DB9CA400982A63 /* Vendor */,
 				D7BAF5EB20DB93A300982A63 /* Resources */,
 			);
 			path = XYYFoundation;
@@ -791,39 +1070,14 @@
 			isa = PBXGroup;
 			children = (
 				D7BAF5EC20DB93A300982A63 /* error_reload@2x.png */,
-				D7BAF5ED20DB93A300982A63 /* icon_share_weibo@2x.png */,
 				D7BAF5EE20DB93A300982A63 /* error_msg@2x.png */,
-				D7BAF5EF20DB93A300982A63 /* MySocialShareTargetItemInfos.plist */,
 				D7BAF5F020DB93A300982A63 /* success_msg@2x.png */,
-				D7BAF5F120DB93A300982A63 /* MySocialSNSManagerLocalizedString.strings */,
-				D7BAF5F220DB93A300982A63 /* scan_line@2x.png */,
-				D7BAF5F320DB93A300982A63 /* scan_line@3x.png */,
-				D7BAF5F420DB93A300982A63 /* icon_share_qq@2x.png */,
 				D7BAF5F520DB93A300982A63 /* ic_arrow_down@2x.png */,
-				D7BAF5F620DB93A300982A63 /* icon_share_wechat_circle@2x.png */,
-				D7BAF5F720DB93A300982A63 /* icon_share_qq_zone@3x.png */,
 				D7BAF5F820DB93A300982A63 /* error_tap_reload@2x.png */,
-				D7BAF5F920DB93A300982A63 /* icon_share_qq_zone@2x.png */,
-				D7BAF5FA20DB93A300982A63 /* icon_share_wechat@2x.png */,
-				D7BAF5FB20DB93A300982A63 /* icon_bottom_swipe_indicater@2x.png */,
 				D7BAF5FC20DB93A300982A63 /* ic_arrow_down@3x.png */,
 				D7BAF5FD20DB93A300982A63 /* error_no_network@2x.png */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		D7BAF60420DB953100982A63 /* XYYCache */ = {
-			isa = PBXGroup;
-			children = (
-				D7BAF60820DB953100982A63 /* XYYCache.h */,
-				D7BAF60520DB953100982A63 /* MyBasicFileCachePool.h */,
-				D7BAF60920DB953100982A63 /* MyBasicFileCachePool.m */,
-				D7BAF60720DB953100982A63 /* MyContextManager.h */,
-				D7BAF60A20DB953100982A63 /* MyContextManager.m */,
-				D7BAF60B20DB953100982A63 /* MyDocumentCachePool.h */,
-				D7BAF60620DB953100982A63 /* MyDocumentCachePool.m */,
-			);
-			path = XYYCache;
 			sourceTree = "<group>";
 		};
 		D7BAF60F20DB96AE00982A63 /* XYYView */ = {
@@ -971,12 +1225,12 @@
 			path = XYYViewController;
 			sourceTree = "<group>";
 		};
-		D7BAF6A620DB9CA400982A63 /* Lib */ = {
+		D7BAF6A620DB9CA400982A63 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
 				D7BAF6A720DB9CA400982A63 /* Reachability */,
 			);
-			path = Lib;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		D7BAF6A720DB9CA400982A63 /* Reachability */ = {
@@ -1182,6 +1436,149 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		D7BAF79D20DC8D1B00982A63 /* XYYCodeScan */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF79E20DC8D1B00982A63 /* XYYCodeScan.h */,
+				D7BAF7A820DC8D8E00982A63 /* MyCodeReaderView.h */,
+				D7BAF7AE20DC8D8F00982A63 /* MyCodeReaderView.m */,
+				D7BAF7AB20DC8D8F00982A63 /* MyCodeScanActivityView.h */,
+				D7BAF7A620DC8D8E00982A63 /* MyCodeScanActivityView.m */,
+				D7BAF7AA20DC8D8E00982A63 /* MyCodeScanController.h */,
+				D7BAF7AC20DC8D8F00982A63 /* MyCodeScanController.m */,
+				D7BAF7A520DC8D8E00982A63 /* MyCodeTypeDef.h */,
+				D7BAF7AD20DC8D8F00982A63 /* QRCodeGenerator.h */,
+				D7BAF7A720DC8D8E00982A63 /* QRCodeGenerator.m */,
+				D7BAF7F320DC978000982A63 /* Resources */,
+			);
+			path = XYYCodeScan;
+			sourceTree = "<group>";
+		};
+		D7BAF7B820DC8E5500982A63 /* XYYScanImage */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF7B920DC8E5500982A63 /* XYYScanImage.h */,
+				D7BAF7C020DC8ECD00982A63 /* MyScanImageCell.h */,
+				D7BAF7C320DC8ECD00982A63 /* MyScanImageCell.m */,
+				D7BAF7C620DC8ECE00982A63 /* MyScanImageData.h */,
+				D7BAF7C520DC8ECE00982A63 /* MyScanImageData.m */,
+				D7BAF7C120DC8ECD00982A63 /* MyScanImageView.h */,
+				D7BAF7C420DC8ECE00982A63 /* MyScanImageView.m */,
+			);
+			path = XYYScanImage;
+			sourceTree = "<group>";
+		};
+		D7BAF7CF20DC8F8400982A63 /* XYYSocialSNS */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF7D020DC8F8400982A63 /* XYYSocialSNS.h */,
+				D7BAF7D920DC8FD600982A63 /* MySocialShareBaseMessage.h */,
+				D7BAF7DF20DC8FD700982A63 /* MySocialShareBaseMessage.m */,
+				D7BAF7DC20DC8FD600982A63 /* MySocialShareTargetItem.h */,
+				D7BAF7E420DC8FD800982A63 /* MySocialShareTargetItem.m */,
+				D7BAF7D820DC8FD600982A63 /* MySocialShareTargetItemCell.h */,
+				D7BAF7DD20DC8FD700982A63 /* MySocialShareTargetItemCell.m */,
+				D7BAF7E020DC8FD700982A63 /* MySocialShareTargetItemsPopoverView.h */,
+				D7BAF7DA20DC8FD600982A63 /* MySocialShareTargetItemsPopoverView.m */,
+				D7BAF7E120DC8FD700982A63 /* MySocialSNSManager.h */,
+				D7BAF7DE20DC8FD700982A63 /* MySocialSNSManager.m */,
+				D7BAF7E320DC8FD800982A63 /* MySocialSNSTargetItem.h */,
+				D7BAF7E220DC8FD700982A63 /* MySocialSNSTargetItem.m */,
+				D7BAF7D720DC8F9F00982A63 /* Resources */,
+			);
+			path = XYYSocialSNS;
+			sourceTree = "<group>";
+		};
+		D7BAF7D720DC8F9F00982A63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF7EE20DC976400982A63 /* icon_share_qq_zone@2x.png */,
+				D7BAF7EF20DC976400982A63 /* icon_share_qq_zone@3x.png */,
+				D7BAF7F120DC976400982A63 /* icon_share_qq@2x.png */,
+				D7BAF7F020DC976400982A63 /* icon_share_wechat_circle@2x.png */,
+				D7BAF7EB20DC976300982A63 /* icon_share_wechat@2x.png */,
+				D7BAF7F220DC976400982A63 /* icon_share_weibo@2x.png */,
+				D7BAF7ED20DC976400982A63 /* MySocialShareTargetItemInfos.plist */,
+				D7BAF7EC20DC976400982A63 /* MySocialSNSManagerLocalizedString.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7BAF7F320DC978000982A63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF7F520DC97D700982A63 /* scan_line@2x.png */,
+				D7BAF7F420DC97D700982A63 /* scan_line@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7BAF7FB20DC991800982A63 /* XYYPageLoad */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF7FC20DC991800982A63 /* XYYPageLoad.h */,
+				D7BAF80320DC995800982A63 /* MyArrayPageLoadController.h */,
+				D7BAF80620DC995900982A63 /* MyArrayPageLoadController.m */,
+				D7BAF80420DC995800982A63 /* MyBasicPageLoadController.h */,
+				D7BAF80E20DC995A00982A63 /* MyBasicPageLoadController.m */,
+				D7BAF80B20DC995900982A63 /* MyPageLoadContentPageCell.h */,
+				D7BAF80C20DC995900982A63 /* MyPageLoadContentPageCell.m */,
+				D7BAF80520DC995800982A63 /* MyPageLoadControllerProtocol.h */,
+				D7BAF80720DC995900982A63 /* MyPageLoadManagerForTableAndCollectionView.h */,
+				D7BAF80A20DC995900982A63 /* MyPageLoadManagerForTableAndCollectionView.m */,
+				D7BAF80D20DC995A00982A63 /* MySectionArrayPageLoadController.h */,
+				D7BAF80820DC995900982A63 /* MySectionArrayPageLoadController.m */,
+			);
+			path = XYYPageLoad;
+			sourceTree = "<group>";
+		};
+		D7BAF81920DC9A7500982A63 /* XYYUserGuidePage */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF81A20DC9A7500982A63 /* XYYUserGuidePage.h */,
+				D7BAF82520DC9AB200982A63 /* MyUserGuidePageManager.h */,
+				D7BAF82220DC9AB200982A63 /* MyUserGuidePageManager.m */,
+				D7BAF82120DC9AB200982A63 /* MyUserGuideView.h */,
+				D7BAF82420DC9AB200982A63 /* MyUserGuideView.m */,
+			);
+			path = XYYUserGuidePage;
+			sourceTree = "<group>";
+		};
+		D7BAF82D20DC9B5900982A63 /* XYYCache */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF82E20DC9B5900982A63 /* XYYCache.h */,
+				D7BAF83A20DC9BBD00982A63 /* MyBasicFileCachePool.h */,
+				D7BAF83720DC9BBD00982A63 /* MyBasicFileCachePool.m */,
+				D7BAF83620DC9BBD00982A63 /* MyContextManager.h */,
+				D7BAF83520DC9BBD00982A63 /* MyContextManager.m */,
+				D7BAF83820DC9BBD00982A63 /* MyDocumentCachePool.h */,
+				D7BAF83920DC9BBD00982A63 /* MyDocumentCachePool.m */,
+			);
+			path = XYYCache;
+			sourceTree = "<group>";
+		};
+		D7BAF84320DC9CA300982A63 /* XYYDeclineMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF84420DC9CA300982A63 /* XYYDeclineMenu.h */,
+				D7BAF84B20DC9CCD00982A63 /* MyBasicDeclineMenuContentView.h */,
+				D7BAF84C20DC9CCE00982A63 /* MyBasicDeclineMenuContentView.m */,
+				D7BAF84E20DC9CCE00982A63 /* MyDeclineMenuContainerView.h */,
+				D7BAF84D20DC9CCE00982A63 /* MyDeclineMenuContainerView.m */,
+				D7BAF85420DC9D6000982A63 /* Resources */,
+			);
+			path = XYYDeclineMenu;
+			sourceTree = "<group>";
+		};
+		D7BAF85420DC9D6000982A63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF85520DC9D6000982A63 /* icon_bottom_swipe_indicater@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1293,6 +1690,132 @@
 			productReference = D7BAF75120DBAF5400982A63 /* libXYYImagePicker.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		D7BAF79B20DC8D1B00982A63 /* XYYCodeScan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BAF7A220DC8D1B00982A63 /* Build configuration list for PBXNativeTarget "XYYCodeScan" */;
+			buildPhases = (
+				877207AB58EFEDF4CD801C7C /* [CP] Check Pods Manifest.lock */,
+				D7BAF79820DC8D1B00982A63 /* Sources */,
+				D7BAF79920DC8D1B00982A63 /* Frameworks */,
+				D7BAF79A20DC8D1B00982A63 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYYCodeScan;
+			productName = XYYCodeScan;
+			productReference = D7BAF79C20DC8D1B00982A63 /* libXYYCodeScan.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D7BAF7B620DC8E5500982A63 /* XYYScanImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BAF7BF20DC8E5500982A63 /* Build configuration list for PBXNativeTarget "XYYScanImage" */;
+			buildPhases = (
+				7076AE34B9BE7E4B545037EA /* [CP] Check Pods Manifest.lock */,
+				D7BAF7B320DC8E5500982A63 /* Sources */,
+				D7BAF7B420DC8E5500982A63 /* Frameworks */,
+				D7BAF7B520DC8E5500982A63 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYYScanImage;
+			productName = XYYScanImage;
+			productReference = D7BAF7B720DC8E5500982A63 /* libXYYScanImage.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D7BAF7CD20DC8F8400982A63 /* XYYSocialSNS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BAF7D620DC8F8400982A63 /* Build configuration list for PBXNativeTarget "XYYSocialSNS" */;
+			buildPhases = (
+				C7D1F17B7E50DA866B5DF3F2 /* [CP] Check Pods Manifest.lock */,
+				D7BAF7CA20DC8F8400982A63 /* Sources */,
+				D7BAF7CB20DC8F8400982A63 /* Frameworks */,
+				D7BAF7CC20DC8F8400982A63 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYYSocialSNS;
+			productName = XYYSocialSNS;
+			productReference = D7BAF7CE20DC8F8400982A63 /* libXYYSocialSNS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D7BAF7F920DC991800982A63 /* XYYPageLoad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BAF80020DC991800982A63 /* Build configuration list for PBXNativeTarget "XYYPageLoad" */;
+			buildPhases = (
+				FAF8F081767558174EC5497C /* [CP] Check Pods Manifest.lock */,
+				D7BAF7F620DC991800982A63 /* Sources */,
+				D7BAF7F720DC991800982A63 /* Frameworks */,
+				D7BAF7F820DC991800982A63 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYYPageLoad;
+			productName = XYYPageLoad;
+			productReference = D7BAF7FA20DC991800982A63 /* libXYYPageLoad.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D7BAF81720DC9A7500982A63 /* XYYUserGuidePage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BAF82020DC9A7500982A63 /* Build configuration list for PBXNativeTarget "XYYUserGuidePage" */;
+			buildPhases = (
+				0C4518ED733243B39DFE446B /* [CP] Check Pods Manifest.lock */,
+				D7BAF81420DC9A7500982A63 /* Sources */,
+				D7BAF81520DC9A7500982A63 /* Frameworks */,
+				D7BAF81620DC9A7500982A63 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYYUserGuidePage;
+			productName = XYYUserGuidePage;
+			productReference = D7BAF81820DC9A7500982A63 /* libXYYUserGuidePage.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D7BAF82B20DC9B5900982A63 /* XYYCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BAF83420DC9B5900982A63 /* Build configuration list for PBXNativeTarget "XYYCache" */;
+			buildPhases = (
+				9EF49577E521C888775680E4 /* [CP] Check Pods Manifest.lock */,
+				D7BAF82820DC9B5900982A63 /* Sources */,
+				D7BAF82920DC9B5900982A63 /* Frameworks */,
+				D7BAF82A20DC9B5900982A63 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYYCache;
+			productName = XYYCache;
+			productReference = D7BAF82C20DC9B5900982A63 /* libXYYCache.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D7BAF84120DC9CA300982A63 /* XYYDeclineMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BAF84A20DC9CA300982A63 /* Build configuration list for PBXNativeTarget "XYYDeclineMenu" */;
+			buildPhases = (
+				4BCDD7B158BDF6D3EC659003 /* [CP] Check Pods Manifest.lock */,
+				D7BAF83E20DC9CA300982A63 /* Sources */,
+				D7BAF83F20DC9CA300982A63 /* Frameworks */,
+				D7BAF84020DC9CA300982A63 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYYDeclineMenu;
+			productName = XYYDeclineMenu;
+			productReference = D7BAF84220DC9CA300982A63 /* libXYYDeclineMenu.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1320,6 +1843,27 @@
 					D7BAF75020DBAF5400982A63 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					D7BAF79B20DC8D1B00982A63 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					D7BAF7B620DC8E5500982A63 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					D7BAF7CD20DC8F8400982A63 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					D7BAF7F920DC991800982A63 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					D7BAF81720DC9A7500982A63 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					D7BAF82B20DC9B5900982A63 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					D7BAF84120DC9CA300982A63 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = D735C90A20BD4D1A000D4A79 /* Build configuration list for PBXProject "XYYKit" */;
@@ -1341,6 +1885,13 @@
 				D7BAF71F20DBAAB200982A63 /* XYYNetImage */,
 				D7BAF73920DBAC9E00982A63 /* XYYAppComponent */,
 				D7BAF75020DBAF5400982A63 /* XYYImagePicker */,
+				D7BAF79B20DC8D1B00982A63 /* XYYCodeScan */,
+				D7BAF7B620DC8E5500982A63 /* XYYScanImage */,
+				D7BAF7CD20DC8F8400982A63 /* XYYSocialSNS */,
+				D7BAF7F920DC991800982A63 /* XYYPageLoad */,
+				D7BAF81720DC9A7500982A63 /* XYYUserGuidePage */,
+				D7BAF82B20DC9B5900982A63 /* XYYCache */,
+				D7BAF84120DC9CA300982A63 /* XYYDeclineMenu */,
 			);
 		};
 /* End PBXProject section */
@@ -1358,6 +1909,42 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-XYYFoundation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0C4518ED733243B39DFE446B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYUserGuidePage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BCDD7B158BDF6D3EC659003 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYDeclineMenu-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1418,6 +2005,60 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7076AE34B9BE7E4B545037EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYScanImage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		877207AB58EFEDF4CD801C7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYCodeScan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EF49577E521C888775680E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYCache-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B1E6BF42068040A5C3AD7AE4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1430,6 +2071,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-XYYImagePicker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7D1F17B7E50DA866B5DF3F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYSocialSNS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1454,6 +2113,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FAF8F081767558174EC5497C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYPageLoad-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1461,6 +2138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7BAF79720DC8C6B00982A63 /* XYYKit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1500,7 +2178,6 @@
 				D7BAF66420DB96AF00982A63 /* MyBadgeView.m in Sources */,
 				D7BAF68120DB986600982A63 /* MyGetAuthCodeButton.m in Sources */,
 				D7BAF66A20DB96AF00982A63 /* MyBlurredView.m in Sources */,
-				D7BAF60C20DB953100982A63 /* MyDocumentCachePool.m in Sources */,
 				D7BAF6F220DB9D6A00982A63 /* UICollectionView+register.m in Sources */,
 				D7BAF66820DB96AF00982A63 /* MyLoadingIndicateView.m in Sources */,
 				D7BAF6EB20DB9D6A00982A63 /* NSDictionary+MyBasicInfoCell.m in Sources */,
@@ -1511,11 +2188,9 @@
 				D7BAF6E820DB9D6A00982A63 /* MyInfoCellController.m in Sources */,
 				D7BAF67F20DB986600982A63 /* MySegmentedControl.m in Sources */,
 				D7BAF5C920DB7B4B00982A63 /* NSDate+MyCategory.m in Sources */,
-				D7BAF60E20DB953100982A63 /* MyContextManager.m in Sources */,
 				D7BAF6F920DB9D6A00982A63 /* UITableViewCell+ShowContent.m in Sources */,
 				D7BAF5C720DB7B4B00982A63 /* NSString+DES.m in Sources */,
 				D7BAF5D520DB7B4B00982A63 /* UIColor+HexString.m in Sources */,
-				D7BAF60D20DB953100982A63 /* MyBasicFileCachePool.m in Sources */,
 				D7BAF65820DB96AF00982A63 /* MySelectionView.m in Sources */,
 				D7BAF60220DB94F000982A63 /* UIImage+ImageEffects.m in Sources */,
 				D7BAF65920DB96AF00982A63 /* MyBasicPopoverAlertView.m in Sources */,
@@ -1631,6 +2306,80 @@
 				D7BAF79020DBAFB100982A63 /* DNUnAuthorizedTipsView.m in Sources */,
 				D7BAF79120DBAFB100982A63 /* DNAlbumTableViewCell.m in Sources */,
 				D7BAF79220DBAFB100982A63 /* DNSendButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF79820DC8D1B00982A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BAF7B220DC8D8F00982A63 /* MyCodeReaderView.m in Sources */,
+				D7BAF7AF20DC8D8F00982A63 /* MyCodeScanActivityView.m in Sources */,
+				D7BAF7B120DC8D8F00982A63 /* MyCodeScanController.m in Sources */,
+				D7BAF7B020DC8D8F00982A63 /* QRCodeGenerator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF7B320DC8E5500982A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BAF7C720DC8ECE00982A63 /* MyScanImageCell.m in Sources */,
+				D7BAF7C920DC8ECE00982A63 /* MyScanImageData.m in Sources */,
+				D7BAF7C820DC8ECE00982A63 /* MyScanImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF7CA20DC8F8400982A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BAF7E620DC8FD800982A63 /* MySocialShareTargetItemCell.m in Sources */,
+				D7BAF7E920DC8FD800982A63 /* MySocialSNSTargetItem.m in Sources */,
+				D7BAF7E820DC8FD800982A63 /* MySocialShareBaseMessage.m in Sources */,
+				D7BAF7E720DC8FD800982A63 /* MySocialSNSManager.m in Sources */,
+				D7BAF7EA20DC8FD800982A63 /* MySocialShareTargetItem.m in Sources */,
+				D7BAF7E520DC8FD800982A63 /* MySocialShareTargetItemsPopoverView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF7F620DC991800982A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BAF81320DC995A00982A63 /* MyBasicPageLoadController.m in Sources */,
+				D7BAF81120DC995A00982A63 /* MyPageLoadManagerForTableAndCollectionView.m in Sources */,
+				D7BAF81220DC995A00982A63 /* MyPageLoadContentPageCell.m in Sources */,
+				D7BAF81020DC995A00982A63 /* MySectionArrayPageLoadController.m in Sources */,
+				D7BAF80F20DC995A00982A63 /* MyArrayPageLoadController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF81420DC9A7500982A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BAF82720DC9AB300982A63 /* MyUserGuideView.m in Sources */,
+				D7BAF82620DC9AB300982A63 /* MyUserGuidePageManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF82820DC9B5900982A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BAF83B20DC9BBE00982A63 /* MyContextManager.m in Sources */,
+				D7BAF83C20DC9BBE00982A63 /* MyBasicFileCachePool.m in Sources */,
+				D7BAF83D20DC9BBE00982A63 /* MyDocumentCachePool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF83E20DC9CA300982A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BAF85120DC9CCE00982A63 /* MyDeclineMenuContainerView.m in Sources */,
+				D7BAF85020DC9CCE00982A63 /* MyBasicDeclineMenuContentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1924,6 +2673,202 @@
 			};
 			name = Release;
 		};
+		D7BAF7A320DC8D1B00982A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5708FA00A5EABDB62EBB5223 /* Pods-XYYCodeScan.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7BAF7A420DC8D1B00982A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ADDFE99AE1D8773D210CB5A /* Pods-XYYCodeScan.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7BAF7BD20DC8E5500982A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBB5797EBA0B1CC05FC2C944 /* Pods-XYYScanImage.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7BAF7BE20DC8E5500982A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F6B46FB3E6482539628686C /* Pods-XYYScanImage.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7BAF7D420DC8F8400982A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42AC1D8A69E8F13AD8B05833 /* Pods-XYYSocialSNS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7BAF7D520DC8F8400982A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A198B9E2D37419C1D74F818 /* Pods-XYYSocialSNS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7BAF80120DC991800982A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB5A95DEA638FF0CE8CADB07 /* Pods-XYYPageLoad.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7BAF80220DC991800982A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32A41C9C467118E573902F96 /* Pods-XYYPageLoad.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7BAF81E20DC9A7500982A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EC44E7F8374D1CC0838F08E /* Pods-XYYUserGuidePage.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7BAF81F20DC9A7500982A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECDC9B64E0E01474EC001EC6 /* Pods-XYYUserGuidePage.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7BAF83220DC9B5900982A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3C6E6E7617A23E436E158F2 /* Pods-XYYCache.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7BAF83320DC9B5900982A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4881537F54278DE345FB5C23 /* Pods-XYYCache.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7BAF84820DC9CA300982A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33795FB0CA401C8ABD76F5F0 /* Pods-XYYDeclineMenu.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7BAF84920DC9CA300982A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1793719532289EB0218331C3 /* Pods-XYYDeclineMenu.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1986,6 +2931,69 @@
 			buildConfigurations = (
 				D7BAF75720DBAF5400982A63 /* Debug */,
 				D7BAF75820DBAF5400982A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BAF7A220DC8D1B00982A63 /* Build configuration list for PBXNativeTarget "XYYCodeScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BAF7A320DC8D1B00982A63 /* Debug */,
+				D7BAF7A420DC8D1B00982A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BAF7BF20DC8E5500982A63 /* Build configuration list for PBXNativeTarget "XYYScanImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BAF7BD20DC8E5500982A63 /* Debug */,
+				D7BAF7BE20DC8E5500982A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BAF7D620DC8F8400982A63 /* Build configuration list for PBXNativeTarget "XYYSocialSNS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BAF7D420DC8F8400982A63 /* Debug */,
+				D7BAF7D520DC8F8400982A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BAF80020DC991800982A63 /* Build configuration list for PBXNativeTarget "XYYPageLoad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BAF80120DC991800982A63 /* Debug */,
+				D7BAF80220DC991800982A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BAF82020DC9A7500982A63 /* Build configuration list for PBXNativeTarget "XYYUserGuidePage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BAF81E20DC9A7500982A63 /* Debug */,
+				D7BAF81F20DC9A7500982A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BAF83420DC9B5900982A63 /* Build configuration list for PBXNativeTarget "XYYCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BAF83220DC9B5900982A63 /* Debug */,
+				D7BAF83320DC9B5900982A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BAF84A20DC9CA300982A63 /* Build configuration list for PBXNativeTarget "XYYDeclineMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BAF84820DC9CA300982A63 /* Debug */,
+				D7BAF84920DC9CA300982A63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

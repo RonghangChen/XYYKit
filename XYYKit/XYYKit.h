@@ -12,10 +12,15 @@
 #define XYYKit_h
 
 #import "XYYFoundation.h"
+#import "XYYCache.h"
 #import "XYYNetConnection.h"
 #import "XYYNetImage.h"
 #import "XYYAppComponent.h"
 #import "XYYImagePicker.h"
-
+#import "XYYCodeScan.h"
+#import "XYYScanImage.h"
+#import "XYYSocialSNS.h"
+#import "XYYPageLoad.h"
+#import "XYYUserGuidePage.h"
 
 #endif
