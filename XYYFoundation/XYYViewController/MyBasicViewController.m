@@ -12,11 +12,9 @@
 #import "MyNavigationTransitioningDelegate.h"
 #import "MyViewControllerTransitioningDelegate.h"
 #import "MyActivityIndicatorView.h"
-#import <MBProgressHUD.h>
+#import "MBProgressHUD.h"
 #import "XYYBaseDef.h"
 #import "XYYMessageUtil.h"
-//#import "MacroDef.h"
-//#import "help.h"
 
 //----------------------------------------------------------
 

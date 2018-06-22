@@ -23,17 +23,18 @@ Pod::Spec.new do |s|
   s.homepage     = "https://coding.net/u/crh/p/XYYKit/git"
   s.social_media_url  = "https://github.com/RonghangChen"
 
-  s.license      = "MIT"
+  s.license       = { :type => "MIT", :file => "LICENSE" }
 
   s.requires_arc = true
   s.platform     = :ios, "8.0"
 
   s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :tag => "#{s.version}" }
-  s.source_files = "#{s.name}/*.{h,m}"
+  s.source_files = "#{s.name}/*.{h,m}", "#{s.name}/**/*.{h,m}"
   s.resources    = "#{s.name}/Resources/*"
 
   s.frameworks = "UIKit", "Foundation", "Accelerate", "CoreFoundation"
 
-  s.dependency "MBProgressHUD", "~> 0.9.1", "TTTAttributedLabel"
+  s.dependency 'MBProgressHUD' , '~> 0.9.1'
+  s.dependency 'TTTAttributedLabel'
 
 end

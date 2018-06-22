@@ -7,7 +7,7 @@
 //
 
 #import "UILabel+CaculaterShowSize.h"
-#import <TTTAttributedLabel.h>
+#import "TTTAttributedLabel.h"
 
 @implementation UILabel (CaculaterShowSize)
 

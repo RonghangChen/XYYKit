@@ -7,7 +7,7 @@
 //
 
 #import "XYYMessageUtil.h"
-#import <MBProgressHUD.h>
+#import "MBProgressHUD.h"
 #import "UIImage+XYYExtend.h"
 #import "MyActivityIndicatorView.h"
 #import "MyNetReachability.h"
