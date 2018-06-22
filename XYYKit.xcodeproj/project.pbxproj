@@ -156,7 +156,6 @@
 		D7BAF79720DC8C6B00982A63 /* XYYKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF79620DC8C6B00982A63 /* XYYKit-dummy.m */; };
 		D7BAF7A120DC8D1B00982A63 /* XYYCodeScan.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF79E20DC8D1B00982A63 /* XYYCodeScan.h */; };
 		D7BAF7AF20DC8D8F00982A63 /* MyCodeScanActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7A620DC8D8E00982A63 /* MyCodeScanActivityView.m */; };
-		D7BAF7B020DC8D8F00982A63 /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7A720DC8D8E00982A63 /* QRCodeGenerator.m */; };
 		D7BAF7B120DC8D8F00982A63 /* MyCodeScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7AC20DC8D8F00982A63 /* MyCodeScanController.m */; };
 		D7BAF7B220DC8D8F00982A63 /* MyCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7AE20DC8D8F00982A63 /* MyCodeReaderView.m */; };
 		D7BAF7BC20DC8E5500982A63 /* XYYScanImage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF7B920DC8E5500982A63 /* XYYScanImage.h */; };
@@ -666,8 +665,6 @@
 		D7BAF77920DBAFB000982A63 /* DNAlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAlbumTableViewCell.m; sourceTree = "<group>"; };
 		D7BAF77A20DBAFB000982A63 /* DNSendButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSendButton.m; sourceTree = "<group>"; };
 		D7BAF77B20DBAFB000982A63 /* DNBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNBrowserCell.m; sourceTree = "<group>"; };
-		D7BAF77E20DBAFB000982A63 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DNImagePicker.strings"; sourceTree = "<group>"; };
-		D7BAF77F20DBAFB000982A63 /* imageResources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = imageResources.xcassets; sourceTree = "<group>"; };
 		D7BAF78020DBAFB000982A63 /* MyImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImagePickerViewController.h; sourceTree = "<group>"; };
 		D7BAF78220DBAFB000982A63 /* MyImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImagePickerViewController.m; sourceTree = "<group>"; };
 		D7BAF78320DBAFB000982A63 /* MyMultipleImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMultipleImagePickerController.h; sourceTree = "<group>"; };
@@ -677,12 +674,10 @@
 		D7BAF79E20DC8D1B00982A63 /* XYYCodeScan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYCodeScan.h; sourceTree = "<group>"; };
 		D7BAF7A520DC8D8E00982A63 /* MyCodeTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCodeTypeDef.h; sourceTree = "<group>"; };
 		D7BAF7A620DC8D8E00982A63 /* MyCodeScanActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCodeScanActivityView.m; sourceTree = "<group>"; };
-		D7BAF7A720DC8D8E00982A63 /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
 		D7BAF7A820DC8D8E00982A63 /* MyCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCodeReaderView.h; sourceTree = "<group>"; };
 		D7BAF7AA20DC8D8E00982A63 /* MyCodeScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCodeScanController.h; sourceTree = "<group>"; };
 		D7BAF7AB20DC8D8F00982A63 /* MyCodeScanActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCodeScanActivityView.h; sourceTree = "<group>"; };
 		D7BAF7AC20DC8D8F00982A63 /* MyCodeScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCodeScanController.m; sourceTree = "<group>"; };
-		D7BAF7AD20DC8D8F00982A63 /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
 		D7BAF7AE20DC8D8F00982A63 /* MyCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCodeReaderView.m; sourceTree = "<group>"; };
 		D7BAF7B720DC8E5500982A63 /* libXYYScanImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYScanImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BAF7B920DC8E5500982A63 /* XYYScanImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYScanImage.h; sourceTree = "<group>"; };
@@ -760,6 +755,8 @@
 		D7BAF86920DCDD3C00982A63 /* MyScrollContentPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollContentPageCell.h; sourceTree = "<group>"; };
 		D7BAF86A20DCDD3D00982A63 /* MyPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageView.h; sourceTree = "<group>"; };
 		D7BAF86B20DCDD3D00982A63 /* MyScrollContentPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollContentPageCell.m; sourceTree = "<group>"; };
+		D7BAF87220DD01FA00982A63 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DNImagePicker.strings"; sourceTree = "<group>"; };
+		D7BAF87320DD01FA00982A63 /* imageResources.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = imageResources.xcassets; sourceTree = "<group>"; };
 		EC3D660718FF048A45519DF1 /* Pods-XYYImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYImagePicker/Pods-XYYImagePicker.release.xcconfig"; sourceTree = "<group>"; };
 		ECDC9B64E0E01474EC001EC6 /* Pods-XYYUserGuidePage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYUserGuidePage.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYUserGuidePage/Pods-XYYUserGuidePage.release.xcconfig"; sourceTree = "<group>"; };
 		F06DA14B82E4E67F10DD855D /* Pods-XYYPageView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYPageView.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYPageView/Pods-XYYPageView.release.xcconfig"; sourceTree = "<group>"; };
@@ -1373,6 +1370,7 @@
 				D7BAF78220DBAFB000982A63 /* MyImagePickerViewController.m */,
 				D7BAF78320DBAFB000982A63 /* MyMultipleImagePickerController.h */,
 				D7BAF78420DBAFB100982A63 /* MyMultipleImagePickerController.m */,
+				D7BAF87020DD01FA00982A63 /* Resources */,
 				D7BAF75A20DBAFB000982A63 /* DNImagePicker */,
 			);
 			path = XYYImagePicker;
@@ -1393,7 +1391,6 @@
 				D7BAF76A20DBAFB000982A63 /* DNPhotoBrowser.m */,
 				D7BAF76B20DBAFB000982A63 /* DNImageFlowViewController.m */,
 				D7BAF76C20DBAFB000982A63 /* Views */,
-				D7BAF77C20DBAFB000982A63 /* Assets */,
 			);
 			path = DNImagePicker;
 			sourceTree = "<group>";
@@ -1433,15 +1430,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D7BAF77C20DBAFB000982A63 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				D7BAF77D20DBAFB000982A63 /* DNImagePicker.strings */,
-				D7BAF77F20DBAFB000982A63 /* imageResources.xcassets */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		D7BAF79D20DC8D1B00982A63 /* XYYCodeScan */ = {
 			isa = PBXGroup;
 			children = (
@@ -1453,8 +1441,6 @@
 				D7BAF7AA20DC8D8E00982A63 /* MyCodeScanController.h */,
 				D7BAF7AC20DC8D8F00982A63 /* MyCodeScanController.m */,
 				D7BAF7A520DC8D8E00982A63 /* MyCodeTypeDef.h */,
-				D7BAF7AD20DC8D8F00982A63 /* QRCodeGenerator.h */,
-				D7BAF7A720DC8D8E00982A63 /* QRCodeGenerator.m */,
 				D7BAF7F320DC978000982A63 /* Resources */,
 			);
 			path = XYYCodeScan;
@@ -1607,6 +1593,15 @@
 				D7BAF86720DCDD3C00982A63 /* KIPageView.h */,
 			);
 			path = KIPageView;
+			sourceTree = "<group>";
+		};
+		D7BAF87020DD01FA00982A63 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF87120DD01FA00982A63 /* DNImagePicker.strings */,
+				D7BAF87320DD01FA00982A63 /* imageResources.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2382,7 +2377,6 @@
 				D7BAF7B220DC8D8F00982A63 /* MyCodeReaderView.m in Sources */,
 				D7BAF7AF20DC8D8F00982A63 /* MyCodeScanActivityView.m in Sources */,
 				D7BAF7B120DC8D8F00982A63 /* MyCodeScanController.m in Sources */,
-				D7BAF7B020DC8D8F00982A63 /* QRCodeGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2463,10 +2457,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D7BAF77D20DBAFB000982A63 /* DNImagePicker.strings */ = {
+		D7BAF87120DD01FA00982A63 /* DNImagePicker.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D7BAF77E20DBAFB000982A63 /* zh-Hans */,
+				D7BAF87220DD01FA00982A63 /* zh-Hans */,
 			);
 			name = DNImagePicker.strings;
 			sourceTree = "<group>";

@@ -65,7 +65,7 @@ target 'XYYCodeScan' do
     # Pods for XYYKit
     #    pod 'XYYModel'
 
-    pod 'libqrencode'
+# pod 'libqrencode'
 
 end
 

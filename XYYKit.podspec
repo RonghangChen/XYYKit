@@ -28,7 +28,9 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :tag => "#{s.version}" }
+ # s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :tag => "#{s.version}" }
+
+  s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :commit => "7074603" }
 
   s.source_files = "**/*.{h,m}"
   s.resources    = "**/Resources/*"
@@ -55,7 +57,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYAppComponent' do |appComponent|
 
     appComponent.source_files = "XYYAppComponent/**/*.{h,m}"
-    appComponent.resources    = "XYYAppComponent/Resources/*"  
+  # appComponent.resources    = "XYYAppComponent/Resources/*"  
 
     appComponent.frameworks = "UIKit", "Foundation", "UserNotifications"
 
@@ -67,7 +69,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYCache' do |cache|
 
     cache.source_files = "XYYCache/**/*.{h,m}"
-    cache.resources    = "XYYCache/Resources/*"  
+ #  cache.resources    = "XYYCache/Resources/*"  
 
     cache.frameworks = "UIKit", "Foundation"
 
@@ -78,7 +80,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYNetConnection' do |netConnection|
 
     netConnection.source_files = "XYYNetConnection/**/*.{h,m}"
-    netConnection.resources    = "XYYNetConnection/Resources/*"  
+ #  netConnection.resources    = "XYYNetConnection/Resources/*"  
 
     netConnection.frameworks = "UIKit", "Foundation"
 
@@ -89,7 +91,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYNetImage' do |netImage|
 
     netImage.source_files = "XYYNetImage/**/*.{h,m}"
-    netImage.resources    = "XYYNetImage/Resources/*"  
+ #   netImage.resources    = "XYYNetImage/Resources/*"  
 
     netImage.frameworks = "UIKit", "Foundation"
 
@@ -101,7 +103,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYPageView' do |pageView|
 
     pageView.source_files = "XYYPageView/**/*.{h,m}"
-    pageView.resources    = "XYYPageView/Resources/*"  
+ #   pageView.resources    = "XYYPageView/Resources/*"  
 
     pageView.frameworks = "UIKit", "Foundation"
 
@@ -112,7 +114,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYScanImage' do |scanImage|
 
     scanImage.source_files = "XYYScanImage/**/*.{h,m}"
-    scanImage.resources    = "XYYScanImage/Resources/*"  
+ #   scanImage.resources    = "XYYScanImage/Resources/*"  
 
     scanImage.frameworks = "UIKit", "Foundation"
 
@@ -156,7 +158,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYUserGuidePage' do |userGuidePage|
 
     userGuidePage.source_files = "XYYUserGuidePage/**/*.{h,m}"
-    userGuidePage.resources    = "XYYUserGuidePage/Resources/*"  
+ #   userGuidePage.resources    = "XYYUserGuidePage/Resources/*"  
 
     userGuidePage.frameworks = "UIKit", "Foundation"
 
@@ -176,7 +178,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYPageLoad' do |pageLoad|
 
     pageLoad.source_files = "XYYPageLoad/**/*.{h,m}"
-    pageLoad.resources    = "XYYPageLoad/Resources/*"  
+ #   pageLoad.resources    = "XYYPageLoad/Resources/*"  
 
     pageLoad.frameworks = "UIKit", "Foundation"
 

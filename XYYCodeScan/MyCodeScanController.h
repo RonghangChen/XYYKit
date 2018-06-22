@@ -15,14 +15,14 @@
 
 @interface MyCodeScanController : NSObject
 
-//获取编码后的图片
-+ (UIImage *)codeImageWithData:(NSString *)data
-                          size:(CGSize)imageSize
-                          type:(MyCodeType)codeType;
-+ (UIImage *)codeImageWithData:(NSString *)data
-                          size:(CGSize)imageSize
-                        margin:(CGFloat)margin
-                          type:(MyCodeType)codeType;
+////获取编码后的图片
+//+ (UIImage *)codeImageWithData:(NSString *)data
+//                          size:(CGSize)imageSize
+//                          type:(MyCodeType)codeType;
+//+ (UIImage *)codeImageWithData:(NSString *)data
+//                          size:(CGSize)imageSize
+//                        margin:(CGFloat)margin
+//                          type:(MyCodeType)codeType;
 
 
 //解码图片

@@ -1,28 +1,24 @@
 PODS:
-  - libqrencode (3.4.2)
   - MBProgressHUD (0.9.2)
   - TTTAttributedLabel (2.0.0)
   - XYYModel (1.0.2)
 
 DEPENDENCIES:
-  - libqrencode
   - MBProgressHUD (~> 0.9.1)
   - TTTAttributedLabel
   - XYYModel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - libqrencode
     - MBProgressHUD
     - TTTAttributedLabel
     - XYYModel
 
 SPEC CHECKSUMS:
-  libqrencode: 43dc34b89af83ea4b07c409cd8e09c87aa3a1c9f
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
   XYYModel: 76040f1d7ab90c3c063bf6ddce488b0649b1d523
 
-PODFILE CHECKSUM: eefbcf779047be7b5ac3395348fc3a1d6fc04ea6
+PODFILE CHECKSUM: 96c1856ffea2221cf092da7b63f46856a13c7bbb
 
 COCOAPODS: 1.5.2
