@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XYYFoundation"
-  s.version      = "0.0.3"
+  s.version      = "0.0.5"
   s.summary      = "私人框架库"
 
   s.author       =  { "LeslieChen" => "102731887@qq.com" }
@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
 
   s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :tag => "#{s.version}" }
+
   s.source_files = "#{s.name}/*.{h,m}", "#{s.name}/**/*.{h,m}"
   s.resources    = "#{s.name}/Resources/*"
 

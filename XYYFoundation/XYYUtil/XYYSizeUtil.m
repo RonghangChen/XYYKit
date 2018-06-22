@@ -93,3 +93,32 @@ CGSize convertSizeToScale(CGSize size, CGFloat fromScale, CGFloat toScale)
     }
 }
 
+#pragma mark -
+
+CGRect contentRectForLayout(CGRect rect, CGSize contentSize, MyContentLayout contentLayout)
+{
+    //原点
+    CGPoint origin = CGPointZero;
+    
+    //水平
+    if (contentLayout & MyContentLayoutLeft) {
+        origin.x = CGRectGetMinX(rect);
+    }else if(contentLayout & MyContentLayoutRight){
+        origin.x = CGRectGetMaxX(rect) - contentSize.width;
+    }else{
+        origin.x = CGRectGetMinX(rect) + (CGRectGetWidth(rect) - contentSize.width) * 0.5f;
+    }
+    
+    //竖直
+    if (contentLayout & MyContentLayoutTop) {
+        origin.y = CGRectGetMinY(rect);
+    }else if(contentLayout & MyContentLayoutBottom){
+        origin.y = CGRectGetMaxY(rect) - contentSize.height;
+    }else{
+        origin.y = CGRectGetMinY(rect) + (CGRectGetHeight(rect) - contentSize.height) * 0.5f;
+    }
+    
+    return CGRectMake(origin.x, origin.y, contentSize.width, contentSize.height);
+}
+
+
