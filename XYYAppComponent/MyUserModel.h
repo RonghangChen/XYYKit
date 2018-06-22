@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <XYYModel.h>
+#import "XYYModel.h"
 
 @interface MyUserModel : NSObject<XYYJsonModel>
 

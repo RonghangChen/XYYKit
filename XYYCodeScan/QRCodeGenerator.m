@@ -22,7 +22,7 @@
 //
 
 #import "QRCodeGenerator.h"
-#import <qrencode.h>
+#import "qrencode.h"
 
 
 @interface QRCodeGenerator ()

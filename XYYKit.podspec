@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XYYKit"
-  s.version      = "0.0.2"
+  s.version      = "0.0.5"
   s.summary      = "私人框架库"
 
   s.author       =  { "LeslieChen" => "102731887@qq.com" }
@@ -29,13 +29,160 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
 
   s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :tag => "#{s.version}" }
-  s.source_files = "#{s.name}/*.{h,m}"
-  s.resources    = "#{s.name}/Resources/*"
 
-  s.frameworks = "UIKit", "Foundation"
+  s.source_files = "**/*.{h,m}"
+  s.resources    = "**/Resources/*"
 
-  # s.frameworks = "UIKit", "Foundation", "AVFoundation", "Accelerate", "CoreFoundation", "SystemConfiguration", "UserNotifications", "AssetsLibrary", "CoreGraphics","CoreImage"
+  s.frameworks = "UIKit", "Foundation", "AVFoundation", "Accelerate", "CoreFoundation", "SystemConfiguration", "UserNotifications", "AssetsLibrary", "CoreGraphics","CoreImage"
 
-  s.dependency "XYYFoundation", "XYYCache", "XYYNetConnection", "XYYNetImage", "XYYModel", "XYYAppComponent", "XYYImagePicker", "XYYCodeScan", "XYYScanImage", "XYYSocialSNS", "XYYPageLoad", "XYYUserGuidePage", "XYYDeclineMenu"
+  s.dependency 'MBProgressHUD' , '~> 0.9.1'
+  s.dependency 'TTTAttributedLabel'
+  s.dependency 'XYYModel'
+  s.dependency 'libqrencode'
+
+  s.subspec 'XYYFoundation' do |foundation|
+
+    foundation.source_files = "XYYFoundation/**/*.{h,m}"
+    foundation.resources    = "XYYFoundation/Resources/*"  
+
+    foundation.frameworks = "UIKit", "Foundation", "Accelerate", "CoreFoundation"
+
+    foundation.dependency 'MBProgressHUD' , '~> 0.9.1'
+    foundation.dependency 'TTTAttributedLabel'
+
+  end
+
+  s.subspec 'XYYAppComponent' do |appComponent|
+
+    appComponent.source_files = "XYYAppComponent/**/*.{h,m}"
+    appComponent.resources    = "XYYAppComponent/Resources/*"  
+
+    appComponent.frameworks = "UIKit", "Foundation", "UserNotifications"
+
+    appComponent.dependency 'XYYKit/XYYFoundation'
+    appComponent.dependency 'XYYModel'
+
+  end
+
+  s.subspec 'XYYCache' do |cache|
+
+    cache.source_files = "XYYCache/**/*.{h,m}"
+    cache.resources    = "XYYCache/Resources/*"  
+
+    cache.frameworks = "UIKit", "Foundation"
+
+    cache.dependency 'XYYKit/XYYFoundation'
+
+  end
+
+  s.subspec 'XYYNetConnection' do |netConnection|
+
+    netConnection.source_files = "XYYNetConnection/**/*.{h,m}"
+    netConnection.resources    = "XYYNetConnection/Resources/*"  
+
+    netConnection.frameworks = "UIKit", "Foundation"
+
+    netConnection.dependency 'XYYKit/XYYFoundation'
+
+  end
+
+  s.subspec 'XYYNetImage' do |netImage|
+
+    netImage.source_files = "XYYNetImage/**/*.{h,m}"
+    netImage.resources    = "XYYNetImage/Resources/*"  
+
+    netImage.frameworks = "UIKit", "Foundation"
+
+    netImage.dependency 'XYYKit/XYYFoundation'
+    netImage.dependency 'XYYKit/XYYNetConnection'
+    netImage.dependency 'XYYKit/XYYCache'
+  end
+
+  s.subspec 'XYYPageView' do |pageView|
+
+    pageView.source_files = "XYYPageView/**/*.{h,m}"
+    pageView.resources    = "XYYPageView/Resources/*"  
+
+    pageView.frameworks = "UIKit", "Foundation"
+
+    pageView.dependency 'XYYKit/XYYFoundation'
+    pageView.dependency 'XYYKit/XYYCache'
+  end
+
+  s.subspec 'XYYScanImage' do |scanImage|
+
+    scanImage.source_files = "XYYScanImage/**/*.{h,m}"
+    scanImage.resources    = "XYYScanImage/Resources/*"  
+
+    scanImage.frameworks = "UIKit", "Foundation"
+
+    scanImage.dependency 'XYYKit/XYYFoundation'
+    scanImage.dependency 'XYYKit/XYYPageView'
+    scanImage.dependency 'XYYKit/XYYNetImage'
+  end
+
+  s.subspec 'XYYImagePicker' do |imagePicker|
+
+    imagePicker.source_files = "XYYImagePicker/**/*.{h,m}"
+    imagePicker.resources    = "XYYImagePicker/Resources/*"  
+
+    imagePicker.frameworks = "UIKit", "Foundation"
+
+    imagePicker.dependency 'XYYKit/XYYFoundation'
+
+  end
+
+  s.subspec 'XYYCodeScan' do |codeScan|
+
+    codeScan.source_files = "XYYCodeScan/**/*.{h,m}"
+    codeScan.resources    = "XYYCodeScan/Resources/*"  
+
+    codeScan.frameworks = "UIKit", "Foundation","AVFoundation", "CoreImage"
+
+    codeScan.dependency 'XYYKit/XYYFoundation'
+    codeScan.dependency 'libqrencode'
+  end
+
+  s.subspec 'XYYSocialSNS' do |socialSNS|
+
+    socialSNS.source_files = "XYYSocialSNS/**/*.{h,m}"
+    socialSNS.resources    = "XYYSocialSNS/Resources/*"  
+
+    socialSNS.frameworks = "UIKit", "Foundation"
+
+    socialSNS.dependency 'XYYKit/XYYFoundation'
+  end
+
+  s.subspec 'XYYUserGuidePage' do |userGuidePage|
+
+    userGuidePage.source_files = "XYYUserGuidePage/**/*.{h,m}"
+    userGuidePage.resources    = "XYYUserGuidePage/Resources/*"  
+
+    userGuidePage.frameworks = "UIKit", "Foundation"
+
+    userGuidePage.dependency 'XYYKit/XYYFoundation'
+  end
+
+  s.subspec 'XYYDeclineMenu' do |declineMenu|
+
+    declineMenu.source_files = "XYYDeclineMenu/**/*.{h,m}"
+    declineMenu.resources    = "XYYDeclineMenu/Resources/*"  
+
+    declineMenu.frameworks = "UIKit", "Foundation"
+
+    declineMenu.dependency 'XYYKit/XYYFoundation'
+  end
+
+  s.subspec 'XYYPageLoad' do |pageLoad|
+
+    pageLoad.source_files = "XYYPageLoad/**/*.{h,m}"
+    pageLoad.resources    = "XYYPageLoad/Resources/*"  
+
+    pageLoad.frameworks = "UIKit", "Foundation"
+
+    pageLoad.dependency 'XYYKit/XYYFoundation'
+  end
+
+
 
 end
