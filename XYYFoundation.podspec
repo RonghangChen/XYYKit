@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.source_files = "#{s.name}/**/*.{h,m}"
   s.resources    = "#{s.name}/Resources/*"
-  s.public_header_files = "#{s.name}/**/*.h"   
+ # s.public_header_files = "#{s.name}/**/*.h"   
 
   s.frameworks = "UIKit", "Foundation", "Accelerate", "CoreFoundation"
 

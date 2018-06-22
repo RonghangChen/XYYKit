@@ -1002,7 +1002,7 @@
 				D7BAF68620DB9B4A00982A63 /* XYYViewController */,
 				D7BAF6C920DB9D6A00982A63 /* XYYCell */,
 				D7BAF6AB20DB9D6A00982A63 /* XYYInfoCell */,
-				D7BAF6A620DB9CA400982A63 /* Lib */,
+				D7BAF6A620DB9CA400982A63 /* Vendor */,
 				D7BAF5EB20DB93A300982A63 /* Resources */,
 			);
 			path = XYYFoundation;
@@ -1231,12 +1231,12 @@
 			path = XYYViewController;
 			sourceTree = "<group>";
 		};
-		D7BAF6A620DB9CA400982A63 /* Lib */ = {
+		D7BAF6A620DB9CA400982A63 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
 				D7BAF6A720DB9CA400982A63 /* Reachability */,
 			);
-			path = Lib;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		D7BAF6A720DB9CA400982A63 /* Reachability */ = {
