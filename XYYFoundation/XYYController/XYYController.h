@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 YB. All rights reserved.
 //
 
-#ifndef MyController_h
-#define MyController_h
+#ifndef XYYController_h
+#define XYYController_h
 
 #import "MyButton.h"
 #import "MyMediaProgressBar.h"

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 YB. All rights reserved.
 //
 
-#ifndef MyViewController_h
-#define MyViewController_h
+#ifndef XYYViewController_h
+#define XYYViewController_h
 
 #import "MyBasicViewController.h"
 #import "MyNavigationTransitioningDelegate.h"

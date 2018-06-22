@@ -17,6 +17,4 @@
 #import "XYYCell.h"
 #import "XYYInfoCell.h"
 
-
-
 #endif

@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 ED. All rights reserved.
 //
 
-#ifndef __MyInfoCell_h
-#define __MyInfoCell_h
+#ifndef __XYYInfoCell_h
+#define __XYYInfoCell_h
 
 #import "MyBasicInfoCell.h"
 #import "MyBasicTextViewInfoCell.h"

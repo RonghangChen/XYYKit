@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 ED. All rights reserved.
 //
 
-#ifndef MyCell_h
-#define MyCell_h
+#ifndef XYYCell_h
+#define XYYCell_h
 
 #import "MyTableViewCell.h"
 #import "MyCollectionViewCell.h"

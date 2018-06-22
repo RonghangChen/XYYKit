@@ -10,6 +10,7 @@
 
 #import "MyScrollContentPageCell.h"
 #import "XYYCache.h"
+#import <MBProgressHUD.h>
 
 //-------------------------------------------------
 

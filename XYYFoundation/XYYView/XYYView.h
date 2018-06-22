@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 YB. All rights reserved.
 //
 
-#ifndef MyView_h
-#define MyView_h
+#ifndef XYYView_h
+#define XYYView_h
 
 #import "MyActivityIndicatorView.h"
 //#import "MyAuthCodeView.h"
@@ -29,9 +29,7 @@
 #import "MySelectionProtocol.h"
 #import "MySelectionView.h"
 
-//#import "UILabel+AutoAdjustSize.h"
 #import "UIView+Instance.h"
-//#import "UINib+AsyncLoad.h"
 #import "UIView+Screenshot.h"
 #import "UIView+IntervalAnimation.h"
 #import "UIView+Frame.h"
@@ -39,10 +37,7 @@
 
 #import "MyTextView.h"
 #import "UIScrollView+ScrollToBorder.h"
-#import "KIPageView.h"
 #import "MyContentView.h"
 #import "MyScrollViewImageHeaderView.h"
-//#import "MyPageView.h"
-#import "MyScrollContentPageCell.h"
 
 #endif
