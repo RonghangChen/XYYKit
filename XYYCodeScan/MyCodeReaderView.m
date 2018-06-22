@@ -12,7 +12,6 @@
 #import "MyCodeReaderView.h"
 #import "MyCodeScanController.h"
 #import "MyCodeScanActivityView.h"
-#import <AVFoundation/AVFoundation.h>
 #import "XYYFoundation.h"
 
 //----------------------------------------------------------

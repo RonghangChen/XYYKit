@@ -11,9 +11,11 @@
 #ifndef XYYKit_h
 #define XYYKit_h
 
+
 #import "XYYFoundation.h"
 #import "XYYCache.h"
 #import "XYYNetConnection.h"
+#import "XYYModel.h"
 #import "XYYNetImage.h"
 #import "XYYAppComponent.h"
 #import "XYYImagePicker.h"

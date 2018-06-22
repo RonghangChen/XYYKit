@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "XYYKit"
+  s.name         = "XYYAppComponent"
   s.version      = "0.0.3"
   s.summary      = "私人框架库"
 
@@ -32,10 +32,8 @@ Pod::Spec.new do |s|
   s.source_files = "#{s.name}/*.{h,m}"
   s.resources    = "#{s.name}/Resources/*"
 
-  s.frameworks = "UIKit", "Foundation"
+  s.frameworks = "UIKit", "Foundation","UserNotifications"
 
-  # s.frameworks = "UIKit", "Foundation", "AVFoundation", "Accelerate", "CoreFoundation", "SystemConfiguration", "UserNotifications", "AssetsLibrary", "CoreGraphics","CoreImage"
-
-  s.dependency "XYYFoundation", "XYYCache", "XYYNetConnection", "XYYNetImage", "XYYModel", "XYYAppComponent", "XYYImagePicker", "XYYCodeScan", "XYYScanImage", "XYYSocialSNS", "XYYPageLoad", "XYYUserGuidePage", "XYYDeclineMenu"
+  s.dependency "XYYFoundation", "XYYModel"
 
 end
