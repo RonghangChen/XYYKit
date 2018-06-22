@@ -30,8 +30,9 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :tag => "#{s.version}" }
 
-  s.source_files = "#{s.name}/*.{h,m}", "#{s.name}/**/*.{h,m}"
+  s.source_files = "#{s.name}/**/*.{h,m}"
   s.resources    = "#{s.name}/Resources/*"
+  s.public_header_files = "#{s.name}/**/*.h"   
 
   s.frameworks = "UIKit", "Foundation", "Accelerate", "CoreFoundation"
 
