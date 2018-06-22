@@ -10,7 +10,7 @@
 
 #import "MyScanImageView.h"
 #import "MyScanImageCell.h"
-#import "XYYFoundation.h"
+#import "XYYPageView.h"
 
 //----------------------------------------------------------
 

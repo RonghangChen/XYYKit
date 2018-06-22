@@ -24,5 +24,6 @@
 #import "XYYSocialSNS.h"
 #import "XYYPageLoad.h"
 #import "XYYUserGuidePage.h"
+#import "XYYPageView.h"
 
 #endif

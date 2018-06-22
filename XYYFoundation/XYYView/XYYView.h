@@ -42,7 +42,7 @@
 #import "KIPageView.h"
 #import "MyContentView.h"
 #import "MyScrollViewImageHeaderView.h"
-#import "MyPageView.h"
+//#import "MyPageView.h"
 #import "MyScrollContentPageCell.h"
 
 #endif

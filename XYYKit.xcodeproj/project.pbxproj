@@ -17,6 +17,7 @@
 		7656D63B4CC4A467B72311A0 /* libPods-XYYCache.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8534831A7DBA473D53E5A3 /* libPods-XYYCache.a */; };
 		95EFBD5A5BC01240259EB0EB /* libPods-XYYCodeScan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B37D401C8EC68B606A5A98 /* libPods-XYYCodeScan.a */; };
 		B51917EE723BDA77DC372C2E /* libPods-XYYDeclineMenu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D38CD46ACB8355A0F0E5BB13 /* libPods-XYYDeclineMenu.a */; };
+		BD6CD05CF14E2FCF9E374C2F /* libPods-XYYPageView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 191ED8DEFC79A4775473243A /* libPods-XYYPageView.a */; };
 		C0FA761BEE1395CAFE3ACC1D /* libPods-XYYFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D94B7C8D7FA6B8446D9F0A /* libPods-XYYFoundation.a */; };
 		D735C91520BD4D1A000D4A79 /* XYYKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D735C91220BD4D1A000D4A79 /* XYYKit.h */; };
 		D7BAF57820DB775000982A63 /* XYYFoundation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF57520DB775000982A63 /* XYYFoundation.h */; };
@@ -71,8 +72,6 @@
 		D7BAF65F20DB96AF00982A63 /* MyBorderShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF62820DB96AE00982A63 /* MyBorderShadowView.m */; };
 		D7BAF66020DB96AF00982A63 /* MyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF62B20DB96AE00982A63 /* MyTextView.m */; };
 		D7BAF66120DB96AF00982A63 /* MyBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF62C20DB96AE00982A63 /* MyBorderView.m */; };
-		D7BAF66220DB96AF00982A63 /* KIPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF63020DB96AE00982A63 /* KIPageView.m */; };
-		D7BAF66320DB96AF00982A63 /* KIPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF63120DB96AE00982A63 /* KIPageViewCell.m */; };
 		D7BAF66420DB96AF00982A63 /* MyBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF63420DB96AE00982A63 /* MyBadgeView.m */; };
 		D7BAF66520DB96AF00982A63 /* UIView+IntervalAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF63620DB96AE00982A63 /* UIView+IntervalAnimation.m */; };
 		D7BAF66720DB96AF00982A63 /* UIScrollView+ScrollToBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF63B20DB96AE00982A63 /* UIScrollView+ScrollToBorder.m */; };
@@ -80,8 +79,6 @@
 		D7BAF66920DB96AF00982A63 /* MyIndicateView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF64320DB96AE00982A63 /* MyIndicateView.m */; };
 		D7BAF66A20DB96AF00982A63 /* MyBlurredView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF64720DB96AE00982A63 /* MyBlurredView.m */; };
 		D7BAF66B20DB96AF00982A63 /* MyActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF64A20DB96AE00982A63 /* MyActivityIndicatorView.m */; };
-		D7BAF66C20DB96AF00982A63 /* MyPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF64D20DB96AE00982A63 /* MyPageView.m */; };
-		D7BAF66D20DB96AF00982A63 /* MyScrollContentPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF65020DB96AE00982A63 /* MyScrollContentPageCell.m */; };
 		D7BAF66E20DB96AF00982A63 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF65120DB96AE00982A63 /* UIView+Screenshot.m */; };
 		D7BAF67F20DB986600982A63 /* MySegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF67020DB986600982A63 /* MySegmentedControl.m */; };
 		D7BAF68020DB986600982A63 /* MyRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF67120DB986600982A63 /* MyRefreshControl.m */; };
@@ -189,6 +186,11 @@
 		D7BAF84720DC9CA300982A63 /* XYYDeclineMenu.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF84420DC9CA300982A63 /* XYYDeclineMenu.h */; };
 		D7BAF85020DC9CCE00982A63 /* MyBasicDeclineMenuContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF84C20DC9CCE00982A63 /* MyBasicDeclineMenuContentView.m */; };
 		D7BAF85120DC9CCE00982A63 /* MyDeclineMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF84D20DC9CCE00982A63 /* MyDeclineMenuContainerView.m */; };
+		D7BAF85F20DCDCCA00982A63 /* XYYPageView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF85C20DCDCCA00982A63 /* XYYPageView.h */; };
+		D7BAF86C20DCDD3D00982A63 /* KIPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF86520DCDD3C00982A63 /* KIPageView.m */; };
+		D7BAF86D20DCDD3D00982A63 /* KIPageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF86620DCDD3C00982A63 /* KIPageViewCell.m */; };
+		D7BAF86E20DCDD3D00982A63 /* MyPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF86820DCDD3C00982A63 /* MyPageView.m */; };
+		D7BAF86F20DCDD3D00982A63 /* MyScrollContentPageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF86B20DCDD3D00982A63 /* MyScrollContentPageCell.m */; };
 		DAB8BED3CBFE5DD5E29FE120 /* libPods-XYYKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85200BD1C0C8462C43FAA4 /* libPods-XYYKit.a */; };
 		F2CC5A3DD00E362C843BBF23 /* libPods-XYYAppComponent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3D65EE619E8ECF39DAF013 /* libPods-XYYAppComponent.a */; };
 /* End PBXBuildFile section */
@@ -324,6 +326,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7BAF85820DCDCCA00982A63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D7BAF85F20DCDCCA00982A63 /* XYYPageView.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -331,6 +343,7 @@
 		0A148BB5C8BDE39FE7E1D229 /* Pods-XYYAppComponent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYAppComponent.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYAppComponent/Pods-XYYAppComponent.release.xcconfig"; sourceTree = "<group>"; };
 		0ADDFE99AE1D8773D210CB5A /* Pods-XYYCodeScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCodeScan.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCodeScan/Pods-XYYCodeScan.release.xcconfig"; sourceTree = "<group>"; };
 		1793719532289EB0218331C3 /* Pods-XYYDeclineMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYDeclineMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYDeclineMenu/Pods-XYYDeclineMenu.release.xcconfig"; sourceTree = "<group>"; };
+		191ED8DEFC79A4775473243A /* libPods-XYYPageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYPageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EEC9FA388F6EBD9B1380D5 /* Pods-XYYImagePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYImagePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYImagePicker/Pods-XYYImagePicker.debug.xcconfig"; sourceTree = "<group>"; };
 		23C4AB4C2D72BB82D677F6D9 /* libPods-XYYNetImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYNetImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25249C4B801AB60EAA6B1DAD /* libPods-XYYImagePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYImagePicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -348,6 +361,7 @@
 		539AB96D5F43113B55011FC8 /* libPods-XYYScanImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYScanImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5708FA00A5EABDB62EBB5223 /* Pods-XYYCodeScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCodeScan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCodeScan/Pods-XYYCodeScan.debug.xcconfig"; sourceTree = "<group>"; };
 		5A198B9E2D37419C1D74F818 /* Pods-XYYSocialSNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYSocialSNS.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYSocialSNS/Pods-XYYSocialSNS.release.xcconfig"; sourceTree = "<group>"; };
+		6A76927C134B01225E08D0F0 /* Pods-XYYPageView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYPageView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYPageView/Pods-XYYPageView.debug.xcconfig"; sourceTree = "<group>"; };
 		6F6B46FB3E6482539628686C /* Pods-XYYScanImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYScanImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYScanImage/Pods-XYYScanImage.release.xcconfig"; sourceTree = "<group>"; };
 		73D6CF702E79AEB96042E683 /* Pods-XYYFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYFoundation/Pods-XYYFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		7B842A07EBEDC6E26764E6E1 /* Pods-XYYNetConnection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYNetConnection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYNetConnection/Pods-XYYNetConnection.debug.xcconfig"; sourceTree = "<group>"; };
@@ -476,10 +490,6 @@
 		D7BAF62B20DB96AE00982A63 /* MyTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextView.m; sourceTree = "<group>"; };
 		D7BAF62C20DB96AE00982A63 /* MyBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBorderView.m; sourceTree = "<group>"; };
 		D7BAF62D20DB96AE00982A63 /* UIView+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Screenshot.h"; sourceTree = "<group>"; };
-		D7BAF62F20DB96AE00982A63 /* KIPageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIPageViewCell.h; sourceTree = "<group>"; };
-		D7BAF63020DB96AE00982A63 /* KIPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIPageView.m; sourceTree = "<group>"; };
-		D7BAF63120DB96AE00982A63 /* KIPageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIPageViewCell.m; sourceTree = "<group>"; };
-		D7BAF63220DB96AE00982A63 /* KIPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIPageView.h; sourceTree = "<group>"; };
 		D7BAF63320DB96AE00982A63 /* MySelectionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySelectionProtocol.h; sourceTree = "<group>"; };
 		D7BAF63420DB96AE00982A63 /* MyBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBadgeView.m; sourceTree = "<group>"; };
 		D7BAF63520DB96AE00982A63 /* MyScrollViewImageHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollViewImageHeaderView.h; sourceTree = "<group>"; };
@@ -503,10 +513,6 @@
 		D7BAF64920DB96AE00982A63 /* MyLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLabel.h; sourceTree = "<group>"; };
 		D7BAF64A20DB96AE00982A63 /* MyActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivityIndicatorView.m; sourceTree = "<group>"; };
 		D7BAF64B20DB96AE00982A63 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		D7BAF64D20DB96AE00982A63 /* MyPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageView.m; sourceTree = "<group>"; };
-		D7BAF64E20DB96AE00982A63 /* MyScrollContentPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollContentPageCell.h; sourceTree = "<group>"; };
-		D7BAF64F20DB96AE00982A63 /* MyPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageView.h; sourceTree = "<group>"; };
-		D7BAF65020DB96AE00982A63 /* MyScrollContentPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollContentPageCell.m; sourceTree = "<group>"; };
 		D7BAF65120DB96AE00982A63 /* UIView+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Screenshot.m"; sourceTree = "<group>"; };
 		D7BAF67020DB986600982A63 /* MySegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySegmentedControl.m; sourceTree = "<group>"; };
 		D7BAF67120DB986600982A63 /* MyRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRefreshControl.m; sourceTree = "<group>"; };
@@ -744,8 +750,19 @@
 		D7BAF84D20DC9CCE00982A63 /* MyDeclineMenuContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDeclineMenuContainerView.m; sourceTree = "<group>"; };
 		D7BAF84E20DC9CCE00982A63 /* MyDeclineMenuContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDeclineMenuContainerView.h; sourceTree = "<group>"; };
 		D7BAF85520DC9D6000982A63 /* icon_bottom_swipe_indicater@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_bottom_swipe_indicater@2x.png"; sourceTree = "<group>"; };
+		D7BAF85A20DCDCCA00982A63 /* libXYYPageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYPageView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BAF85C20DCDCCA00982A63 /* XYYPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYPageView.h; sourceTree = "<group>"; };
+		D7BAF86420DCDD3C00982A63 /* KIPageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIPageViewCell.h; sourceTree = "<group>"; };
+		D7BAF86520DCDD3C00982A63 /* KIPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIPageView.m; sourceTree = "<group>"; };
+		D7BAF86620DCDD3C00982A63 /* KIPageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIPageViewCell.m; sourceTree = "<group>"; };
+		D7BAF86720DCDD3C00982A63 /* KIPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIPageView.h; sourceTree = "<group>"; };
+		D7BAF86820DCDD3C00982A63 /* MyPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageView.m; sourceTree = "<group>"; };
+		D7BAF86920DCDD3C00982A63 /* MyScrollContentPageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScrollContentPageCell.h; sourceTree = "<group>"; };
+		D7BAF86A20DCDD3D00982A63 /* MyPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageView.h; sourceTree = "<group>"; };
+		D7BAF86B20DCDD3D00982A63 /* MyScrollContentPageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScrollContentPageCell.m; sourceTree = "<group>"; };
 		EC3D660718FF048A45519DF1 /* Pods-XYYImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYImagePicker/Pods-XYYImagePicker.release.xcconfig"; sourceTree = "<group>"; };
 		ECDC9B64E0E01474EC001EC6 /* Pods-XYYUserGuidePage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYUserGuidePage.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYUserGuidePage/Pods-XYYUserGuidePage.release.xcconfig"; sourceTree = "<group>"; };
+		F06DA14B82E4E67F10DD855D /* Pods-XYYPageView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYPageView.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYPageView/Pods-XYYPageView.release.xcconfig"; sourceTree = "<group>"; };
 		F7B1B83E075778BC69F6FE1B /* Pods-XYYKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYKit/Pods-XYYKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -854,6 +871,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7BAF85720DCDCCA00982A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD6CD05CF14E2FCF9E374C2F /* libPods-XYYPageView.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -886,6 +911,8 @@
 				4881537F54278DE345FB5C23 /* Pods-XYYCache.release.xcconfig */,
 				33795FB0CA401C8ABD76F5F0 /* Pods-XYYDeclineMenu.debug.xcconfig */,
 				1793719532289EB0218331C3 /* Pods-XYYDeclineMenu.release.xcconfig */,
+				6A76927C134B01225E08D0F0 /* Pods-XYYPageView.debug.xcconfig */,
+				F06DA14B82E4E67F10DD855D /* Pods-XYYPageView.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -906,6 +933,7 @@
 				3CA29823E34FB05DD46E30A4 /* libPods-XYYUserGuidePage.a */,
 				CF8534831A7DBA473D53E5A3 /* libPods-XYYCache.a */,
 				D38CD46ACB8355A0F0E5BB13 /* libPods-XYYDeclineMenu.a */,
+				191ED8DEFC79A4775473243A /* libPods-XYYPageView.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -926,6 +954,7 @@
 				D7BAF7FB20DC991800982A63 /* XYYPageLoad */,
 				D7BAF81920DC9A7500982A63 /* XYYUserGuidePage */,
 				D7BAF84320DC9CA300982A63 /* XYYDeclineMenu */,
+				D7BAF85B20DCDCCA00982A63 /* XYYPageView */,
 				D735C91020BD4D1A000D4A79 /* Products */,
 				6399C03EAB79F3EEDE2CECD4 /* Pods */,
 				C2BA7A3A95922AEE4D5787BC /* Frameworks */,
@@ -948,6 +977,7 @@
 				D7BAF81820DC9A7500982A63 /* libXYYUserGuidePage.a */,
 				D7BAF82C20DC9B5900982A63 /* libXYYCache.a */,
 				D7BAF84220DC9CA300982A63 /* libXYYDeclineMenu.a */,
+				D7BAF85A20DCDCCA00982A63 /* libXYYPageView.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1084,8 +1114,6 @@
 			isa = PBXGroup;
 			children = (
 				D7BAF61C20DB96AE00982A63 /* MyPopoverView */,
-				D7BAF62E20DB96AE00982A63 /* KIPageView */,
-				D7BAF64C20DB96AE00982A63 /* MyPageView */,
 				D7BAF64520DB96AE00982A63 /* MyBlurredView */,
 				D7BAF62720DB96AE00982A63 /* XYYView.h */,
 				D7BAF61020DB96AE00982A63 /* UIScrollView+ScrollToBorder.h */,
@@ -1147,17 +1175,6 @@
 			path = MyPopoverView;
 			sourceTree = "<group>";
 		};
-		D7BAF62E20DB96AE00982A63 /* KIPageView */ = {
-			isa = PBXGroup;
-			children = (
-				D7BAF62F20DB96AE00982A63 /* KIPageViewCell.h */,
-				D7BAF63020DB96AE00982A63 /* KIPageView.m */,
-				D7BAF63120DB96AE00982A63 /* KIPageViewCell.m */,
-				D7BAF63220DB96AE00982A63 /* KIPageView.h */,
-			);
-			path = KIPageView;
-			sourceTree = "<group>";
-		};
 		D7BAF64520DB96AE00982A63 /* MyBlurredView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1166,17 +1183,6 @@
 				D7BAF64820DB96AE00982A63 /* MyBlurredBackgroundProtocol.h */,
 			);
 			path = MyBlurredView;
-			sourceTree = "<group>";
-		};
-		D7BAF64C20DB96AE00982A63 /* MyPageView */ = {
-			isa = PBXGroup;
-			children = (
-				D7BAF64D20DB96AE00982A63 /* MyPageView.m */,
-				D7BAF64E20DB96AE00982A63 /* MyScrollContentPageCell.h */,
-				D7BAF64F20DB96AE00982A63 /* MyPageView.h */,
-				D7BAF65020DB96AE00982A63 /* MyScrollContentPageCell.m */,
-			);
-			path = MyPageView;
 			sourceTree = "<group>";
 		};
 		D7BAF66F20DB986600982A63 /* XYYController */ = {
@@ -1579,6 +1585,30 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D7BAF85B20DCDCCA00982A63 /* XYYPageView */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF85C20DCDCCA00982A63 /* XYYPageView.h */,
+				D7BAF86A20DCDD3D00982A63 /* MyPageView.h */,
+				D7BAF86820DCDD3C00982A63 /* MyPageView.m */,
+				D7BAF86920DCDD3C00982A63 /* MyScrollContentPageCell.h */,
+				D7BAF86B20DCDD3D00982A63 /* MyScrollContentPageCell.m */,
+				D7BAF86320DCDD3C00982A63 /* KIPageView */,
+			);
+			path = XYYPageView;
+			sourceTree = "<group>";
+		};
+		D7BAF86320DCDD3C00982A63 /* KIPageView */ = {
+			isa = PBXGroup;
+			children = (
+				D7BAF86420DCDD3C00982A63 /* KIPageViewCell.h */,
+				D7BAF86520DCDD3C00982A63 /* KIPageView.m */,
+				D7BAF86620DCDD3C00982A63 /* KIPageViewCell.m */,
+				D7BAF86720DCDD3C00982A63 /* KIPageView.h */,
+			);
+			path = KIPageView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1816,6 +1846,24 @@
 			productReference = D7BAF84220DC9CA300982A63 /* libXYYDeclineMenu.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		D7BAF85920DCDCCA00982A63 /* XYYPageView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BAF86220DCDCCA00982A63 /* Build configuration list for PBXNativeTarget "XYYPageView" */;
+			buildPhases = (
+				547506E68690CA4E86A29F8D /* [CP] Check Pods Manifest.lock */,
+				D7BAF85620DCDCCA00982A63 /* Sources */,
+				D7BAF85720DCDCCA00982A63 /* Frameworks */,
+				D7BAF85820DCDCCA00982A63 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYYPageView;
+			productName = XYYPageView;
+			productReference = D7BAF85A20DCDCCA00982A63 /* libXYYPageView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1864,6 +1912,9 @@
 					D7BAF84120DC9CA300982A63 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					D7BAF85920DCDCCA00982A63 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = D735C90A20BD4D1A000D4A79 /* Build configuration list for PBXProject "XYYKit" */;
@@ -1892,6 +1943,7 @@
 				D7BAF81720DC9A7500982A63 /* XYYUserGuidePage */,
 				D7BAF82B20DC9B5900982A63 /* XYYCache */,
 				D7BAF84120DC9CA300982A63 /* XYYDeclineMenu */,
+				D7BAF85920DCDCCA00982A63 /* XYYPageView */,
 			);
 		};
 /* End PBXProject section */
@@ -1945,6 +1997,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-XYYDeclineMenu-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		547506E68690CA4E86A29F8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYPageView-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2155,7 +2225,6 @@
 				D7BAF68520DB986600982A63 /* MyButton.m in Sources */,
 				D7BAF69F20DB9B4B00982A63 /* MyBasicViewController.m in Sources */,
 				D7BAF65420DB96AF00982A63 /* UIView+IBDesignable.m in Sources */,
-				D7BAF66C20DB96AF00982A63 /* MyPageView.m in Sources */,
 				D7BAF66120DB96AF00982A63 /* MyBorderView.m in Sources */,
 				D7BAF5C020DB7B4B00982A63 /* MyWeakProxy.m in Sources */,
 				D7BAF5D120DB7B4B00982A63 /* NSString+Predicate.m in Sources */,
@@ -2172,7 +2241,6 @@
 				D7BAF5CE20DB7B4B00982A63 /* NSString+CitySort.m in Sources */,
 				D7BAF5E320DB880A00982A63 /* UIImage+XYYExtend.m in Sources */,
 				D7BAF6FE20DB9D6A00982A63 /* MyCollectionViewCell.m in Sources */,
-				D7BAF66D20DB96AF00982A63 /* MyScrollContentPageCell.m in Sources */,
 				D7BAF5BD20DB7B4B00982A63 /* XYYCommonUtil.m in Sources */,
 				D7BAF6A520DB9B4B00982A63 /* UIViewController+Instance.m in Sources */,
 				D7BAF66420DB96AF00982A63 /* MyBadgeView.m in Sources */,
@@ -2199,7 +2267,6 @@
 				D7BAF5CB20DB7B4B00982A63 /* UIImage+Orientation.m in Sources */,
 				D7BAF6E620DB9D6A00982A63 /* MyBasicInfoCellEditerPopoverView.m in Sources */,
 				D7BAF68420DB986600982A63 /* MyScoreBarView.m in Sources */,
-				D7BAF66220DB96AF00982A63 /* KIPageView.m in Sources */,
 				D7BAF65720DB96AF00982A63 /* MyLineLayer.m in Sources */,
 				D7BAF5D920DB7B4B00982A63 /* MyPathManager.m in Sources */,
 				D7BAF5D020DB7B4B00982A63 /* NSString+Extend.m in Sources */,
@@ -2218,7 +2285,6 @@
 				D7BAF5CF20DB7B4B00982A63 /* NSObject+runtime.m in Sources */,
 				D7BAF5BE20DB7B4B00982A63 /* ScreenAdaptation.m in Sources */,
 				D7BAF69E20DB9B4B00982A63 /* MyPresentAnimatedTransitioning.m in Sources */,
-				D7BAF66320DB96AF00982A63 /* KIPageViewCell.m in Sources */,
 				D7BAF5CC20DB7B4B00982A63 /* NSDictionary+MyCategory.m in Sources */,
 				D7BAF5E720DB8E2100982A63 /* XYYMessageUtil.m in Sources */,
 				D7BAF5E020DB856200982A63 /* XYYSizeUtil.m in Sources */,
@@ -2380,6 +2446,17 @@
 			files = (
 				D7BAF85120DC9CCE00982A63 /* MyDeclineMenuContainerView.m in Sources */,
 				D7BAF85020DC9CCE00982A63 /* MyBasicDeclineMenuContentView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BAF85620DCDCCA00982A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BAF86F20DCDD3D00982A63 /* MyScrollContentPageCell.m in Sources */,
+				D7BAF86E20DCDD3D00982A63 /* MyPageView.m in Sources */,
+				D7BAF86D20DCDD3D00982A63 /* KIPageViewCell.m in Sources */,
+				D7BAF86C20DCDD3D00982A63 /* KIPageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2869,6 +2946,34 @@
 			};
 			name = Release;
 		};
+		D7BAF86020DCDCCA00982A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A76927C134B01225E08D0F0 /* Pods-XYYPageView.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7BAF86120DCDCCA00982A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F06DA14B82E4E67F10DD855D /* Pods-XYYPageView.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2994,6 +3099,15 @@
 			buildConfigurations = (
 				D7BAF84820DC9CA300982A63 /* Debug */,
 				D7BAF84920DC9CA300982A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BAF86220DCDCCA00982A63 /* Build configuration list for PBXNativeTarget "XYYPageView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BAF86020DCDCCA00982A63 /* Debug */,
+				D7BAF86120DCDCCA00982A63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
