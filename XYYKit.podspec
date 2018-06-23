@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
 
  # s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :tag => "#{s.version}" }
 
-  s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :commit => "32a0534" }
+  s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :commit => "dcebdba" }
 
   s.source_files = "**/*.{h,m}"
   s.resources    = "**/Resources/*","**/*.{nib,storyboard}"

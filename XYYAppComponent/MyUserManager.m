@@ -11,6 +11,7 @@
 #import "MyUserManager.h"
 #import "MyUserModel.h"
 #import "XYYFoundation.h"
+#import "XYYModel.h"
 
 //----------------------------------------------------------
 
