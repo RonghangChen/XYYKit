@@ -156,7 +156,6 @@
 		D7BAF79320DBAFB100982A63 /* DNBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF77B20DBAFB000982A63 /* DNBrowserCell.m */; };
 		D7BAF79420DBAFB100982A63 /* MyImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF78220DBAFB000982A63 /* MyImagePickerViewController.m */; };
 		D7BAF79520DBAFB100982A63 /* MyMultipleImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF78420DBAFB100982A63 /* MyMultipleImagePickerController.m */; };
-		D7BAF79720DC8C6B00982A63 /* XYYKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF79620DC8C6B00982A63 /* XYYKit-dummy.m */; };
 		D7BAF7A120DC8D1B00982A63 /* XYYCodeScan.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF79E20DC8D1B00982A63 /* XYYCodeScan.h */; };
 		D7BAF7AF20DC8D8F00982A63 /* MyCodeScanActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7A620DC8D8E00982A63 /* MyCodeScanActivityView.m */; };
 		D7BAF7B120DC8D8F00982A63 /* MyCodeScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF7AC20DC8D8F00982A63 /* MyCodeScanController.m */; };
@@ -688,7 +687,6 @@
 		D7BAF78220DBAFB000982A63 /* MyImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImagePickerViewController.m; sourceTree = "<group>"; };
 		D7BAF78320DBAFB000982A63 /* MyMultipleImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMultipleImagePickerController.h; sourceTree = "<group>"; };
 		D7BAF78420DBAFB100982A63 /* MyMultipleImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMultipleImagePickerController.m; sourceTree = "<group>"; };
-		D7BAF79620DC8C6B00982A63 /* XYYKit-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XYYKit-dummy.m"; sourceTree = "<group>"; };
 		D7BAF79C20DC8D1B00982A63 /* libXYYCodeScan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYCodeScan.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BAF79E20DC8D1B00982A63 /* XYYCodeScan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYCodeScan.h; sourceTree = "<group>"; };
 		D7BAF7A520DC8D8E00982A63 /* MyCodeTypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCodeTypeDef.h; sourceTree = "<group>"; };
@@ -1015,7 +1013,6 @@
 			isa = PBXGroup;
 			children = (
 				D735C91220BD4D1A000D4A79 /* XYYKit.h */,
-				D7BAF79620DC8C6B00982A63 /* XYYKit-dummy.m */,
 			);
 			path = XYYKit;
 			sourceTree = "<group>";
@@ -2284,7 +2281,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7BAF79720DC8C6B00982A63 /* XYYKit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,7 +48,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #elif __has_include("AlipaySDK/AlipaySDK.h")
 #define XYYSOCIALSNS_ALIPAY_ENABLED 1
-#import <AlipaySDK/AlipaySDK.h>
+#import "AlipaySDK/AlipaySDK.h"
 #endif
 
 
