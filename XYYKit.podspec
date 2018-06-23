@@ -30,16 +30,16 @@ Pod::Spec.new do |s|
 
  # s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :tag => "#{s.version}" }
 
-  s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :commit => "f22f2bf" }
+  s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :commit => "fa1cbbf" }
 
   s.source_files = "XYYKit/*.{h,m}"
-  # s.resources    = "**/Resources/*","**/*.{nib,storyboard}"
+  s.resources    = "**/Resources/*","**/*.{nib,storyboard}"
 
-  # s.frameworks = "UIKit", "Foundation", "AVFoundation", "Accelerate", "CoreFoundation", "SystemConfiguration", "UserNotifications", "AssetsLibrary", "CoreGraphics","CoreImage"
+  s.frameworks = "UIKit", "Foundation", "AVFoundation", "Accelerate", "CoreFoundation", "SystemConfiguration", "UserNotifications", "AssetsLibrary", "CoreGraphics","CoreImage"
 
-  # s.dependency 'MBProgressHUD' , '~> 0.9.1'
-  # s.dependency 'TTTAttributedLabel'
-  # s.dependency 'XYYModel'
+  s.dependency 'MBProgressHUD' , '~> 0.9.1'
+  s.dependency 'TTTAttributedLabel'
+  s.dependency 'XYYModel'
   # s.dependency 'libqrencode'
 
   s.subspec 'XYYFoundation' do |foundation|

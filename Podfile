@@ -22,7 +22,6 @@ target 'XYYFoundation' do
 
 end
 
-
 target 'XYYCache' do
     # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
     # use_frameworks!
@@ -48,7 +47,7 @@ target 'XYYAppComponent' do
     # use_frameworks!
 
     # Pods for XYYKit
-    pod 'XYYModel'
+    # pod 'XYYModel'
 
 end
 
@@ -108,6 +107,14 @@ target 'XYYDeclineMenu' do
 end
 
 target 'XYYPageView' do
+    # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+    # use_frameworks!
+    
+    #    pod 'WechatOpenSDK'
+    
+end
+
+target 'XYYModel' do
     # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
     # use_frameworks!
     

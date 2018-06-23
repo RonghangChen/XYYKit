@@ -29,7 +29,7 @@
 #pragma mark - 更新属性值
 
 //更新属性值，更新属性值策略为:
-//(1)通过propertyNameForKey:方法获取key对应的属性名称
+//(1)通过xyy_propertyNameForKey:方法获取key对应的属性名称
 //
 //(2)判断属性是否有效（可赋值属性）
 //属性是否有效需满足四个条件:

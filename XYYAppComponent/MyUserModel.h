@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XYYModel.h"
 
-@protocol XYYJsonModel;
 @interface MyUserModel : NSObject<XYYJsonModel>
 
 //更新数据

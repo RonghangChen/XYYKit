@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		01F283809CC0FB2DF8227B09 /* libPods-XYYNetConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C520CD5C14CB019176E1A9E /* libPods-XYYNetConnection.a */; };
 		180545D44D42ADF7D34E9C0E /* libPods-XYYNetImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C4AB4C2D72BB82D677F6D9 /* libPods-XYYNetImage.a */; };
+		252CC48C72ECFF972F8E3162 /* libPods-XYYModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 814531C38E1923F1FFBB26A6 /* libPods-XYYModel.a */; };
 		2E194A8B5780361C6D5E534D /* libPods-XYYImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25249C4B801AB60EAA6B1DAD /* libPods-XYYImagePicker.a */; };
 		3DFF147895243F037880EA83 /* libPods-XYYScanImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 539AB96D5F43113B55011FC8 /* libPods-XYYScanImage.a */; };
 		5E15149DC71B3DFC0097A84D /* libPods-XYYPageLoad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 099B7D6C4CC2FDB19BF5C8BB /* libPods-XYYPageLoad.a */; };
@@ -20,6 +21,8 @@
 		BD6CD05CF14E2FCF9E374C2F /* libPods-XYYPageView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 191ED8DEFC79A4775473243A /* libPods-XYYPageView.a */; };
 		C0FA761BEE1395CAFE3ACC1D /* libPods-XYYFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D94B7C8D7FA6B8446D9F0A /* libPods-XYYFoundation.a */; };
 		D735C91520BD4D1A000D4A79 /* XYYKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D735C91220BD4D1A000D4A79 /* XYYKit.h */; };
+		D743CBEE20DDFB9200122177 /* XYYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D743CBED20DDFB9200122177 /* XYYModel.m */; };
+		D743CBEF20DDFB9200122177 /* XYYModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D743CBEC20DDFB9200122177 /* XYYModel.h */; };
 		D7BAF57820DB775000982A63 /* XYYFoundation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF57520DB775000982A63 /* XYYFoundation.h */; };
 		D7BAF5BD20DB7B4B00982A63 /* XYYCommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF58620DB7B4B00982A63 /* XYYCommonUtil.m */; };
 		D7BAF5BE20DB7B4B00982A63 /* ScreenAdaptation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF58820DB7B4B00982A63 /* ScreenAdaptation.m */; };
@@ -205,6 +208,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D743CBE820DDFB9200122177 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D743CBEF20DDFB9200122177 /* XYYModel.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7BAF57120DB775000982A63 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,6 +356,7 @@
 		0ADDFE99AE1D8773D210CB5A /* Pods-XYYCodeScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCodeScan.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCodeScan/Pods-XYYCodeScan.release.xcconfig"; sourceTree = "<group>"; };
 		1793719532289EB0218331C3 /* Pods-XYYDeclineMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYDeclineMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYDeclineMenu/Pods-XYYDeclineMenu.release.xcconfig"; sourceTree = "<group>"; };
 		191ED8DEFC79A4775473243A /* libPods-XYYPageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYPageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22D095336A4C211B111960E0 /* Pods-XYYModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYModel.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYModel/Pods-XYYModel.release.xcconfig"; sourceTree = "<group>"; };
 		22EEC9FA388F6EBD9B1380D5 /* Pods-XYYImagePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYImagePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYImagePicker/Pods-XYYImagePicker.debug.xcconfig"; sourceTree = "<group>"; };
 		23C4AB4C2D72BB82D677F6D9 /* libPods-XYYNetImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYNetImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25249C4B801AB60EAA6B1DAD /* libPods-XYYImagePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYImagePicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -364,6 +378,7 @@
 		6F6B46FB3E6482539628686C /* Pods-XYYScanImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYScanImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYScanImage/Pods-XYYScanImage.release.xcconfig"; sourceTree = "<group>"; };
 		73D6CF702E79AEB96042E683 /* Pods-XYYFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYFoundation/Pods-XYYFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		7B842A07EBEDC6E26764E6E1 /* Pods-XYYNetConnection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYNetConnection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYNetConnection/Pods-XYYNetConnection.debug.xcconfig"; sourceTree = "<group>"; };
+		814531C38E1923F1FFBB26A6 /* libPods-XYYModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D94B7C8D7FA6B8446D9F0A /* libPods-XYYFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYFoundation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B37D401C8EC68B606A5A98 /* libPods-XYYCodeScan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYCodeScan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C520CD5C14CB019176E1A9E /* libPods-XYYNetConnection.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYNetConnection.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -373,11 +388,15 @@
 		B27961D6F9ACE23ACAD4B4A3 /* Pods-XYYKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYKit/Pods-XYYKit.debug.xcconfig"; sourceTree = "<group>"; };
 		B4F356A2DB37F1AF9A0374AE /* Pods-XYYNetConnection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYNetConnection.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYNetConnection/Pods-XYYNetConnection.release.xcconfig"; sourceTree = "<group>"; };
 		BBB5797EBA0B1CC05FC2C944 /* Pods-XYYScanImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYScanImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYScanImage/Pods-XYYScanImage.debug.xcconfig"; sourceTree = "<group>"; };
+		C783B67096D93D6C5E0E4C43 /* Pods-XYYModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYModel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYModel/Pods-XYYModel.debug.xcconfig"; sourceTree = "<group>"; };
 		CF8534831A7DBA473D53E5A3 /* libPods-XYYCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYCache.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38CD46ACB8355A0F0E5BB13 /* libPods-XYYDeclineMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYDeclineMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C6E6E7617A23E436E158F2 /* Pods-XYYCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCache.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCache/Pods-XYYCache.debug.xcconfig"; sourceTree = "<group>"; };
 		D735C90F20BD4D1A000D4A79 /* libXYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D735C91220BD4D1A000D4A79 /* XYYKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYKit.h; sourceTree = "<group>"; };
+		D743CBEA20DDFB9200122177 /* libXYYModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D743CBEC20DDFB9200122177 /* XYYModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYModel.h; sourceTree = "<group>"; };
+		D743CBED20DDFB9200122177 /* XYYModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYYModel.m; sourceTree = "<group>"; };
 		D7BAF57320DB775000982A63 /* libXYYFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BAF57520DB775000982A63 /* XYYFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYFoundation.h; sourceTree = "<group>"; };
 		D7BAF57D20DB7B4B00982A63 /* XYYCommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYYCommonUtil.h; sourceTree = "<group>"; };
@@ -772,6 +791,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D743CBE720DDFB9200122177 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				252CC48C72ECFF972F8E3162 /* libPods-XYYModel.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7BAF57020DB775000982A63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -910,6 +937,8 @@
 				1793719532289EB0218331C3 /* Pods-XYYDeclineMenu.release.xcconfig */,
 				6A76927C134B01225E08D0F0 /* Pods-XYYPageView.debug.xcconfig */,
 				F06DA14B82E4E67F10DD855D /* Pods-XYYPageView.release.xcconfig */,
+				C783B67096D93D6C5E0E4C43 /* Pods-XYYModel.debug.xcconfig */,
+				22D095336A4C211B111960E0 /* Pods-XYYModel.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -931,6 +960,7 @@
 				CF8534831A7DBA473D53E5A3 /* libPods-XYYCache.a */,
 				D38CD46ACB8355A0F0E5BB13 /* libPods-XYYDeclineMenu.a */,
 				191ED8DEFC79A4775473243A /* libPods-XYYPageView.a */,
+				814531C38E1923F1FFBB26A6 /* libPods-XYYModel.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -952,6 +982,7 @@
 				D7BAF81920DC9A7500982A63 /* XYYUserGuidePage */,
 				D7BAF84320DC9CA300982A63 /* XYYDeclineMenu */,
 				D7BAF85B20DCDCCA00982A63 /* XYYPageView */,
+				D743CBEB20DDFB9200122177 /* XYYModel */,
 				D735C91020BD4D1A000D4A79 /* Products */,
 				6399C03EAB79F3EEDE2CECD4 /* Pods */,
 				C2BA7A3A95922AEE4D5787BC /* Frameworks */,
@@ -975,6 +1006,7 @@
 				D7BAF82C20DC9B5900982A63 /* libXYYCache.a */,
 				D7BAF84220DC9CA300982A63 /* libXYYDeclineMenu.a */,
 				D7BAF85A20DCDCCA00982A63 /* libXYYPageView.a */,
+				D743CBEA20DDFB9200122177 /* libXYYModel.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -986,6 +1018,15 @@
 				D7BAF79620DC8C6B00982A63 /* XYYKit-dummy.m */,
 			);
 			path = XYYKit;
+			sourceTree = "<group>";
+		};
+		D743CBEB20DDFB9200122177 /* XYYModel */ = {
+			isa = PBXGroup;
+			children = (
+				D743CBEC20DDFB9200122177 /* XYYModel.h */,
+				D743CBED20DDFB9200122177 /* XYYModel.m */,
+			);
+			path = XYYModel;
 			sourceTree = "<group>";
 		};
 		D7BAF57420DB775000982A63 /* XYYFoundation */ = {
@@ -1625,6 +1666,24 @@
 			productReference = D735C90F20BD4D1A000D4A79 /* libXYYKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		D743CBE920DDFB9200122177 /* XYYModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D743CBF220DDFB9200122177 /* Build configuration list for PBXNativeTarget "XYYModel" */;
+			buildPhases = (
+				4D11AB344C0192B7B217AA22 /* [CP] Check Pods Manifest.lock */,
+				D743CBE620DDFB9200122177 /* Sources */,
+				D743CBE720DDFB9200122177 /* Frameworks */,
+				D743CBE820DDFB9200122177 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYYModel;
+			productName = XYYModel;
+			productReference = D743CBEA20DDFB9200122177 /* libXYYModel.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		D7BAF57220DB775000982A63 /* XYYFoundation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7BAF57920DB775000982A63 /* Build configuration list for PBXNativeTarget "XYYFoundation" */;
@@ -1871,6 +1930,9 @@
 					D735C90E20BD4D1A000D4A79 = {
 						CreatedOnToolsVersion = 9.3;
 					};
+					D743CBE920DDFB9200122177 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					D7BAF57220DB775000982A63 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -1939,6 +2001,7 @@
 				D7BAF82B20DC9B5900982A63 /* XYYCache */,
 				D7BAF84120DC9CA300982A63 /* XYYDeclineMenu */,
 				D7BAF85920DCDCCA00982A63 /* XYYPageView */,
+				D743CBE920DDFB9200122177 /* XYYModel */,
 			);
 		};
 /* End PBXProject section */
@@ -1992,6 +2055,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-XYYDeclineMenu-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D11AB344C0192B7B217AA22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYModel-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2204,6 +2285,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7BAF79720DC8C6B00982A63 /* XYYKit-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D743CBE620DDFB9200122177 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D743CBEE20DDFB9200122177 /* XYYModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2604,6 +2693,34 @@
 			};
 			name = Release;
 		};
+		D743CBF020DDFB9200122177 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C783B67096D93D6C5E0E4C43 /* Pods-XYYModel.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D743CBF120DDFB9200122177 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22D095336A4C211B111960E0 /* Pods-XYYModel.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QZCF4M4UX4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D7BAF57A20DB775000982A63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 37F75039E29D7A2ED0095E67 /* Pods-XYYFoundation.debug.xcconfig */;
@@ -2985,6 +3102,15 @@
 			buildConfigurations = (
 				D735C91920BD4D1A000D4A79 /* Debug */,
 				D735C91A20BD4D1A000D4A79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D743CBF220DDFB9200122177 /* Build configuration list for PBXNativeTarget "XYYModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D743CBF020DDFB9200122177 /* Debug */,
+				D743CBF120DDFB9200122177 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

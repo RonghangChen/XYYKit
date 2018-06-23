@@ -7,7 +7,6 @@
 //
 
 #import "MyUserModel.h"
-#import "XYYModel.h"
 
 @implementation MyUserModel
 
