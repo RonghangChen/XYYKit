@@ -11,6 +11,7 @@
 #import "MyScanImageView.h"
 #import "MyScanImageCell.h"
 #import "XYYPageView.h"
+#import "MBProgressHUD.h"
 
 //----------------------------------------------------------
 

@@ -30,10 +30,10 @@ Pod::Spec.new do |s|
 
  # s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :tag => "#{s.version}" }
 
-  s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :commit => "7074603" }
+  s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :commit => "32a0534" }
 
   s.source_files = "**/*.{h,m}"
-  s.resources    = "**/Resources/*"
+  s.resources    = "**/Resources/*","**/*.{nib,storyboard}"
 
   s.frameworks = "UIKit", "Foundation", "AVFoundation", "Accelerate", "CoreFoundation", "SystemConfiguration", "UserNotifications", "AssetsLibrary", "CoreGraphics","CoreImage"
 
@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYFoundation' do |foundation|
 
     foundation.source_files = "XYYFoundation/**/*.{h,m}"
-    foundation.resources    = "XYYFoundation/Resources/*"  
+    foundation.resources    = "XYYFoundation/Resources/*","XYYFoundation/**/*.{nib,storyboard}" 
 
     foundation.frameworks = "UIKit", "Foundation", "Accelerate", "CoreFoundation"
 
@@ -126,7 +126,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYImagePicker' do |imagePicker|
 
     imagePicker.source_files = "XYYImagePicker/**/*.{h,m}"
-    imagePicker.resources    = "XYYImagePicker/Resources/*"  
+    imagePicker.resources    = "XYYImagePicker/Resources/*","XYYImagePicker/**/*.{nib,storyboard}"   
 
     imagePicker.frameworks = "UIKit", "Foundation"
 
