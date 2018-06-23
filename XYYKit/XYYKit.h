@@ -21,7 +21,7 @@
 #import "XYYImagePicker.h"
 #import "XYYCodeScan.h"
 #import "XYYScanImage.h"
-#import "XYYSocialSNS.h"
+//#import "XYYSocialSNS.h"
 #import "XYYPageLoad.h"
 #import "XYYUserGuidePage.h"
 #import "XYYPageView.h"

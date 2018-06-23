@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XYYKit"
-  s.version      = "0.9"
+  s.version      = "0.9.1"
   s.summary      = "框架库"
 
   s.author       =  { "LeslieChen" => "102731887@qq.com" }
@@ -126,15 +126,15 @@ Pod::Spec.new do |s|
     codeScan.dependency 'XYYKit/XYYFoundation'
   end
 
-  s.subspec 'XYYSocialSNS' do |socialSNS|
+  #s.subspec 'XYYSocialSNS' do |socialSNS|
 
-    socialSNS.source_files = "XYYSocialSNS/**/*.{h,m}"
-    socialSNS.resources    = "XYYSocialSNS/Resources/*"  
+    #socialSNS.source_files = "XYYSocialSNS/**/*.{h,m}"
+    #socialSNS.resources    = "XYYSocialSNS/Resources/*"  
 
-    socialSNS.frameworks = "UIKit", "Foundation"
+    #socialSNS.frameworks = "UIKit", "Foundation"
 
-    socialSNS.dependency 'XYYKit/XYYFoundation'
-  end
+    #socialSNS.dependency 'XYYKit/XYYFoundation'
+  #end
 
   s.subspec 'XYYUserGuidePage' do |userGuidePage|
 
