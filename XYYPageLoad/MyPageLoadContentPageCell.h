@@ -8,7 +8,7 @@
 
 //----------------------------------------------------------
 
-#import "MyScrollContentPageCell.h"
+#import "XYYPageView.h"
 #import "MyPageLoadManagerForTableAndCollectionView.h"
 
 //----------------------------------------------------------

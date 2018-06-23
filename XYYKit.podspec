@@ -30,22 +30,22 @@ Pod::Spec.new do |s|
 
  # s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :tag => "#{s.version}" }
 
-  s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :commit => "dcebdba" }
+  s.source       = { :git => "https://git.coding.net/crh/XYYKit.git", :commit => "c15183c" }
 
-  s.source_files = "**/*.{h,m}"
-  s.resources    = "**/Resources/*","**/*.{nib,storyboard}"
+  s.source_files = "XYYKit/*.{h,m}"
+  # s.resources    = "**/Resources/*","**/*.{nib,storyboard}"
 
-  s.frameworks = "UIKit", "Foundation", "AVFoundation", "Accelerate", "CoreFoundation", "SystemConfiguration", "UserNotifications", "AssetsLibrary", "CoreGraphics","CoreImage"
+  # s.frameworks = "UIKit", "Foundation", "AVFoundation", "Accelerate", "CoreFoundation", "SystemConfiguration", "UserNotifications", "AssetsLibrary", "CoreGraphics","CoreImage"
 
-  s.dependency 'MBProgressHUD' , '~> 0.9.1'
-  s.dependency 'TTTAttributedLabel'
-  s.dependency 'XYYModel'
-  s.dependency 'libqrencode'
+  # s.dependency 'MBProgressHUD' , '~> 0.9.1'
+  # s.dependency 'TTTAttributedLabel'
+  # s.dependency 'XYYModel'
+  # s.dependency 'libqrencode'
 
   s.subspec 'XYYFoundation' do |foundation|
 
     foundation.source_files = "XYYFoundation/**/*.{h,m}"
-    foundation.resources    = "XYYFoundation/Resources/*","XYYFoundation/**/*.{nib,storyboard}" 
+    foundation.resources    = "XYYFoundation/Resources/*","XYYFoundation/**/*.{xib,nib,storyboard}" 
 
     foundation.frameworks = "UIKit", "Foundation", "Accelerate", "CoreFoundation"
 
@@ -61,8 +61,8 @@ Pod::Spec.new do |s|
 
     appComponent.frameworks = "UIKit", "Foundation", "UserNotifications"
 
-    appComponent.dependency 'XYYKit/XYYFoundation'
     appComponent.dependency 'XYYModel'
+    appComponent.dependency 'XYYKit/XYYFoundation'
 
   end
 
@@ -126,7 +126,7 @@ Pod::Spec.new do |s|
   s.subspec 'XYYImagePicker' do |imagePicker|
 
     imagePicker.source_files = "XYYImagePicker/**/*.{h,m}"
-    imagePicker.resources    = "XYYImagePicker/Resources/*","XYYImagePicker/**/*.{nib,storyboard}"   
+    imagePicker.resources    = "XYYImagePicker/Resources/*","XYYImagePicker/**/*.{xib,nib,storyboard}"   
 
     imagePicker.frameworks = "UIKit", "Foundation"
 
@@ -142,7 +142,7 @@ Pod::Spec.new do |s|
     codeScan.frameworks = "UIKit", "Foundation","AVFoundation", "CoreImage"
 
     codeScan.dependency 'XYYKit/XYYFoundation'
-    codeScan.dependency 'libqrencode'
+    # codeScan.dependency 'libqrencode'
   end
 
   s.subspec 'XYYSocialSNS' do |socialSNS|
@@ -183,6 +183,7 @@ Pod::Spec.new do |s|
     pageLoad.frameworks = "UIKit", "Foundation"
 
     pageLoad.dependency 'XYYKit/XYYFoundation'
+    pageLoad.dependency 'XYYKit/XYYPageView'
   end
 
 
