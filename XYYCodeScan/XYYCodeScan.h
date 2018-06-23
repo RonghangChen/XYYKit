@@ -9,9 +9,10 @@
 #ifndef __XYYCodeScan_h
 #define __XYYCodeScan_h
 
+#import "MyCodeTypeDef.h"
 #import "MyCodeScanController.h"
 #import "MyCodeReaderView.h"
 #import "MyCodeScanActivityView.h"
-#import "MyImagePickerViewController.h"
+//#import "MyImagePickerViewController.h"
 
 #endif
