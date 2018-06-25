@@ -120,14 +120,14 @@ typedef NS_ENUM(NSInteger, MyAppScoreAlertViewResult) {
 
 
 //应用包信息
-@property(nonatomic,readonly) MyApplicationBundleInfo appBundleInfo;
+@property(nonatomic) MyApplicationBundleInfo appBundleInfo;
 //应用包身份信息
 @property(nonatomic,strong,readonly) NSString * appBundleIdentifier;
 //应用身份信息，由appBundleIdentifier和appID合成
 @property(nonatomic,strong,readonly) NSString * appIdentifier;
 
-//app包信息改变
-- (void)appBundleInfoDidChangeForm:(MyApplicationBundleInfo)oldBundleInfo;
+////app包信息改变
+//- (void)appBundleInfoDidChangeForm:(MyApplicationBundleInfo)oldBundleInfo;
 
 //                  app更新
 //-----------------------------------------------------

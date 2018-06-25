@@ -94,25 +94,6 @@
         }else {
             _lastInstallAppVersion = [userDefaults objectForKey:MyKLastAppVersion];
         }
-        
-        //应用包信息
-        MyApplicationBundleInfo bundleInfo = MyApplicationBundleInfoUnknow;
-#if DEBUG
-        bundleInfo |= MyApplicationBundleInfoDebug;
-#endif
-#if IS_DEV_SERVER_ENV
-        bundleInfo |= MyApplicationBundleInfoDevelopEnv;
-#else
-        bundleInfo |= MyApplicationBundleInfoProductionEnv;
-#endif
-        _appBundleInfo = bundleInfo;
-        
-        //版本信息改变
-        MyApplicationBundleInfo oldBundleInfo = [[NSUserDefaults standardUserDefaults] integerForKey:MyKAppBundleInfo];
-        if (_appBundleInfo != oldBundleInfo) {
-             [[NSUserDefaults standardUserDefaults] setInteger:_appBundleInfo forKey:MyKAppBundleInfo];
-            [self appBundleInfoDidChangeForm:oldBundleInfo];
-        }
     }
     
     return self;
@@ -124,9 +105,18 @@
     return [NSString stringWithFormat:@"%@.%@",_appID,_appBundleIdentifier];
 }
 
-- (void)appBundleInfoDidChangeForm:(MyApplicationBundleInfo)oldBundleInfo {
-    //do nothing
+- (void)setAppBundleInfo:(MyApplicationBundleInfo)appBundleInfo {
+    [[NSUserDefaults standardUserDefaults] setInteger:appBundleInfo forKey:MyKAppBundleInfo];
 }
+
+- (MyApplicationBundleInfo)appBundleInfo {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:MyKAppBundleInfo];
+}
+
+
+//- (void)appBundleInfoDidChangeForm:(MyApplicationBundleInfo)oldBundleInfo {
+//    //do nothing
+//}
 
 #pragma mark -
 

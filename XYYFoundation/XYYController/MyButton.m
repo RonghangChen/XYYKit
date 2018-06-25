@@ -107,7 +107,7 @@
 {
     [self.backgrounpColorDic setObject: backgroundColor ?: [UIColor clearColor] forKey:@(state)];
     
-    if (state == self.state) {
+    if (state == self.state || state == UIControlStateNormal) {
         [self _updateBackgroundColor];
     }
 }
