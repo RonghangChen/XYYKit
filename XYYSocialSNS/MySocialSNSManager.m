@@ -10,46 +10,19 @@
 
 #import "MySocialSNSManager.h"
 #import "XYYFoundation.h"
+#import <objc/message.h>
 
 //----------------------------------------------------------
 
-//是否包含微信
-#if __has_include(<WXApi.h>)
-#define XYYSOCIALSNS_WECHAT_ENABLED 1
-#import <WXApi.h>
-#elif __has_include("WXApi.h")
-#define XYYSOCIALSNS_WECHAT_ENABLED 1
-#import "WXApi.h"
-#endif
+#define XYY_SOCIAL_IS_KIND_OF_CLASS(obj,className) \
+({\
+    Class class = objc_getClass(className); \
+    class != nil && [obj isKindOfClass: class]; \
+})
 
-//微博
-#if __has_include(<WeiboSDK.h>)
-#define XYYSOCIALSNS_WEIBO_ENABLED 1
-#import <WeiboSDK.h>
-#elif __has_include("WeiboSDK.h")
-#define XYYSOCIALSNS_WEIBO_ENABLED 1
-#import "WeiboSDK.h"
-#endif
+#define XYY_SOCIAL_GET_MSG_SEND(rType,obj,selName) ((rType(*)(id,SEL))objc_msgSend)(obj,sel_registerName(selName))
 
-//QQ
-#if __has_include(<TencentOpenAPI/QQApiInterface.h>) && __has_include(<TencentOpenAPI/TencentOAuth.h>)
-#define XYYSOCIALSNS_QQ_ENABLED 1
-#import <TencentOpenAPI/QQApiInterface.h>
-#import <TencentOpenAPI/TencentOAuth.h>
-#elif __has_include("TencentOpenAPI/QQApiInterface.h") && __has_include("TencentOpenAPI/TencentOAuth.h")
-#define XYYSOCIALSNS_QQ_ENABLED 1
-#import "TencentOpenAPI/QQApiInterface.h"
-#import "TencentOpenAPI/TencentOAuth.h"
-#endif
-
-//支付宝
-#if __has_include(<AlipaySDK/AlipaySDK.h>)
-#define XYYSOCIALSNS_ALIPAY_ENABLED 1
-#import <AlipaySDK/AlipaySDK.h>
-#elif __has_include("AlipaySDK/AlipaySDK.h")
-#define XYYSOCIALSNS_ALIPAY_ENABLED 1
-#import "AlipaySDK/AlipaySDK.h"
-#endif
+#define XYY_SOCIAL_SET_MSG_SEND(vType,obj,selName,value) ((void(*)(id,SEL,vType))objc_msgSend)(obj,sel_registerName(selName),value)
 
 
 //----------------------------------------------------------
@@ -164,6 +137,9 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
 //统一各平台的接口
 @protocol _MySocialSNSTargetProtocol
 
+//基于的类别
++ (Class)baseClass;
+
 //名称
 + (NSString *)appName;
 //是否安装应用
@@ -194,41 +170,25 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
 
 //----------------------------------------------------------
 
-#if XYYSOCIALSNS_WECHAT_ENABLED
-
-@interface WXApi (MyShareTarget) <_MySocialSNSTargetProtocol>
+@interface MyWXApi : NSObject <_MySocialSNSTargetProtocol>
 
 @end
 
-#endif
-
 //----------------------------------------------------------
-
-#if XYYSOCIALSNS_QQ_ENABLED
 
 @interface MyQQApi : NSObject <_MySocialSNSTargetProtocol>
 
-+ (TencentOAuth *)tencentOAuth;
++ (id)tencentOAuth;
 
 @end
 
-#endif
-
 //----------------------------------------------------------
 
-
-#if XYYSOCIALSNS_WEIBO_ENABLED
-
-@interface WeiboSDK (MySocialSNSTarget) <_MySocialSNSTargetProtocol>
+@interface MyWeiboApi : NSObject<_MySocialSNSTargetProtocol>
 
 @end
 
-#endif
-
 //----------------------------------------------------------
-
-
-#if XYYSOCIALSNS_ALIPAY_ENABLED
 
 @protocol MyAlipaySDKDelegate <NSObject>
 
@@ -236,32 +196,13 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
 
 @end
 
-//----------------------------------------------------------
-
-@interface AlipaySDK(MySocialSNSTarget) <_MySocialSNSTargetProtocol>
+@interface MyAlipayApi : NSObject<_MySocialSNSTargetProtocol>
 
 @end
 
-#endif
-
 //----------------------------------------------------------
 
-@interface MySocialSNSManager ()
-<   NSObject
-#if XYYSOCIALSNS_WECHAT_ENABLED
-    ,WXApiDelegate
-#endif
-#if XYYSOCIALSNS_QQ_ENABLED
-    ,QQApiInterfaceDelegate
-    ,TencentSessionDelegate
-#endif
-#if XYYSOCIALSNS_WEIBO_ENABLED
-    ,WeiboSDKDelegate
-#endif
-#if XYYSOCIALSNS_ALIPAY_ENABLED
-    ,MyAlipaySDKDelegate
-#endif
->
+@interface MySocialSNSManager () < MyAlipaySDKDelegate >
 
 //身份信息
 @property(nonatomic,strong,readonly) NSMutableDictionary * socialSNSTargetIdentifyInfos;
@@ -332,40 +273,54 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
 
 + (Class<_MySocialSNSTargetProtocol>)_shareTargetClassForName:(MySocialSNSTargetItemName)name
 {
-    NSString * className = nil;
+    Class<_MySocialSNSTargetProtocol> apiClass = nil;
     if ([name isEqualToString:MySocialSNSTargetItemNameWeChat] ||
         [name isEqualToString:MySocialSNSTargetItemNameWeChatCircle]) {
-        className = @"WXApi";
+        apiClass = [MyWXApi class];
     }else if([name isEqualToString:MySocialSNSTargetItemNameQQ] ||
              [name isEqualToString:MySocialSNSTargetItemNameQQZone]){
-        className = @"MyQQApi";
+        apiClass = [MyQQApi class];
     }else if ([name isEqualToString:MySocialSNSTargetItemNameWeibo]) {
-        className = @"WeiboSDK";
+        apiClass = [MyWeiboApi class];
     }else if ([name isEqualToString:MySocialSNSTargetItemNameAlipay]) {
-        className = @"AlipaySDK";
+        apiClass = [MyAlipayApi class];
     }
     
-    return className.length ? NSClassFromString(className) : nil;
+    return [apiClass baseClass] ? apiClass : nil;
 }
 
-+ (BOOL)isInstallSocialSNSTarget:(MySocialSNSTargetItemName)targetItmeName {
-    return [[self _shareTargetClassForName:targetItmeName] isAppInstalled];
++ (BOOL)isInstallSocialSNSTargetSDK:(MySocialSNSTargetItemName)targetItmeName {
+    return [self _shareTargetClassForName:targetItmeName] != nil;
 }
 
-+ (MySocialSNSTargetSupportResultType)isSupportShareForSocialSNSTarget:(MySocialSNSTargetItemName)targetItmeName {
-    return [[self _shareTargetClassForName:targetItmeName] isAppSupportShare];
++ (BOOL)isInstallSocialSNSTarget:(MySocialSNSTargetItemName)targetItmeName
+{
+    Class<_MySocialSNSTargetProtocol> class = [self _shareTargetClassForName:targetItmeName];
+    return class ? [class isAppInstalled] : NO;
 }
 
-+ (MySocialSNSTargetSupportResultType)isSupportSSOForSocialSNSTarget:(MySocialSNSTargetItemName)targetItmeName {
-    return [[self _shareTargetClassForName:targetItmeName] isAppSupportSSO];
++ (MySocialSNSTargetSupportResultType)isSupportShareForSocialSNSTarget:(MySocialSNSTargetItemName)targetItmeName
+{
+    Class<_MySocialSNSTargetProtocol> class = [self _shareTargetClassForName:targetItmeName];
+    return class ? [class isAppSupportShare] : MySocialSNSTargetSupportResultTypeUnSupport;
 }
 
-+ (MySocialSNSTargetSupportResultType)isSupportPayForSocialSNSTarget:(MySocialSNSTargetItemName)targetItmeName {
-    return [[self _shareTargetClassForName:targetItmeName] isAppSupportPay];
++ (MySocialSNSTargetSupportResultType)isSupportSSOForSocialSNSTarget:(MySocialSNSTargetItemName)targetItmeName
+{
+    Class<_MySocialSNSTargetProtocol> class = [self _shareTargetClassForName:targetItmeName];
+    return class ? [class isAppSupportSSO] : MySocialSNSTargetSupportResultTypeUnSupport;
 }
 
-+ (NSString *)appNameForSocialSNSTarget:(MySocialSNSTargetItemName)targetItmeName {
-    return [[self _shareTargetClassForName:targetItmeName] appName];
++ (MySocialSNSTargetSupportResultType)isSupportPayForSocialSNSTarget:(MySocialSNSTargetItemName)targetItmeName
+{
+    Class<_MySocialSNSTargetProtocol> class = [self _shareTargetClassForName:targetItmeName];
+    return class ? [class isAppSupportPay] : MySocialSNSTargetSupportResultTypeUnSupport;
+}
+
++ (NSString *)appNameForSocialSNSTarget:(MySocialSNSTargetItemName)targetItmeName
+{
+    Class<_MySocialSNSTargetProtocol> class = [self _shareTargetClassForName:targetItmeName];
+    return class ?  [class appName] : nil;
 }
 
 #pragma mark -
@@ -378,7 +333,8 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
     
     for (NSString * name in socialSNSTargetIdentifyInfos.allKeys) { //注册APP身份信息
         NSDictionary * identifyInfo = socialSNSTargetIdentifyInfos[name];
-        if (![[self _shareTargetClassForName:name] registerAppWithInfo:identifyInfo]) {
+        Class<_MySocialSNSTargetProtocol> class = [self _shareTargetClassForName:name];
+        if (class == nil || ![class registerAppWithInfo:identifyInfo]) {
             [registerFailTargetNames addObject:name];
         }
     }
@@ -421,6 +377,13 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
                                      userInfo:nil];
     }
     
+    if (![self isInstallSocialSNSTargetSDK:target.name]) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:[NSString stringWithFormat:@"未集成【%@】的SDK",target.name]
+                                     userInfo:nil];
+    }
+    
+    
     NSError * error = nil;
     MySocialSNSTargetSupportResultType supportType = [self isSupportShareForSocialSNSTarget:target.name];
     if (supportType != MySocialSNSTargetSupportResultTypeSupport) { //不支持
@@ -452,7 +415,6 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
                     
                     if (buttonIndex != alertView.cancelButtonIndex) {
                         openURL([NSURL URLWithString:appInstallUrl]);
-//                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appInstallUrl]];
                     }
                     
                 }
@@ -509,6 +471,12 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
 {
     if (!target) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"授权目标不能为nil" userInfo:nil];
+    }
+    
+    if (![self isInstallSocialSNSTargetSDK:target.name]) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:[NSString stringWithFormat:@"未集成【%@】的SDK",target.name]
+                                     userInfo:nil];
     }
     
     NSError * error = nil;
@@ -576,6 +544,12 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
 {
     if (!target) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"支付目标不能为nil" userInfo:nil];
+    }
+    
+    if (![self isInstallSocialSNSTargetSDK:target.name]) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:[NSString stringWithFormat:@"未集成【%@】的SDK",target.name]
+                                     userInfo:nil];
     }
     
     NSError * error = nil;
@@ -652,18 +626,17 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
 
 - (void)onResp:(id)resp;
 {
-#if XYYSOCIALSNS_QQ_ENABLED
-    
-    if ([resp isKindOfClass:[SendMessageToQQResp class]]) { //QQ分享
-
+    if (XYY_SOCIAL_IS_KIND_OF_CLASS(resp, "SendMessageToQQResp")) { //QQ分享
+        
         //上下文目标不是QQ则忽略
         if (self.context == nil ||
             self.context.handleType != _MySocialSNSHandleTypeShare ||
             ![[[self class] _socialSNSTargetAppNameForName:self.context.target.name] isEqualToString:MySocialSNSTargetItemNameQQ]) {
             return;
         }
-
-        NSInteger result = [[(QQBaseResp *)resp result] integerValue];
+        
+        id resultValue = XYY_SOCIAL_GET_MSG_SEND(id, resp, "result");
+        NSInteger result = [resultValue integerValue];
 
         NSError * error = nil;
         if(result == -4){ //用户取消
@@ -678,12 +651,9 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
         [self _sendCompletedShareMsgWithContext:self.context error:error];
 
         self.context = nil;
+        
         return;
     }
-    
-#endif
-    
-#if XYYSOCIALSNS_WECHAT_ENABLED
     
     //微信
     //上下文目标不是微信则忽略
@@ -692,19 +662,18 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
         return;
     }
     
-    if ([resp isKindOfClass:[SendMessageToWXResp class]]) { //微信分享
+    if (XYY_SOCIAL_IS_KIND_OF_CLASS(resp, "SendMessageToWXResp")) { //微信分享
         
         if (self.context.handleType != _MySocialSNSHandleTypeShare) {
             return;
         }
         
-        NSInteger errCode = [(BaseResp *)resp errCode];
-        
         NSError * error = nil;
-        if(errCode == WXErrCodeUserCancel){ //用户取消
+        NSInteger errCode = XYY_SOCIAL_GET_MSG_SEND(int, resp, "errCode");
+        if(errCode == -2 /*WXErrCodeUserCancel*/){ //用户取消
             error = SOCIALSNSERROR_CREATE(MySocialSNSUserCancleErrorCode,
                                           MySocialSNSManagerLocalizedString(@"UserCancleShareErrorDescription"));
-        }else if(errCode != WXSuccess){
+        }else if(errCode != 0 /*WXSuccess*/){
             error = SOCIALSNSERROR_CREATE(MyShareSNSHandleFailErrorCode,
                                           MySocialSNSManagerLocalizedString(@"ShareFailErrorDescription"));
         }
@@ -712,19 +681,18 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
         //完成
         [self _sendCompletedShareMsgWithContext:self.context error:error];
         
-    }else if ([resp isKindOfClass:[SendAuthResp class]]) { //微信授权
+    }else if (XYY_SOCIAL_IS_KIND_OF_CLASS(resp, "SendAuthResp")) { //微信授权
         
         if (self.context.handleType != _MySocialSNSHandleTypeSSO) {
             return;
         }
         
-        NSInteger errCode = [(BaseResp *)resp errCode];
-        
         NSError * error = nil;
-        if(errCode == WXErrCodeUserCancel){ //用户取消
+        NSInteger errCode = XYY_SOCIAL_GET_MSG_SEND(int, resp, "errCode");
+        if(errCode == -2 /*WXErrCodeUserCancel*/){ //用户取消
             error = SOCIALSNSERROR_CREATE(MySocialSNSUserCancleErrorCode,
                                           MySocialSNSManagerLocalizedString(@"UserCancleSSOErrorDescription"));
-        }else if(errCode != WXSuccess){
+        }else if(errCode != 0 /*WXSuccess*/){
             error = SOCIALSNSERROR_CREATE(MyShareSNSHandleFailErrorCode,
                                           MySocialSNSManagerLocalizedString(@"SSOFailErrorDescription"));
         }
@@ -733,22 +701,21 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
         [self _sendCompletedAuthMsgWithContext:self.context
                                    accessToken:nil
                                         openId:nil
-                                          code:error ? nil : [(SendAuthResp *)resp code]
+                                          code:error ? nil : ((id(*)(id,SEL))objc_msgSend)(resp,sel_registerName("code"))
                                          error:error];
         
-    }else if ([resp isKindOfClass:[PayResp class]]) { //微信支付
+    }else if (XYY_SOCIAL_IS_KIND_OF_CLASS(resp, "PayResp")) { //微信支付
         
         if (self.context.handleType != _MySocialSNSHandleTypePay) {
             return;
         }
         
-        NSInteger errCode = [(BaseResp *)resp errCode];
-        
         NSError * error = nil;
-        if(errCode == WXErrCodeUserCancel){ //用户取消
+        NSInteger errCode = XYY_SOCIAL_GET_MSG_SEND(int, resp, "errCode");
+        if(errCode == -2 /*WXErrCodeUserCancel*/){ //用户取消
             error = SOCIALSNSERROR_CREATE(MySocialSNSUserCancleErrorCode,
                                           MySocialSNSManagerLocalizedString(@"UserCanclePayErrorDescription"));
-        }else if(errCode != WXSuccess){
+        }else if(errCode != 0 /*WXSuccess*/){
             error = SOCIALSNSERROR_CREATE(MyShareSNSHandleFailErrorCode,
                                           MySocialSNSManagerLocalizedString(@"PayFailErrorDescription"));
         }
@@ -761,25 +728,21 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
     
     self.context = nil;
     
-#endif
 }
 
-//微博
-#if XYYSOCIALSNS_WEIBO_ENABLED
-
-- (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
+- (void)didReceiveWeiboRequest:(id)request{
     // do nothing
 }
 
-- (void)didReceiveWeiboResponse:(WBBaseResponse *)response
+- (void)didReceiveWeiboResponse:(id)response
 {
     //上下文目标不是微博则忽略
     if (self.context == nil ||
         ![[[self class] _socialSNSTargetAppNameForName:self.context.target.name] isEqualToString:MySocialSNSTargetItemNameWeibo]) {
         return;
     }
-
-    if ([response isKindOfClass:[WBSendMessageToWeiboResponse class]]) { //分享
+    
+    if (XYY_SOCIAL_IS_KIND_OF_CLASS(response, "WBSendMessageToWeiboResponse")) { //分享
 
         if (self.context.handleType != _MySocialSNSHandleTypeShare) {
             return;
@@ -787,10 +750,11 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
 
         //错误
         NSError * error = nil;
-        if(response.statusCode == WeiboSDKResponseStatusCodeUserCancel){ //用户取消
+        NSInteger statusCode = XYY_SOCIAL_GET_MSG_SEND(NSInteger, response, "statusCode");
+        if(statusCode == -1 /*WeiboSDKResponseStatusCodeUserCancel*/){ //用户取消
             error = SOCIALSNSERROR_CREATE(MySocialSNSUserCancleErrorCode,
                                           MySocialSNSManagerLocalizedString(@"UserCancleShareErrorDescription"));
-        }else if(response.statusCode != WeiboSDKResponseStatusCodeSuccess){
+        }else if(statusCode != 0 /*WeiboSDKResponseStatusCodeSuccess*/){
             error = SOCIALSNSERROR_CREATE(MyShareSNSHandleFailErrorCode,
                                           MySocialSNSManagerLocalizedString(@"ShareFailErrorDescription"));
         }
@@ -798,7 +762,7 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
         //完成
         [self _sendCompletedShareMsgWithContext:self.context error:error];
 
-    }else if ([response isKindOfClass:[WBAuthorizeResponse class]]) { //微博授权
+    }else if (XYY_SOCIAL_IS_KIND_OF_CLASS(response, "WBAuthorizeResponse")) { //微博授权
 
         if (self.context.handleType != _MySocialSNSHandleTypeSSO) {
             return;
@@ -806,18 +770,19 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
 
         //错误
         NSError * error = nil;
-        if(response.statusCode == WeiboSDKResponseStatusCodeUserCancel){ //用户取消
+        NSInteger statusCode = XYY_SOCIAL_GET_MSG_SEND(NSInteger, response, "statusCode");
+        if(statusCode == -1 /*WeiboSDKResponseStatusCodeUserCancel*/){ //用户取消
             error = SOCIALSNSERROR_CREATE(MySocialSNSUserCancleErrorCode,
                                           MySocialSNSManagerLocalizedString(@"UserCancleSSOErrorDescription"));
-        }else if(response.statusCode != WeiboSDKResponseStatusCodeSuccess){
+        }else if(statusCode != 0 /*WeiboSDKResponseStatusCodeSuccess*/){
             error = SOCIALSNSERROR_CREATE(MyShareSNSHandleFailErrorCode,
                                           MySocialSNSManagerLocalizedString(@"SSOFailErrorDescription"));
         }
 
         //完成
         [self _sendCompletedAuthMsgWithContext:self.context
-                                   accessToken:error ? nil : [(WBAuthorizeResponse *)response accessToken]
-                                        openId:error ? nil : [(WBAuthorizeResponse *)response userID]
+                                   accessToken:error ? nil : XYY_SOCIAL_GET_MSG_SEND(id, response, "accessToken")
+                                        openId:error ? nil : XYY_SOCIAL_GET_MSG_SEND(id, response, "userID")
                                           code:nil
                                          error:error];
 
@@ -826,16 +791,12 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
     self.context = nil;
 }
 
-#endif
-
-
-//QQ
-#if XYYSOCIALSNS_WEIBO_ENABLED
 
 - (void)tencentDidLogin
 {
     NSError * error = nil;
-    if ([MyQQApi tencentOAuth].accessToken.length == 0) {
+    
+    if (XYY_SOCIAL_GET_MSG_SEND(NSString *, [MyQQApi tencentOAuth], "accessToken").length == 0) {
         error = SOCIALSNSERROR_CREATE(MyShareSNSHandleFailErrorCode,
                                       MySocialSNSManagerLocalizedString(@"SSOFailErrorDescription"));
     }
@@ -872,21 +833,16 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
     }
 
     //发送消息
-    TencentOAuth * tencentOAuth = [MyQQApi tencentOAuth];
+    id tencentOAuth = [MyQQApi tencentOAuth];
     [self _sendCompletedAuthMsgWithContext:self.context
-                               accessToken:error ? nil : [tencentOAuth accessToken]
-                                    openId:error ? nil : [tencentOAuth openId]
+                               accessToken:error ? nil : XYY_SOCIAL_GET_MSG_SEND(id, tencentOAuth, "accessToken")
+                                    openId:error ? nil : XYY_SOCIAL_GET_MSG_SEND(id, tencentOAuth, "openId")
                                       code:nil
                                      error:error];
 
     self.context = nil;
 }
-
-#endif
-
-//支付宝
-#if XYYSOCIALSNS_ALIPAY_ENABLED
-
+                                                                                       
 - (void)alipayDidCompletedWithResult:(NSDictionary *)result
 {
     //核对目标是支付宝
@@ -919,8 +875,6 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
     
     self.context = nil;
 }
-
-#endif
 
 - (void)_sendCompletedShareMsgWithContext:(_MySocialSNSContext *)context error:(NSError *)error
 {
@@ -957,162 +911,170 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
 
 //----------------------------------------------------------
 
-#if XYYSOCIALSNS_WECHAT_ENABLED
+@implementation MyWXApi
 
-@implementation WXApi (MyShareTarget)
++ (Class)baseClass {
+    return NSClassFromString(@"WXApi");
+}
 
 + (NSString *)appName {
     return MySocialSNSManagerLocalizedString(@"AppName_WX");
 }
 
 + (BOOL)isAppInstalled {
-    return [self isWXAppInstalled];
+    return XYY_SOCIAL_GET_MSG_SEND(BOOL, [self baseClass], "isWXAppInstalled");
 }
 
 + (MySocialSNSTargetSupportResultType)isAppSupportShare
 {
-    return [self isWXAppSupportApi] ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
+    return XYY_SOCIAL_GET_MSG_SEND(BOOL, [self baseClass], "isWXAppSupportApi") ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
 }
 
 + (MySocialSNSTargetSupportResultType)isAppSupportSSO
 {
-    return [self isWXAppSupportApi] ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
+    return XYY_SOCIAL_GET_MSG_SEND(BOOL, [self baseClass], "isWXAppSupportApi") ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
 }
 
 + (MySocialSNSTargetSupportResultType)isAppSupportPay
 {
-    return [self isWXAppSupportApi] ? MySocialSNSTargetSupportResultTypeSupport : MySocialSNSTargetSupportResultTypeCanSupport;
+    return XYY_SOCIAL_GET_MSG_SEND(BOOL, [self baseClass], "isWXAppSupportApi") ? MySocialSNSTargetSupportResultTypeSupport : MySocialSNSTargetSupportResultTypeCanSupport;
 }
 
 + (NSString *)appInstallUrl {
-    return [self getWXAppInstallUrl];
+    return XYY_SOCIAL_GET_MSG_SEND(id, [self baseClass], "getWXAppInstallUrl");
 }
 
 + (BOOL)registerAppWithInfo:(NSDictionary *)info
 {
     NSString * appID = [info stringValueForKey:@"id"];
     if (appID.length) {
-        return [self registerApp:appID];
+        return ((BOOL(*)(id,SEL,id))objc_msgSend)([self baseClass],sel_registerName("registerApp:"),appID);
     }
     
     return NO;
 }
 
-+ (BOOL)handleOpenURL:(NSURL *)url withContext:(_MySocialSNSContext *)context {
-    return [self handleOpenURL:url delegate:[MySocialSNSManager shareManager]];
++ (BOOL)handleOpenURL:(NSURL *)url withContext:(_MySocialSNSContext *)context
+{
+    return ((BOOL(*)(id,SEL,id,id))objc_msgSend)([self baseClass],sel_registerName("handleOpenURL:delegate:"),url,[MySocialSNSManager shareManager]);
 }
 
 + (BOOL)startShareWithContext:(_MySocialSNSContext *)context
 {
-    SendMessageToWXReq * req = [[SendMessageToWXReq alloc] init];
+    id req = [[objc_getClass("SendMessageToWXReq") alloc] init];
     
     MySocialShareBaseMessage * message = context.info;
     if (message.messageType == MyShareMessageTypeText) {
-        req.text = [(MySocialShareTextMessage *)message text];
-        req.bText = YES;
+        XYY_SOCIAL_SET_MSG_SEND(id, req, "setText:", [(MySocialShareTextMessage *)message text]);
+        XYY_SOCIAL_SET_MSG_SEND(BOOL, req, "setBText:", YES);
     }else {
         
-        WXMediaMessage * mediaMessage = [WXMediaMessage message];
-        mediaMessage.title = [(MySocialShareBaseMediaMessage *)message title];
-        mediaMessage.description = [(MySocialShareBaseMediaMessage *)message description];
-        mediaMessage.thumbData = [(MySocialShareBaseMediaMessage *)message thumbData];
-        
+        id mediaMessage = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WXMediaMessage"), "message");
+        XYY_SOCIAL_SET_MSG_SEND(id, mediaMessage, "setTitle:", [(MySocialShareBaseMediaMessage *)message title]);
+        XYY_SOCIAL_SET_MSG_SEND(id, mediaMessage, "setDescription:", [(MySocialShareBaseMediaMessage *)message description]);
+        XYY_SOCIAL_SET_MSG_SEND(id, mediaMessage, "setThumbData:", [(MySocialShareBaseMediaMessage *)message thumbData]);
+
         switch (message.messageType) {
             case MyShareMessageTypeImage:
             {
-                WXImageObject * imageObject = [WXImageObject object];
-                imageObject.imageData = [(MySocialShareImageMessage *)message imageData];
+                id imageObject = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WXImageObject"), "object");
+                XYY_SOCIAL_SET_MSG_SEND(id, imageObject, "setImageData:", [(MySocialShareImageMessage *)message imageData]);
                 
-                mediaMessage.mediaObject = imageObject;
+                XYY_SOCIAL_SET_MSG_SEND(id, mediaMessage, "setMediaObject:", imageObject);
             }
             break;
             
             case MyShareMessageTypeVideo:
             {
-                WXVideoObject * videoObject = [WXVideoObject object];
-                videoObject.videoUrl = [(MySocialShareVideoMessage *)message videoUrl];
+                id videoObject = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WXVideoObject"), "object");
+                XYY_SOCIAL_SET_MSG_SEND(id, videoObject, "setVideoUrl:", [(MySocialShareVideoMessage *)message videoUrl]);
                 
-                mediaMessage.mediaObject = videoObject;
+                XYY_SOCIAL_SET_MSG_SEND(id, mediaMessage, "setMediaObject:", videoObject);
             }
             
             break;
             
             case MyShareMessageTypeMusic:
             {
-                WXMusicObject * musicObject = [WXMusicObject object];
-                musicObject.musicUrl = [(MySocialShareMusicMessage *)message musicUrl];
-                musicObject.musicDataUrl = [(MySocialShareMusicMessage *)message musicStreamUrl];
+                id musicObject = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WXMusicObject"), "object");
+                XYY_SOCIAL_SET_MSG_SEND(id, musicObject, "setMusicUrl:", [(MySocialShareMusicMessage *)message musicUrl]);
+                XYY_SOCIAL_SET_MSG_SEND(id, musicObject, "setMusicDataUrl:", [(MySocialShareMusicMessage *)message musicStreamUrl]);
                 
-                mediaMessage.mediaObject = musicObject;
+                XYY_SOCIAL_SET_MSG_SEND(id, mediaMessage, "setMediaObject:", musicObject);
             }
             
             break;
             
             case MyShareMessageTypeWebpage:
             {
-                WXWebpageObject * webpageObject = [WXWebpageObject object];
-                webpageObject.webpageUrl = [(MySocialShareWebpageMessage *)message webpageUrl];
+                id webpageObject = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WXWebpageObject"), "object");
+                XYY_SOCIAL_SET_MSG_SEND(id, webpageObject, "setWebpageUrl:", [(MySocialShareWebpageMessage *)message webpageUrl]);
                 
-                mediaMessage.mediaObject = webpageObject;
+                XYY_SOCIAL_SET_MSG_SEND(id, mediaMessage, "setMediaObject:", webpageObject);
             }
             
             default:
             break;
         }
         
-        req.message = mediaMessage;
+        XYY_SOCIAL_SET_MSG_SEND(id, req, "setMessage:", mediaMessage);
     }
     
     
     //设置目标是朋友圈还是微信好友
     if ([context.target.name isEqualToString:MySocialSNSTargetItemNameWeChat]) {
-        req.scene = WXSceneSession;
+        XYY_SOCIAL_SET_MSG_SEND(int, req, "setScene:", 0/*WXSceneSession*/);
     }else {
-        req.scene = WXSceneTimeline;
+        XYY_SOCIAL_SET_MSG_SEND(int, req, "setScene:", 1/*WXSceneTimeline*/);
     }
     
     //发送请求
-    return [self sendReq:req];
+    return ((BOOL(*)(id,SEL,id))objc_msgSend)([self baseClass],sel_registerName("sendReq:"),req);
 }
 
 + (BOOL)startAuthorizeWithContext:(_MySocialSNSContext *)context
 {
     //授权请求
-    SendAuthReq * authReq = [[SendAuthReq alloc] init];
-    authReq.scope = @"snsapi_userinfo";
-    authReq.state = [NSString uniqueIDString];
+    id authReq = [[objc_getClass("SendAuthReq") alloc] init];
+    XYY_SOCIAL_SET_MSG_SEND(id, authReq, "setScope:", @"snsapi_userinfo");
+    XYY_SOCIAL_SET_MSG_SEND(id, authReq, "setState:", [NSString uniqueIDString]);
     
     //开始授权
-    return [self sendAuthReq:authReq viewController:context.baseViewController delegate:[MySocialSNSManager shareManager]];
+    return ((BOOL(*)(id,SEL,id,id,id))objc_msgSend)([self baseClass],sel_registerName("sendAuthReq:viewController:delegate:"),authReq,context.baseViewController,[MySocialSNSManager shareManager]);
 }
 
 + (BOOL)startPayWithContext:(_MySocialSNSContext *)context
 {
     MySocialSNSPayContext * payContext = context.info;
     
-    PayReq * req = [[PayReq alloc] init];
-    req.partnerId = payContext.partnerId;
-    req.prepayId = payContext.prepayId;
-    req.nonceStr = payContext.nonceStr;
-    req.timeStamp = (UInt32)payContext.timestamp;
-    req.package = payContext.package;
-    req.sign = payContext.sign;
+    id req = [[objc_getClass("PayReq") alloc] init];
+    XYY_SOCIAL_SET_MSG_SEND(id, req, "setPartnerId:", payContext.partnerId);
+    XYY_SOCIAL_SET_MSG_SEND(id, req, "setPrepayId:", payContext.prepayId);
+    XYY_SOCIAL_SET_MSG_SEND(id, req, "setNonceStr:", payContext.nonceStr);
+    XYY_SOCIAL_SET_MSG_SEND(UInt32, req, "setTimeStamp:", (UInt32)payContext.timestamp);
+    XYY_SOCIAL_SET_MSG_SEND(id, req, "setPackage:", payContext.package);
+    XYY_SOCIAL_SET_MSG_SEND(id, req, "setSign:", payContext.sign);
     
-    return [self sendReq:req];
+    //发送请求
+    return ((BOOL(*)(id,SEL,id))objc_msgSend)([self baseClass],sel_registerName("sendReq:"),req);
 }
 
 @end
 
-#endif
-
 //----------------------------------------------------------
-
-#if XYYSOCIALSNS_QQ_ENABLED
 
 @implementation MyQQApi
 
-static TencentOAuth * tencentOAuth = nil;
-+ (TencentOAuth *)tencentOAuth {
++ (Class)baseClass {
+    return objc_getClass("QQApiInterface");
+}
+
++ (Class)_TencentOAuthClass {
+    return objc_getClass("TencentOAuth");
+}
+
+static id tencentOAuth = nil;
++ (id)tencentOAuth {
     return tencentOAuth;
 }
 
@@ -1121,17 +1083,17 @@ static TencentOAuth * tencentOAuth = nil;
 }
 
 + (BOOL)isAppInstalled {
-    return [QQApiInterface isQQInstalled];
+    return XYY_SOCIAL_GET_MSG_SEND(BOOL, [self baseClass], "isQQInstalled");
 }
 
 + (MySocialSNSTargetSupportResultType)isAppSupportShare
 {
-    return [QQApiInterface isQQSupportApi] ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
+    return XYY_SOCIAL_GET_MSG_SEND(BOOL, [self baseClass], "isQQSupportApi") ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
 }
 
 + (MySocialSNSTargetSupportResultType)isAppSupportSSO
 {
-    return [TencentOAuth iphoneQQSupportSSOLogin] ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
+    return XYY_SOCIAL_GET_MSG_SEND(BOOL, [self _TencentOAuthClass], "iphoneQQSupportSSOLogin") ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
 }
 
 + (MySocialSNSTargetSupportResultType)isAppSupportPay
@@ -1141,14 +1103,14 @@ static TencentOAuth * tencentOAuth = nil;
 }
 
 + (NSString *)appInstallUrl {
-    return [QQApiInterface getQQInstallUrl];
+    return XYY_SOCIAL_GET_MSG_SEND(id, [self baseClass], "getQQInstallUrl");
 }
 
 + (BOOL)registerAppWithInfo:(NSDictionary *)info
 {
     NSString * appID = [info stringValueForKey:@"id"];
     if (appID.length) {
-        tencentOAuth = [[TencentOAuth alloc] initWithAppId:appID andDelegate:[MySocialSNSManager shareManager]];
+        tencentOAuth = ((id(*)(id,SEL,id,id))objc_msgSend)([[self _TencentOAuthClass] alloc],sel_registerName("initWithAppId:andDelegate:"),appID,[MySocialSNSManager shareManager]);
     }else {
         tencentOAuth = nil;
     }
@@ -1158,20 +1120,20 @@ static TencentOAuth * tencentOAuth = nil;
 
 + (BOOL)handleOpenURL:(NSURL *)url withContext:(_MySocialSNSContext *)context
 {
-    if ([TencentOAuth CanHandleOpenURL:url]) {
-        return [TencentOAuth HandleOpenURL:url];
+    if (((BOOL(*)(id,SEL,id))objc_msgSend)([self _TencentOAuthClass],sel_registerName("CanHandleOpenURL:"),url)) {
+        return ((BOOL(*)(id,SEL,id))objc_msgSend)([self _TencentOAuthClass],sel_registerName("HandleOpenURL:"),url);
     }else {
-        return [QQApiInterface handleOpenURL:url delegate:[MySocialSNSManager shareManager]];
+        return ((BOOL(*)(id,SEL,id,id))objc_msgSend)([self baseClass],sel_registerName("handleOpenURL:delegate:"),url,[MySocialSNSManager shareManager]);
     }
 }
 
 + (BOOL)startShareWithContext:(_MySocialSNSContext *)context
 {
-    QQApiObject * qqApiObject = nil;
+    id qqApiObject = nil;
     
     MySocialShareBaseMessage * message = context.info;
     if (message.messageType == MyShareMessageTypeText) {
-        qqApiObject = [QQApiTextObject objectWithText:[(MySocialShareTextMessage *)message text]];
+        qqApiObject = ((id(*)(id,SEL,id))objc_msgSend)(objc_getClass("QQApiTextObject"),sel_registerName("objectWithText:"),[(MySocialShareTextMessage *)message text]);
     }else {
         
         NSString * title = [(MySocialShareBaseMediaMessage *)message title];
@@ -1180,10 +1142,7 @@ static TencentOAuth * tencentOAuth = nil;
 
         switch (message.messageType) {
             case MyShareMessageTypeImage:
-                qqApiObject = [QQApiImageObject objectWithData:[(MySocialShareImageMessage *)message imageData]
-                                              previewImageData:thumbData
-                                                         title:title
-                                                   description:description];
+                qqApiObject = ((id(*)(id,SEL,id,id,id,id))objc_msgSend)(objc_getClass("QQApiImageObject"),sel_registerName("objectWithData:previewImageData:title:description:"),[(MySocialShareImageMessage *)message imageData],thumbData,title,description);
             break;
             
             case MyShareMessageTypeMusic:
@@ -1191,15 +1150,9 @@ static TencentOAuth * tencentOAuth = nil;
                 NSString * musicStreamUrl = [(MySocialShareMusicMessage *)message musicStreamUrl];
                 
                 if (musicStreamUrl) {
-                    qqApiObject = [QQApiAudioObject objectWithURL:[NSURL URLWithString:musicStreamUrl]
-                                                            title:title
-                                                      description:description
-                                                 previewImageData:thumbData];
+                    qqApiObject = ((id(*)(id,SEL,id,id,id,id))objc_msgSend)(objc_getClass("QQApiAudioObject"),sel_registerName("objectWithURL:title:description:previewImageData:"),[NSURL URLWithString:musicStreamUrl],title,description,thumbData);
                 }else {
-                    qqApiObject = [QQApiNewsObject objectWithURL:[NSURL URLWithString:[(MySocialShareMusicMessage *)message musicUrl]]
-                                                           title:title
-                                                     description:description
-                                                previewImageData:thumbData];
+                    qqApiObject = ((id(*)(id,SEL,id,id,id,id))objc_msgSend)(objc_getClass("QQApiNewsObject"),sel_registerName("objectWithURL:title:description:previewImageData:"),[NSURL URLWithString:[(MySocialShareMusicMessage *)message musicUrl]],title,description,thumbData);
                 }
                 
             }
@@ -1207,18 +1160,11 @@ static TencentOAuth * tencentOAuth = nil;
             break;
             
             case MyShareMessageTypeVideo:
-                qqApiObject = [QQApiNewsObject objectWithURL:[NSURL URLWithString:[(MySocialShareVideoMessage *)message videoUrl]]
-                                                       title:title
-                                                 description:description
-                                            previewImageData:thumbData];
+                qqApiObject = ((id(*)(id,SEL,id,id,id,id))objc_msgSend)(objc_getClass("QQApiNewsObject"),sel_registerName("objectWithURL:title:description:previewImageData:"),[NSURL URLWithString:[(MySocialShareVideoMessage *)message videoUrl]],title,description,thumbData);
             break;
             
-            
             case MyShareMessageTypeWebpage:
-                qqApiObject = [QQApiNewsObject objectWithURL:[NSURL URLWithString:[(MySocialShareWebpageMessage *)message webpageUrl]]
-                                                       title:title
-                                                 description:description
-                                            previewImageData:thumbData];
+                qqApiObject = ((id(*)(id,SEL,id,id,id,id))objc_msgSend)(objc_getClass("QQApiNewsObject"),sel_registerName("objectWithURL:title:description:previewImageData:"),[NSURL URLWithString:[(MySocialShareWebpageMessage *)message webpageUrl]],title,description,thumbData);
             break;
             
             default:
@@ -1226,38 +1172,37 @@ static TencentOAuth * tencentOAuth = nil;
         }
     }
 
-    QQApiSendResultCode resultCode;
+    int resultCode;
     
-    SendMessageToQQReq * req = [SendMessageToQQReq reqWithContent:qqApiObject];
+    id req = ((id(*)(id,SEL,id))objc_msgSend)(objc_getClass("SendMessageToQQReq"),sel_registerName("reqWithContent:"),qqApiObject);
+    
     if ([context.target.name isEqualToString:MySocialSNSTargetItemNameQQ]) {
-        resultCode = [QQApiInterface sendReq:req];
+        resultCode = ((int(*)(id,SEL,id))objc_msgSend)([self baseClass],sel_registerName("sendReq:"),req);
     }else {
-        resultCode = [QQApiInterface SendReqToQZone:req];
+        resultCode = ((int(*)(id,SEL,id))objc_msgSend)([self baseClass],sel_registerName("SendReqToQZone:"),req);
         
 #if DEBUG
-        if (resultCode == EQQAPIQZONENOTSUPPORTTEXT ) {
+        if (resultCode == 10000 /* EQQAPIQZONENOTSUPPORTTEXT*/) {
             NSLog(@"qzone分享不支持text类型分享 已转换为分享到QQ");
-        }else if (resultCode == EQQAPIQZONENOTSUPPORTIMAGE) {
+        }else if (resultCode == 10001 /*EQQAPIQZONENOTSUPPORTIMAGE*/) {
             NSLog(@"qzone分享不支持image类型分享 已转换为分享到QQ");
         }
 #endif
         //转换到QQ分享
-        if (resultCode >= EQQAPIQZONENOTSUPPORTTEXT) {
-            resultCode = [QQApiInterface sendReq:req];
+        if (resultCode >= 10000 /* EQQAPIQZONENOTSUPPORTTEXT*/) {
+            resultCode = ((int(*)(id,SEL,id))objc_msgSend)([self baseClass],sel_registerName("sendReq:"),req);
         }
     }
     
-    return resultCode == EQQAPISENDSUCESS;
+    return resultCode == 0 /*EQQAPISENDSUCESS*/;
 }
 
 + (BOOL)startAuthorizeWithContext:(_MySocialSNSContext *)context
 {
-    NSArray * permissions = @[kOPEN_PERMISSION_GET_INFO,
-                              kOPEN_PERMISSION_GET_SIMPLE_USER_INFO,
-                              kOPEN_PERMISSION_GET_USER_INFO];
+    NSArray * permissions = @[@"get_info", @"get_simple_userinfo", @"get_user_info"];
     
-    //已授权则重新授权，否则
-    return [tencentOAuth authorize:permissions];
+    //授权
+    return ((BOOL(*)(id,SEL,id))objc_msgSend)(tencentOAuth,sel_registerName("authorize:"),permissions);
 }
 
 + (BOOL)startPayWithContext:(_MySocialSNSContext *)context {
@@ -1266,30 +1211,31 @@ static TencentOAuth * tencentOAuth = nil;
 
 @end
 
-#endif
-
 //----------------------------------------------------------
 
-#if XYYSOCIALSNS_WEIBO_ENABLED
 
-@implementation WeiboSDK (MyShareTargetProtocol)
+@implementation MyWeiboApi
+
++ (Class)baseClass {
+    return objc_getClass("WeiboSDK");
+}
 
 + (NSString *)appName {
     return MySocialSNSManagerLocalizedString(@"AppName_WB");
 }
 
 + (BOOL)isAppInstalled {
-    return [self isWeiboAppInstalled];
+    return XYY_SOCIAL_GET_MSG_SEND(BOOL, [self baseClass], "isWeiboAppInstalled");
 }
 
 + (MySocialSNSTargetSupportResultType)isAppSupportShare
 {
-    return [self isCanShareInWeiboAPP] ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
+    return XYY_SOCIAL_GET_MSG_SEND(BOOL, [self baseClass], "isCanShareInWeiboAPP") ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
 }
 
 + (MySocialSNSTargetSupportResultType)isAppSupportSSO
 {
-    return [self isCanSSOInWeiboApp] ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
+    return XYY_SOCIAL_GET_MSG_SEND(BOOL, [self baseClass], "isCanSSOInWeiboApp") ? MySocialSNSTargetSupportResultTypeSupport :MySocialSNSTargetSupportResultTypeCanSupport;
 }
 
 + (MySocialSNSTargetSupportResultType)isAppSupportPay
@@ -1299,60 +1245,61 @@ static TencentOAuth * tencentOAuth = nil;
 }
 
 + (NSString *)appInstallUrl {
-    return [self getWeiboAppInstallUrl];
+    return XYY_SOCIAL_GET_MSG_SEND(id, [self baseClass], "getWeiboAppInstallUrl");
 }
 
 + (BOOL)registerAppWithInfo:(NSDictionary *)info
 {
     
 #if DEBUG
-    [self enableDebugMode:YES];
+    XYY_SOCIAL_SET_MSG_SEND(BOOL, [self baseClass], "enableDebugMode:", YES);
 #endif
     
     NSString * appKey = [info stringValueForKey:@"key"];
     if (appKey.length) {
-        return [self registerApp:appKey];
+        return ((BOOL(*)(id,SEL,id))objc_msgSend)([self baseClass],sel_registerName("registerApp:"),appKey);
     }
     
     return NO;
 }
 
-+ (BOOL)handleOpenURL:(NSURL *)url withContext:(_MySocialSNSContext *)context {
-    return [self handleOpenURL:url delegate:[MySocialSNSManager shareManager]];
++ (BOOL)handleOpenURL:(NSURL *)url withContext:(_MySocialSNSContext *)context
+{
+    return ((BOOL(*)(id,SEL,id,id))objc_msgSend)([self baseClass],sel_registerName("handleOpenURL:delegate:"),url,[MySocialSNSManager shareManager]);
 }
 
 + (BOOL)startShareWithContext:(_MySocialSNSContext *)context
 {
-    WBMessageObject * wbMessageObject = [WBMessageObject message];
+    id wbMessageObject = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WBMessageObject"), "message");
     
     MySocialShareBaseMessage * message = context.info;
     if (message.messageType == MyShareMessageTypeText) {
-        wbMessageObject.text = [(MySocialShareTextMessage *)message text];
+        XYY_SOCIAL_SET_MSG_SEND(id, wbMessageObject, "setText:", [(MySocialShareTextMessage *)message text]);
     }else if (message.messageType == MyShareMessageTypeImage) {
 
-        WBImageObject * imageObject = [WBImageObject object];
-        imageObject.imageData = [(MySocialShareImageMessage *)message imageData];
+        id imageObject = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WBImageObject"), "object");
+        XYY_SOCIAL_SET_MSG_SEND(id, imageObject, "setImageData:", [(MySocialShareImageMessage *)message imageData]);
         
 #if DEBUG
       
-        if (imageObject.imageData == nil) {
+        if ([(MySocialShareImageMessage *)message imageData] == nil) {
             NSLog(@"分享到微博的图片消息必须包含图片数据，由于当前为包含，所以将不显示图片");
         }
 #endif
-        wbMessageObject.imageObject = imageObject;
-        wbMessageObject.text = [(MySocialShareImageMessage *)message title];
+        XYY_SOCIAL_SET_MSG_SEND(id, wbMessageObject, "setImageObject:", imageObject);
+        XYY_SOCIAL_SET_MSG_SEND(id, wbMessageObject, "seText:", [(MySocialShareImageMessage *)message title]);
         
     }else {
         
-        WBBaseMediaObject * mediaObject = nil;
+        id mediaObject = nil;
         
         switch (message.messageType) {
             case MyShareMessageTypeVideo:
             {
-                WBVideoObject * videoObject = [WBVideoObject object];
-                videoObject.videoUrl = [(MySocialShareVideoMessage *)message videoUrl];
-                videoObject.videoStreamUrl = [(MySocialShareVideoMessage *)message videoStreamUrl];
-                videoObject.objectID = videoObject.videoUrl;
+                id videoObject = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WBVideoObject"), "object");
+                XYY_SOCIAL_SET_MSG_SEND(id, videoObject, "setVideoUrl:", [(MySocialShareVideoMessage *)message videoUrl]);
+                XYY_SOCIAL_SET_MSG_SEND(id, videoObject, "setVideoStreamUrl:", [(MySocialShareVideoMessage *)message videoStreamUrl]);
+                XYY_SOCIAL_SET_MSG_SEND(id, videoObject, "setObjectID:", [(MySocialShareVideoMessage *)message videoUrl]);
                 
                 mediaObject = videoObject;
             }
@@ -1361,11 +1308,11 @@ static TencentOAuth * tencentOAuth = nil;
             
             case MyShareMessageTypeMusic:
             {
-                WBMusicObject * musicObject = [WBMusicObject object];
-                musicObject.musicUrl = [(MySocialShareMusicMessage *)message musicUrl];
-                musicObject.musicStreamUrl = [(MySocialShareMusicMessage *)message musicStreamUrl];
-                musicObject.objectID = musicObject.musicUrl;
-                
+                id musicObject = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WBMusicObject"), "object");
+                XYY_SOCIAL_SET_MSG_SEND(id, musicObject, "setMusicUrl:", [(MySocialShareMusicMessage *)message musicUrl]);
+                XYY_SOCIAL_SET_MSG_SEND(id, musicObject, "setMusicStreamUrl:", [(MySocialShareMusicMessage *)message musicStreamUrl]);
+                XYY_SOCIAL_SET_MSG_SEND(id, musicObject, "setObjectID:", [(MySocialShareMusicMessage *)message musicUrl]);
+
                 mediaObject = musicObject;
             }
             
@@ -1373,9 +1320,9 @@ static TencentOAuth * tencentOAuth = nil;
             
             case MyShareMessageTypeWebpage:
             {
-                WBWebpageObject * webpageObject = [WBWebpageObject object];
-                webpageObject.webpageUrl = [(MySocialShareWebpageMessage *)message webpageUrl];
-                webpageObject.objectID = webpageObject.webpageUrl;
+                id webpageObject = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WBWebpageObject"), "object");
+                XYY_SOCIAL_SET_MSG_SEND(id, webpageObject, "setWebpageUrl:", [(MySocialShareWebpageMessage *)message webpageUrl]);
+                XYY_SOCIAL_SET_MSG_SEND(id, webpageObject, "setObjectID:", [(MySocialShareWebpageMessage *)message webpageUrl]);
 
                 mediaObject = webpageObject;
             }
@@ -1386,29 +1333,30 @@ static TencentOAuth * tencentOAuth = nil;
             break;
         }
         
-        mediaObject.title = [(MySocialShareBaseMediaMessage *)message title];
-        mediaObject.description = [(MySocialShareBaseMediaMessage *)message description];
-        mediaObject.thumbnailData = [(MySocialShareBaseMediaMessage *)message thumbData];
-        wbMessageObject.mediaObject = mediaObject;
+        XYY_SOCIAL_SET_MSG_SEND(id, mediaObject, "setTitle:", [(MySocialShareBaseMediaMessage *)message title]);
+        XYY_SOCIAL_SET_MSG_SEND(id, mediaObject, "setDescription:", [(MySocialShareBaseMediaMessage *)message description]);
+        XYY_SOCIAL_SET_MSG_SEND(id, mediaObject, "setThumbnailData:", [(MySocialShareBaseMediaMessage *)message thumbData]);
         
-        wbMessageObject.text = [(MySocialShareImageMessage *)message title];
+        XYY_SOCIAL_SET_MSG_SEND(id, wbMessageObject, "setMediaObject:", mediaObject);
+        XYY_SOCIAL_SET_MSG_SEND(id, wbMessageObject, "setText:", [(MySocialShareImageMessage *)message title]);
     }
     
-    WBSendMessageToWeiboRequest * req = [WBSendMessageToWeiboRequest requestWithMessage:wbMessageObject];
-    req.shouldOpenWeiboAppInstallPageIfNotInstalled = NO;
-    
-    return [self sendRequest:req];
+    id req = ((id(*)(id,SEL,id))objc_msgSend)(objc_getClass("WBSendMessageToWeiboRequest"),sel_registerName("requestWithMessage:"),wbMessageObject);
+    XYY_SOCIAL_SET_MSG_SEND(BOOL, req, "setShouldOpenWeiboAppInstallPageIfNotInstalled:", NO);
+
+    return ((BOOL(*)(id,SEL,id))objc_msgSend)([self baseClass],sel_registerName("sendRequest:"),req);
 }
 
 + (BOOL)startAuthorizeWithContext:(_MySocialSNSContext *)context
 {
-    WBAuthorizeRequest * authorizeRequest = [WBAuthorizeRequest request];
-    authorizeRequest.redirectURI = [[MySocialSNSManager _socialSNSTargetIdentifyInfo:context.target.name] objectForKey:@"redirectURI"];
-    authorizeRequest.redirectURI = authorizeRequest.redirectURI ?: @"http://www.sina.com";
-    authorizeRequest.scope = @"all";
+    id authorizeRequest = XYY_SOCIAL_GET_MSG_SEND(id, objc_getClass("WBAuthorizeRequest"), "request");
+    
+    NSString * redirectURI = [[MySocialSNSManager _socialSNSTargetIdentifyInfo:context.target.name] objectForKey:@"redirectURI"] ?:  @"http://www.sina.com";
+    XYY_SOCIAL_SET_MSG_SEND(id, authorizeRequest, "setRedirectURI:", redirectURI);
+    XYY_SOCIAL_SET_MSG_SEND(id, authorizeRequest, "setScope:", @"all");
     
     //开始授权
-    return [self sendRequest:authorizeRequest];
+    return ((BOOL(*)(id,SEL,id))objc_msgSend)([self baseClass],sel_registerName("sendRequest:"),authorizeRequest);
 }
 
 + (BOOL)startPayWithContext:(_MySocialSNSContext *)context {
@@ -1417,13 +1365,13 @@ static TencentOAuth * tencentOAuth = nil;
 
 @end
 
-#endif
-
 //----------------------------------------------------------
 
-#if XYYSOCIALSNS_ALIPAY_ENABLED
+@implementation MyAlipayApi
 
-@implementation AlipaySDK (MyShareTargetProtocol)
++ (Class)baseClass {
+    return objc_getClass("AlipaySDK");
+}
 
 + (NSString *)appName {
     return MySocialSNSManagerLocalizedString(@"AppName_Alipay");
@@ -1461,9 +1409,10 @@ static TencentOAuth * tencentOAuth = nil;
         [url.host isEqualToString:@"safepay"]) {
         
         //处理支付结果回调
-        [[self defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+        id defaultService = XYY_SOCIAL_GET_MSG_SEND(id, [self baseClass], "defaultService");
+        ((void(*)(id,SEL,id,void(^)(NSDictionary *)))objc_msgSend)(defaultService,sel_registerName("processOrderWithPaymentResult:standbyCallback:"),url,^(NSDictionary *resultDic) {
             [self _completedPayCallbackWithResultDic:resultDic];
-        }];
+        });
         
         return YES;
     }
@@ -1488,11 +1437,10 @@ static TencentOAuth * tencentOAuth = nil;
     if (orderStr.length && scheme.length) {
         
         //开始支付
-        [[self defaultService] payOrder:orderStr
-                             fromScheme:scheme
-                               callback:^(NSDictionary *resultDic) {
-                                   [self _completedPayCallbackWithResultDic:resultDic];
-                               }];
+        id defaultService = XYY_SOCIAL_GET_MSG_SEND(id, [self baseClass], "defaultService");
+        ((void(*)(id,SEL,id,id,void(^)(NSDictionary *)))objc_msgSend)(defaultService,sel_registerName("payOrder:fromScheme:callback:"),orderStr,scheme,^(NSDictionary *resultDic) {
+            [self _completedPayCallbackWithResultDic:resultDic];
+        });
         
         return YES;
     }
@@ -1509,6 +1457,3 @@ static TencentOAuth * tencentOAuth = nil;
 }
 
 @end
-
-#endif
-

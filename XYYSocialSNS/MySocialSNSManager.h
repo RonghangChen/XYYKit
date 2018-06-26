@@ -151,6 +151,12 @@ typedef NS_ENUM(NSInteger, MySocialSNSPayResultStatus) {
 + (BOOL)hasSocialSNSTargetIdentifyInfo:(MySocialSNSTargetItemName)targetItmeName;
 
 /**
+ * 是否集成目标平台SDK
+ * @param targetItmeName targetItmeName为目标平台的名字
+ */
++ (BOOL)isInstallSocialSNSTargetSDK:(MySocialSNSTargetItemName)targetItmeName;
+
+/**
  * 手机是否安装目标平台
  * @param targetItmeName targetItmeName为目标平台的名字
  */

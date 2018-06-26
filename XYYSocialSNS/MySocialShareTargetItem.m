@@ -25,8 +25,9 @@ static NSDictionary * allAvailableShareTargetItemInfos()
         
         //核对身份信息
         for (MySocialSNSTargetItemName name in shareTargetItemInfos.allKeys) {
-            if (![MySocialSNSManager hasSocialSNSTargetIdentifyInfo:name] &&
-                [MySocialSNSManager isSupportShareForSocialSNSTarget:name] != MySocialSNSTargetSupportResultTypeUnSupport) {
+            if (![MySocialSNSManager isInstallSocialSNSTargetSDK:name] ||
+                ![MySocialSNSManager hasSocialSNSTargetIdentifyInfo:name] ||
+                [MySocialSNSManager isSupportShareForSocialSNSTarget:name] == MySocialSNSTargetSupportResultTypeUnSupport) {
                 [shareTargetItemInfos removeObjectForKey:name];
             }
         }
