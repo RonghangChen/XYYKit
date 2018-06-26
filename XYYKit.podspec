@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XYYKit"
-  s.version      = "0.9.3"
+  s.version      = "0.9.4"
   s.summary      = "框架库"
 
   s.author       =  { "LeslieChen" => "102731887@qq.com" }
