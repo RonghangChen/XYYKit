@@ -14,14 +14,17 @@
 
 //----------------------------------------------------------
 
+//判断是否属于某各类
 #define XYY_SOCIAL_IS_KIND_OF_CLASS(obj,className) \
 ({\
     Class class = objc_getClass(className); \
     class != nil && [obj isKindOfClass: class]; \
 })
 
+//发送getter消息
 #define XYY_SOCIAL_GET_MSG_SEND(rType,obj,selName) ((rType(*)(id,SEL))objc_msgSend)(obj,sel_registerName(selName))
 
+//发送setter消息
 #define XYY_SOCIAL_SET_MSG_SEND(vType,obj,selName,value) ((void(*)(id,SEL,vType))objc_msgSend)(obj,sel_registerName(selName),value)
 
 

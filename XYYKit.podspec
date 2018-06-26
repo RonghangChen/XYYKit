@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XYYKit"
-  s.version      = "0.9.4"
+  s.version      = "0.9.5"
   s.summary      = "框架库"
 
   s.author       =  { "LeslieChen" => "102731887@qq.com" }
@@ -32,11 +32,10 @@ Pod::Spec.new do |s|
   s.source_files = "XYYKit/*.{h,m}"
 
 
-
   # 基础框架
   s.subspec 'XYYFoundation' do |foundation|
 
-    foundation.source_files = "XYYFoundation/**/*.{h,m}"
+    foundation.source_files = "XYYKit/XYYKit.h","XYYFoundation/**/*.{h,m}"
     foundation.resources    = "XYYFoundation/Resources/*","XYYFoundation/**/*.{xib,nib,storyboard}" 
 
     foundation.frameworks = "UIKit", "Foundation", "Accelerate", "CoreFoundation"
@@ -170,7 +169,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'XYYModel' do |model|
 
-    model.source_files = "XYYModel/**/*.{h,m}" 
+    model.source_files = "XYYKit/XYYKit.h","XYYModel/**/*.{h,m}" 
     model.frameworks = "UIKit", "Foundation"
 
   end
