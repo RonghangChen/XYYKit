@@ -25,9 +25,10 @@
     if (self) {
         
         _originShowHeight = CGRectGetHeight(frame);
-        _maxImageOffset = MAX(0.f, completedShowHeight - _originShowHeight);
+        _completedShowHeight = MAX(_originShowHeight, completedShowHeight);
+//        _maxImageOffset = MAX(0.f, completedShowHeight - _originShowHeight);
         _offsetFactor = 0.5f;
-        _hideOffserFactor = 0.3f;
+        _hideOffsetFactor = 0.3f;
         
         _imageView = [[UIImageView alloc] init];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -69,6 +70,15 @@
     }
 }
 
+- (void)setCompletedShowHeight:(CGFloat)completedShowHeight
+{
+    completedShowHeight = MAX(_originShowHeight, completedShowHeight);
+    if (_completedShowHeight != completedShowHeight) {
+        _completedShowHeight = completedShowHeight;
+        [self setNeedsLayout];
+    }
+}
+
 - (void)setOffsetFactor:(CGFloat)offsetFactor
 {
     offsetFactor = MAX(0.f, MIN(1.f, offsetFactor));
@@ -78,11 +88,11 @@
     }
 }
 
-- (void)setHideOffserFactor:(CGFloat)hideOffserFactor
+- (void)setHideOffsetFactor:(CGFloat)hideOffsetFactor
 {
-    hideOffserFactor = MAX(0.f, MIN(1.f, hideOffserFactor));
-    if (_hideOffserFactor != hideOffserFactor) {
-        _hideOffserFactor = hideOffserFactor;
+    hideOffsetFactor = MAX(0.f, MIN(1.f, hideOffsetFactor));
+    if (_hideOffsetFactor != hideOffsetFactor) {
+        _hideOffsetFactor = hideOffsetFactor;
         [self setNeedsLayout];
     }
 }
@@ -101,7 +111,6 @@
     
     CGRect frame = self.frame;
     if (CGRectGetHeight(frame) != _originShowHeight) {
-//        frame.origin.y +=  (CGRectGetHeight(frame) - _originShowHeight);
         frame.size.height = _originShowHeight;
         self.frame = frame;
     }
@@ -113,20 +122,20 @@
 {
     CGFloat originY = 0.f;
     CGFloat scaleFacter = 1.f;
-    CGFloat completedShowHeight = _originShowHeight + _maxImageOffset;
+    CGFloat maxImageOffset = _completedShowHeight - _originShowHeight;
     
-    if (_contentOffset.y <= - _maxImageOffset) {
+    if (_contentOffset.y <= - maxImageOffset) {
         originY = _contentOffset.y;
-        scaleFacter = completedShowHeight ?  (- originY + _originShowHeight) / completedShowHeight : 1.f;
+        scaleFacter = _completedShowHeight ?  (- originY + _originShowHeight) / _completedShowHeight : 1.f;
     }else if (_contentOffset.y <= 0.f) {
-        originY = - _offsetFactor * _maxImageOffset + (1.f - _offsetFactor) * _contentOffset.y;
+        originY = - _offsetFactor * maxImageOffset + (1.f - _offsetFactor) * _contentOffset.y;
     }else if (_contentOffset.y <= _originShowHeight) {
-        originY = - _offsetFactor * _maxImageOffset + _contentOffset.y * _hideOffserFactor;
+        originY = - _offsetFactor * maxImageOffset + _contentOffset.y * _hideOffsetFactor;
     }
     
     //设置图片视图的frame
     CGFloat width = self.width;
-    _imageView.frame = CGRectMake(width * (1.f - scaleFacter) * 0.5f, originY, width * scaleFacter, scaleFacter * completedShowHeight);
+    _imageView.frame = CGRectMake(width * (1.f - scaleFacter) * 0.5f, originY, width * scaleFacter, scaleFacter * _completedShowHeight);
     
     //设置裁减蒙版
     CGRect maskLayerBounds = UIEdgeInsetsInsetRect(self.bounds, UIEdgeInsetsMake(MIN(originY, 0.f), 0.f, 0.f, 0.f));
