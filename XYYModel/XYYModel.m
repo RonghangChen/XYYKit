@@ -84,9 +84,12 @@ static inline _MyPropertyType _getPropertyType(const char * type) {
 //获取类型的变量占用的内存
 static inline size_t _sizeForType(const char * type)
 {
-    NSMethodSignature * methodSignature = [NSMethodSignature signatureWithObjCTypes:[NSString stringWithFormat:@"%s@:",type].UTF8String];
+    NSUInteger size = 0;
+    NSGetSizeAndAlignment(type, &size, NULL);
     
-    return methodSignature.methodReturnLength;
+//    NSMethodSignature * methodSignature = [NSMethodSignature signatureWithObjCTypes:[NSString stringWithFormat:@"%s@:",type].UTF8String];
+    
+    return size;
 }
 
 //获取对象属性的类
