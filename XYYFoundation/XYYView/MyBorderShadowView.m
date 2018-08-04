@@ -17,13 +17,6 @@
     self.layer.shadowColor = shadowColor.CGColor;
 }
 
-- (CGFloat)shadowOpacity {
-    return self.layer.shadowOpacity;
-}
-- (void)setShadowOpacity:(CGFloat)shadowOpacity {
-    self.layer.shadowOpacity = shadowOpacity;
-}
-
 - (CGSize)shadowOffset {
     return self.layer.shadowOffset;
 }
@@ -38,6 +31,47 @@
     self.layer.shadowRadius = shadowRadius;
 }
 
+
+- (void)setShadowOpacity:(CGFloat)shadowOpacity
+{
+    if (_shadowOpacity != shadowOpacity) {
+        _shadowOpacity = shadowOpacity;
+        self.layer.shadowOpacity = self.showShadow ? shadowOpacity : 0.f;
+    }
+}
+
+- (void)setShowShadow:(BOOL)showShadow
+{
+    if (_showShadow != showShadow) {
+        _showShadow = showShadow;
+        [self setNeedsLayout];
+        self.layer.shadowOpacity = showShadow ? self.shadowOpacity : 0.f;
+    }
+}
+
+- (void)setShadowBorderInset:(UIEdgeInsets)shadowBorderInset
+{
+    if (!UIEdgeInsetsEqualToEdgeInsets(_shadowBorderInset, shadowBorderInset)) {
+        _shadowBorderInset = shadowBorderInset;
+        [self setNeedsLayout];
+    }
+}
+
+- (void)setShadowBorderOffset:(CGPoint)shadowBorderOffset
+{
+    if (CGPointEqualToPoint(_shadowBorderOffset, shadowBorderOffset)) {
+        _shadowBorderOffset = shadowBorderOffset;
+        [self setNeedsLayout];
+    }
+}
+
+- (void)setShadowBorderRadius:(CGFloat)shadowBorderRadius
+{
+    if (_shadowBorderRadius != shadowBorderRadius) {
+        _shadowBorderRadius = shadowBorderRadius;
+        [self setNeedsLayout];
+    }
+}
 
 - (void)layoutSubviews
 {

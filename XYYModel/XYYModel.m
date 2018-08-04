@@ -553,6 +553,7 @@ end:
                 
                 return value;
                 
+                
             }else if ([objectClass isSubclassOfClass:[NSString class]]) { //字符串则通过对象描述进行转换
                 
                 return [objectClass stringWithString:[value description]];
