@@ -21,6 +21,15 @@
 
 //是否显示阴影，默认为NO
 @property(nonatomic) IBInspectable BOOL showShadow;
+
+//是否显示阴影边角，生成阴影边角掩码，默认都为YES
+@property(nonatomic) IBInspectable BOOL showTopLeftShadowCorner;
+@property(nonatomic) IBInspectable BOOL showTopRightShadowCorner;
+@property(nonatomic) IBInspectable BOOL showBottomLeftShadowCorner;
+@property(nonatomic) IBInspectable BOOL showBottomRightShadowCorner;
+//阴影边角,默认为UIRectCornerAllCorners
+@property(nonatomic) UIRectCorner shadowCorner;
+
 //阴影边角半径
 @property(nonatomic) IBInspectable CGFloat shadowBorderRadius;
 //阴影缩进

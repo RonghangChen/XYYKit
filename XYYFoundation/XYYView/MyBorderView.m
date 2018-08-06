@@ -100,57 +100,23 @@ IMP_MUTATOR(setBorderWidth:, CGFloat, _borderWidth, @selector(setNeedsLayout))
 
 #pragma mark -
 
-- (BOOL)showTopBorder {
-    return _borderMask & MyBorderTop;
+#define IMP_BORDER_PROPERTY(name) \
+- (void)setShow##name##Border:(BOOL)show\
+{\
+    if (show) {\
+        self.borderMask |= MyBorder##name;\
+    }else {\
+        self.borderMask &= (~MyBorder##name);\
+    }\
+}\
+- (BOOL)show##name##Border {\
+    return _borderMask & MyBorder##name;\
 }
 
-- (void)setShowTopBorder:(BOOL)showTopBorder
-{
-    if (showTopBorder) {
-        self.borderMask |= MyBorderTop;
-    }else {
-        self.borderMask = _borderMask & (~MyBorderTop);
-    }
-}
-
-- (BOOL)showLeftBorder {
-    return _borderMask & MyBorderLeft;
-}
-
-- (void)setShowLeftBorder:(BOOL)showLeftBorder
-{
-    if (showLeftBorder) {
-        self.borderMask |= MyBorderLeft;
-    }else {
-        self.borderMask = _borderMask & (~MyBorderLeft);
-    }
-}
-
-- (BOOL)showBottomBorder {
-    return _borderMask & MyBorderBottom;
-}
-
-- (void)setShowBottomBorder:(BOOL)showBottomBorder
-{
-    if (showBottomBorder) {
-        self.borderMask |= MyBorderBottom;
-    }else {
-        self.borderMask = _borderMask & (~MyBorderBottom);
-    }
-}
-
-- (BOOL)showRightBorder {
-    return _borderMask & MyBorderRight;
-}
-
-- (void)setShowRightBorder:(BOOL)showRightBorder
-{
-    if (showRightBorder) {
-        self.borderMask |= MyBorderRight;
-    }else {
-        self.borderMask = _borderMask & (~MyBorderRight);
-    }
-}
+IMP_BORDER_PROPERTY(Top)
+IMP_BORDER_PROPERTY(Right)
+IMP_BORDER_PROPERTY(Left)
+IMP_BORDER_PROPERTY(Bottom)
 
 #pragma mark -
 

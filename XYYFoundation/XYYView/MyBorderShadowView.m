@@ -10,6 +10,27 @@
 
 @implementation MyBorderShadowView
 
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _shadowCorner = UIRectCornerAllCorners;
+    }
+    
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _shadowCorner = UIRectCornerAllCorners;
+    }
+    
+    return self;
+}
+
+
 - (UIColor *)shadowColor {
     return [UIColor colorWithCGColor:self.layer.shadowColor];
 }
@@ -73,12 +94,42 @@
     }
 }
 
+#pragma mark -
+
+- (void)setShadowCorner:(UIRectCorner)shadowCorner
+{
+    if (_shadowCorner != shadowCorner) {
+        _shadowCorner = shadowCorner;
+        [self setNeedsLayout];
+    }
+}
+
+#define IMP_CORNER_PROPERTY(name) \
+- (void)setShow##name##ShadowCorner:(BOOL)show\
+{\
+    if (show) {\
+        self.shadowCorner |= UIRectCorner##name;\
+    }else {\
+        self.shadowCorner &= (~UIRectCorner##name);\
+    }\
+}\
+- (BOOL)show##name##ShadowCorner {\
+    return _shadowCorner & UIRectCorner##name;\
+}
+
+IMP_CORNER_PROPERTY(TopLeft)
+IMP_CORNER_PROPERTY(TopRight)
+IMP_CORNER_PROPERTY(BottomLeft)
+IMP_CORNER_PROPERTY(BottomRight)
+
+#pragma mark -
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
     if (self.showShadow) {
-        self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:CGRectOffset(UIEdgeInsetsInsetRect(self.bounds, self.shadowBorderInset), self.shadowBorderOffset.x,  self.shadowBorderOffset.y) cornerRadius: self.shadowBorderRadius].CGPath;
+        self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:CGRectOffset(UIEdgeInsetsInsetRect(self.bounds, self.shadowBorderInset), self.shadowBorderOffset.x,  self.shadowBorderOffset.y) byRoundingCorners:self.shadowCorner cornerRadii:CGSizeMake(self.shadowBorderRadius, self.shadowBorderRadius)].CGPath;
     }else {
         self.layer.shadowPath = nil;
     }
