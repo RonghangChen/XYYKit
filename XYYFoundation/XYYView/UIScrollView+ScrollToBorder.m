@@ -7,15 +7,18 @@
 //
 
 #import "UIScrollView+ScrollToBorder.h"
-#
 
 @implementation UIScrollView (ScrollToBorder)
 
 - (void)scrollToBoder:(MyScrollBorder)border {
-    [self scrollToBoder:border animated:NO];
+    [self scrollToBoder:border offset:CGPointZero animated:NO];
 }
 
-- (void)scrollToBoder:(MyScrollBorder)border animated:(BOOL)animated
+- (void)scrollToBoder:(MyScrollBorder)border animated:(BOOL)animated {
+    [self scrollToBoder:border offset:CGPointZero animated:animated];
+}
+
+- (void)scrollToBoder:(MyScrollBorder)border offset:(CGPoint)offset animated:(BOOL)animated
 {
     if (border) {
      
@@ -54,6 +57,9 @@
                 contentOffset.x = contentSize.width + contentInset.right - size.width;
             }
         }
+        
+        contentOffset.x += offset.x;
+        contentOffset.y += offset.y;
         
         [self setContentOffset:contentOffset animated:animated];
     }

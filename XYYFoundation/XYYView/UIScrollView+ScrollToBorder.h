@@ -19,5 +19,6 @@ typedef NS_OPTIONS(NSUInteger, MyScrollBorder) {
 
 - (void)scrollToBoder:(MyScrollBorder)border;
 - (void)scrollToBoder:(MyScrollBorder)border animated:(BOOL)animated;
+- (void)scrollToBoder:(MyScrollBorder)border offset:(CGPoint)offset animated:(BOOL)animated;
 
 @end
