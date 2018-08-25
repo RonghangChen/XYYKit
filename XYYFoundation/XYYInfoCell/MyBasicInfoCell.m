@@ -169,6 +169,10 @@
 
 - (NSString *)valueTitle
 {
+    if (self.value == nil || self.value == [NSNull null]) {
+        return [self.infoCellInfo valuePlaceholder];
+    }
+    
     if (self.cellType == MyBasicInfoCellTypeEdit) {
         
         switch (self.editType) {
@@ -188,8 +192,7 @@
         }
     }
     
-    id value = self.value ?: [self.infoCellInfo valuePlaceholder];
-    return [value isKindOfClass:[NSString class]] ? value : [value description];
+    return [self.value description];
 }
 
 @end
