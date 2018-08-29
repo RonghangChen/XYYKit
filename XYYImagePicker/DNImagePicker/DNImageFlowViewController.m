@@ -17,6 +17,7 @@
 #import "DNSendButton.h"
 #import "DNAsset.h"
 #import "NSURL+DNIMagePickerUrlEqual.h"
+#import "XYYFoundation.h"
 
 //----------------------------------------------------------
 
@@ -249,9 +250,7 @@ static NSString* const dnAssetsViewCellReuseIdentifier = @"DNAssetsViewCell";
         //超过最大选择
         if (self.selectedAssetsArray.count >= self.maxSelectedImageCount) {
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedStringFromTable(@"alertContent", @"DNImagePicker", nil), (long)self.maxSelectedImageCount] message:nil delegate:self cancelButtonTitle:NSLocalizedStringFromTable(@"alertButton", @"DNImagePicker", nil) otherButtonTitles:nil, nil];
-            
-            [alert show];
+            [[XYYMessageUtil shareMessageUtil] showAlertViewWithTitle:nil content:[NSString stringWithFormat:NSLocalizedStringFromTable(@"alertContent", @"DNImagePicker", nil), (long)self.maxSelectedImageCount] okText:nil cancleText:NSLocalizedStringFromTable(@"alertButton", @"DNImagePicker", nil) actionBlock:nil];
             
             return NO;
         }

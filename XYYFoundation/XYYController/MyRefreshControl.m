@@ -15,6 +15,33 @@
 
 //----------------------------------------------------------
 
+@implementation MyRefreshControlManager
+
+static Class _defaultRefreshControlClass = nil;
++ (Class)defaultRefreshControlClass
+{
+    if (!_defaultRefreshControlClass) {
+        _defaultRefreshControlClass = [MyRefreshControl class];
+    }
+    
+    return _defaultRefreshControlClass;
+}
+
++ (void)setDefaultRefreshControlClass:(Class)refreshControlClass
+{
+    if ([refreshControlClass isKindOfClass:[UIControl class]] && [refreshControlClass conformsToProtocol:@protocol(MyRefreshControlProtocol)]) {
+        _defaultRefreshControlClass = refreshControlClass;
+    }
+}
+
++ (UIControl<MyRefreshControlProtocol> *)createDefaultRefreshControlWithType:(MyRefreshControlType)type {
+    return [[[self defaultRefreshControlClass] alloc] initWithType:type];
+}
+
+@end
+
+//----------------------------------------------------------
+
 @interface MyRefreshControl ()
 
 @property(nonatomic,strong,readonly) NSMutableDictionary * textDictionary;

@@ -177,22 +177,22 @@ typedef NS_ENUM(NSInteger, MyAppScoreAlertViewResult) {
 //显示网络状态的的处理函数
 - (void)showNetworkStatus;
 
-//返回是否可以显示评分视图，即是否已经评价
-+ (BOOL)canShowScoreAlertView;
-
-//每click多少次显示评价页面，默认为0,及不显示
-@property(nonatomic) NSUInteger showScoreAlertViewPerClickTimes;
-
-//显示评价页面,可重载进行特定评分视图的显示
-- (void)showScoreAlertView;
-//评价页面内容文字
-@property(nonatomic,strong) NSString * scoreAlertViewContentText;
-
-//评价忽视的次数
-+ (NSUInteger)appScoreIgnoreTimes;
-
-//评价页面完成了显示
-- (void)scoreAlertViewCompletedShowWithResult:(MyAppScoreAlertViewResult)result;
+////返回是否可以显示评分视图，即是否已经评价
+//+ (BOOL)canShowScoreAlertView;
+//
+////每click多少次显示评价页面，默认为0,及不显示
+//@property(nonatomic) NSUInteger showScoreAlertViewPerClickTimes;
+//
+////显示评价页面,可重载进行特定评分视图的显示
+//- (void)showScoreAlertView;
+////评价页面内容文字
+//@property(nonatomic,strong) NSString * scoreAlertViewContentText;
+//
+////评价忽视的次数
+//+ (NSUInteger)appScoreIgnoreTimes;
+//
+////评价页面完成了显示
+//- (void)scoreAlertViewCompletedShowWithResult:(MyAppScoreAlertViewResult)result;
 
 
 //                app状态信息

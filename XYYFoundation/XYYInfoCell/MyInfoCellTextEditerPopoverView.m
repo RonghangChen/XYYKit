@@ -263,7 +263,7 @@
         }
         
         if (alertText != nil) {
-            showErrorMessage(self.window, nil, self.title.length ? [NSString stringWithFormat:@"%@%@",self.title,alertText] : alertText);
+            [[XYYMessageUtil shareMessageUtil] showErrorMessageInView:self.window withTitle:self.title.length ? [NSString stringWithFormat:@"%@%@",self.title,alertText] : alertText detail:nil duration:0.0 completedBlock:nil];
             return NO;
         }
 
@@ -330,7 +330,8 @@
         }
         
         if (!bRet) {
-            showErrorMessage(self.window, nil, [NSString stringWithFormat:@"输入的%@不合法",self.title.length ? self.title : @"内容"]);
+             [[XYYMessageUtil shareMessageUtil] showErrorMessageInView:self.window withTitle:[NSString stringWithFormat:@"输入的%@不合法",self.title.length ? self.title : @"内容"] detail:nil duration:0.0 completedBlock:nil];
+            
             return NO;
         }
     }

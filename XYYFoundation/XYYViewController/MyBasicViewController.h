@@ -10,10 +10,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MyNetReachability.h"
+#import "XYYMessageUtil.h"
 
 //----------------------------------------------------------
-
-@class MBProgressHUD;
 
 @interface MyBasicViewController : UIViewController
 {
@@ -27,7 +26,7 @@
     BOOL             _needRefreshDataWhenViewAppear;
     
     //Messgae
-    MBProgressHUD  * _progressIndicatorView;
+    id<XYYProgressViewProtocol>  _progressIndicatorView;
     
     //NetStatus
     BOOL             _needObserveNetworkStatusChange;
@@ -90,7 +89,10 @@
 - (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message;
 
 //活动指示器视图
-@property(nonatomic,readonly,strong) MBProgressHUD * progressIndicatorView;
+@property(nonatomic,readonly,strong) id<XYYProgressViewProtocol> progressIndicatorView;
+
+//活动指示器显示基于的视图
+- (UIView *)showProgressIndicatorViewBaseView;
 
 //显示进度指示视图
 - (void)showProgressIndicatorView:(NSString *)title;
@@ -140,7 +142,7 @@
 @property(nonatomic,readonly) NSTimeInterval keyboardAnimationDuration;
 @property(nonatomic,readonly) UIViewAnimationCurve keyboardAnimationCurve;
 
-- (void)keyboardFrameWillChange;
+- (void)keyboardFrameWillChange:(BOOL)frameChange;
 - (void)keyboardFrameDidChange;
 
 //需要基于键盘改变frame的视图，需要needObserveKeyboardFrameChange不为NO

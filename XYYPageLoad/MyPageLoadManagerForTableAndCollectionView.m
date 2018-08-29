@@ -289,10 +289,10 @@
     }
 }
 
-- (MyRefreshControl *)topRefreshControl
+- (UIControl<MyRefreshControlProtocol> *)topRefreshControl
 {
     if (!_topRefreshControl) {
-        _topRefreshControl = [[MyRefreshControl alloc] initWithType:MyRefreshControlTypeTop];
+        _topRefreshControl = [MyRefreshControlManager createDefaultRefreshControlWithType:MyRefreshControlTypeTop];
         [_topRefreshControl addTarget:self
                                action:@selector(_topRefreshControlHandle:)
                      forControlEvents:UIControlEventValueChanged];
@@ -301,7 +301,7 @@
     return _topRefreshControl;
 }
 
-- (void)setTopRefreshControl:(MyRefreshControl *)topRefreshControl
+- (void)setTopRefreshControl:(UIControl<MyRefreshControlProtocol> *)topRefreshControl
 {
     if (topRefreshControl && topRefreshControl.type != MyRefreshControlTypeTop) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException
@@ -363,10 +363,10 @@
     }
 }
 
-- (MyRefreshControl *)bottomLoadControl
+- (UIControl<MyRefreshControlProtocol> *)bottomLoadControl
 {
     if (!_bottomLoadControl) {
-        _bottomLoadControl = [[MyRefreshControl alloc] initWithType:MyRefreshControlTypeBottom];
+        _bottomLoadControl = [MyRefreshControlManager createDefaultRefreshControlWithType:MyRefreshControlTypeBottom];
         [_bottomLoadControl addTarget:self
                                action:@selector(_bottomLoadControlHandle:)
                      forControlEvents:UIControlEventValueChanged];
@@ -375,7 +375,7 @@
     return _bottomLoadControl;
 }
 
-- (void)setBottomLoadControl:(MyRefreshControl *)bottomLoadControl
+- (void)setBottomLoadControl:(UIControl<MyRefreshControlProtocol> *)bottomLoadControl
 {
     if (bottomLoadControl && bottomLoadControl.type != MyRefreshControlTypeBottom) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException

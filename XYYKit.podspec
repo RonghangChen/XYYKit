@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XYYKit"
-  s.version      = "1.0.5"
+  s.version      = "1.0.6"
   s.summary      = "框架库"
 
   s.author       =  { "LeslieChen" => "102731887@qq.com" }
@@ -45,7 +45,8 @@ Pod::Spec.new do |s|
     foundation.frameworks = "UIKit", "Foundation", "Accelerate", "CoreFoundation"
 
     foundation.dependency 'TTTAttributedLabel'
-    foundation.dependency 'MBProgressHUD' , '~> 0.9.1'
+    # foundation.dependency 'MBProgressHUD' , '~> 0.9.1'
+    foundation.dependency 'MBProgressHUD'
     foundation.dependency 'XYYKit/XYYKit'
 
   end

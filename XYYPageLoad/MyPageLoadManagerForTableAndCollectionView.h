@@ -128,8 +128,8 @@ typedef UIScrollView * (^GetContentScrollViewBlock)(void);
 @property(nonatomic,readonly) NSUInteger segmentedCount;
 
 //加载控件
-@property(nonatomic,strong) MyRefreshControl * topRefreshControl;
-@property(nonatomic,strong) MyRefreshControl * bottomLoadControl;
+@property(nonatomic,strong) UIControl<MyRefreshControlProtocol> * topRefreshControl;
+@property(nonatomic,strong) UIControl<MyRefreshControlProtocol> * bottomLoadControl;
 
 
 //自动添加刷新控件

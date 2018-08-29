@@ -498,12 +498,12 @@
         self.indicaterViewStatus != MyIndicaterViewStatusHidden) {
         
 #if DEBUG
-        showErrorMessage(self.window, error, @"获取数据失败");
+        [[XYYMessageUtil shareMessageUtil] showErrorMessageInView:self.window withTitle:@"获取数据失败" error:error duration:0.0 completedBlock:nil];
 #endif
         
         [self _changeIndicaterViewStatus:MyIndicaterViewStatusError context:error];
     }else {
-        showErrorMessage(self.window, error, @"获取数据失败");
+        [[XYYMessageUtil shareMessageUtil] showErrorMessageInView:self.window withTitle:@"获取数据失败" error:error duration:0.0 completedBlock:nil];
     }
     
     [self.pageLoadManager loadDataFail];

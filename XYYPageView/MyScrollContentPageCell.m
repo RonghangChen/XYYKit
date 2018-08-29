@@ -197,12 +197,16 @@
 
 #pragma mark -
 
-- (MyRefreshControl *)refreshControl
+- (Class)defaultRefreshControlClass {
+    return nil;
+}
+
+- (UIControl<MyRefreshControlProtocol> *)refreshControl
 {
     if (!_refreshControl) {
         
         //初始化
-        _refreshControl = [[MyRefreshControl alloc] init];
+        _refreshControl = [[[self defaultRefreshControlClass] ?: [MyRefreshControlManager defaultRefreshControlClass] alloc] initWithType:MyRefreshControlTypeTop];
         [_refreshControl addTarget:self
                             action:@selector(refreshHandle)
                   forControlEvents:UIControlEventValueChanged];
@@ -216,10 +220,10 @@
 - (void)refreshHandle {
 }
 
-- (MyRefreshControl *)loadControl
+- (UIControl<MyRefreshControlProtocol> *)loadControl
 {
     if (!_loadControl) {
-        _loadControl = [[MyRefreshControl alloc] initWithType:MyRefreshControlTypeBottom];
+        _loadControl = [[[self defaultRefreshControlClass] ?: [MyRefreshControlManager defaultRefreshControlClass] alloc] initWithType:MyRefreshControlTypeBottom];
         [_loadControl addTarget:self
                          action:@selector(loadHandle)
                forControlEvents:UIControlEventValueChanged];
@@ -266,43 +270,22 @@
 
 #pragma mark -
 
-- (MBProgressHUD *)progressIndicatorView
-{
-    if (!_progressIndicatorView) {
-        
-        MyActivityIndicatorView * activityIndicatorView = [[MyActivityIndicatorView alloc] initWithStyle:MyActivityIndicatorViewStyleIndeterminate];
-        activityIndicatorView.bounds = CGRectMake(0.f, 0.f, 30.f, 30.f);
-        [activityIndicatorView startAnimating];
-        activityIndicatorView.tintColor = [UIColor whiteColor];
-        _progressIndicatorView = [[MBProgressHUD alloc] initWithView:self];
-//        _progressIndicatorView.autoresizingMask = UIViewAutoresizingFlexibleHeight |
-//                                                  UIViewAutoresizingFlexibleWidth;
-        _progressIndicatorView.mode = MBProgressHUDModeCustomView;
-        _progressIndicatorView.customView = activityIndicatorView;
-        _progressIndicatorView.removeFromSuperViewOnHide = YES;
-    }
-    
-    return _progressIndicatorView;
+- (UIView *)showProgressIndicatorViewBaseView {
+    return self;
 }
-
 
 - (void)showProgressIndicatorViewWithAnimated:(BOOL)animated title:(NSString *)title
 {
     [self hideProgressIndicatorViewWithAnimated:NO completedBlock:nil];
     
-    self.progressIndicatorView.labelText = title;
-    self.progressIndicatorView.transform = CGAffineTransformIdentity;
-    self.progressIndicatorView.animationType = MBProgressHUDAnimationFade;
-    [self addSubview:self.progressIndicatorView];
-    [self.progressIndicatorView show:animated];
+    _progressIndicatorView = [[XYYMessageUtil shareMessageUtil] showProgressViewInView:[self showProgressIndicatorViewBaseView] withTitle:title animated:animated];
 }
 
 - (void)hideProgressIndicatorViewWithAnimated:(BOOL)animated completedBlock:(void(^)(void))completedBlock
 {
-    if (_progressIndicatorView.superview) {
-        _progressIndicatorView.animationType = MBProgressHUDAnimationZoom;
-        _progressIndicatorView.completionBlock = completedBlock;
-        [_progressIndicatorView hide:animated];
+    if (_progressIndicatorView) {
+        [_progressIndicatorView hideWithAnimated:animated completedBlock:completedBlock];
+        _progressIndicatorView = nil;
     }
 }
 
@@ -312,7 +295,7 @@
 {
     if ([self currentNetworkStatus] == NotReachable) {
         if (showMSgWhenNoNetwork) {
-            showErrorMessage(nil, nil, @"网络似乎断开了连接");
+             [[XYYMessageUtil shareMessageUtil] showErrorMessageInView:self.window withTitle:@"网络似乎断开了连接" detail:nil duration:0.0 completedBlock:nil];
         }
         return NO;
     }

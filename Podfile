@@ -16,7 +16,8 @@ target 'XYYFoundation' do
     # use_frameworks!
 
     # Pods for XYYKit
-    pod 'MBProgressHUD', '~> 0.9.1'
+#    pod 'MBProgressHUD', '~> 0.9.1'
+    pod 'MBProgressHUD'
     pod 'TTTAttributedLabel'
 
 

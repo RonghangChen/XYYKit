@@ -91,10 +91,13 @@ typedef NS_ENUM(NSInteger, MyDataStoreType) {
 @property(nonatomic,strong) UITableView * contentTableView;
 @property(nonatomic,strong) UICollectionView * contentCollectionView;
 
+//默认的刷新控件类
+- (Class)defaultRefreshControlClass;
+
 /**
  * 刷新控件的引用，请将其加入UIScrollView或者其子类视图中使用
  */
-@property(nonatomic,strong,readonly) MyRefreshControl *refreshControl;
+@property(nonatomic,strong,readonly) UIControl<MyRefreshControlProtocol> *refreshControl;
 
 /*
  *刷新处理函数，不要手动调用，请从子类覆盖该函数以完成所需操作
@@ -104,7 +107,7 @@ typedef NS_ENUM(NSInteger, MyDataStoreType) {
 /**
  * 加载控件的引用，请将其加入UIScrollView或者其子类视图中使用
  */
-@property(nonatomic,strong,readonly) MyRefreshControl *loadControl;
+@property(nonatomic,strong,readonly) UIControl<MyRefreshControlProtocol> *loadControl;
 
 /**
  * 加载处理函数，不要手动调用，请从子类覆盖该函数以完成所需操作
@@ -115,7 +118,9 @@ typedef NS_ENUM(NSInteger, MyDataStoreType) {
 //-------------------------------------------------
 
 //活动指示器视图
-@property(nonatomic,readonly,strong) MBProgressHUD * progressIndicatorView;
+@property(nonatomic,readonly,strong) id<XYYProgressViewProtocol> progressIndicatorView;
+//活动指示器显示基于的视图
+- (UIView *)showProgressIndicatorViewBaseView;
 
 //显示进度指示视图
 - (void)showProgressIndicatorViewWithAnimated:(BOOL)animated title:(NSString *)title;

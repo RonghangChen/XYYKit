@@ -45,15 +45,15 @@
 {
     if (![self isSourceTypeAvailable:sourceType]) {
         if (sourceType == UIImagePickerControllerSourceTypeCamera) {
-            showAlertView(@"提醒", @"无相机资源可获取");
+            [[XYYMessageUtil shareMessageUtil] showAlertViewWithTitle:@"提醒" content:@"无相机资源可获取"];
         }else{
-            showAlertView(@"提醒", @"无相册资源可获取");
+            [[XYYMessageUtil shareMessageUtil] showAlertViewWithTitle:@"提醒" content:@"无相册资源可获取"];
         }
     }else if (![self isAuthorizedForSourceType:sourceType]){
         if (sourceType == UIImagePickerControllerSourceTypeCamera) {
-            showAlertView(@"提醒", @"应用无权访问您的相机,请在\"设置->隐私\"中设置");
+            [[XYYMessageUtil shareMessageUtil] showAlertViewWithTitle:@"提醒" content:@"应用无权访问您的相机,请在\"设置->隐私\"中设置"];
         }else{
-            showAlertView(@"提醒", @"应用无权访问您的相册,请在\"设置->隐私\"中设置");
+            [[XYYMessageUtil shareMessageUtil] showAlertViewWithTitle:@"提醒" content:@"应用无权访问您的相册,请在\"设置->隐私\"中设置"];
         }
     }else{
         MyImagePickerViewController * imagePickerViewController = [[self alloc] init];

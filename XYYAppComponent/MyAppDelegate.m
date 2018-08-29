@@ -216,11 +216,11 @@
     //click回调
     [self appDidClick];
     
-    //显示去评价app
-    if ([[self class] canShowScoreAlertView] && self.showScoreAlertViewPerClickTimes &&
-        appEnterForegroundTimes % self.showScoreAlertViewPerClickTimes == 0) {
-        [self showScoreAlertView];
-    }
+//    //显示去评价app
+//    if ([[self class] canShowScoreAlertView] && self.showScoreAlertViewPerClickTimes &&
+//        appEnterForegroundTimes % self.showScoreAlertViewPerClickTimes == 0) {
+//        [self showScoreAlertView];
+//    }
 }
 
 - (void)appDidClick {
@@ -404,52 +404,52 @@
     }
 }
 
-+ (BOOL)canShowScoreAlertView {
-    return ![[NSUserDefaults standardUserDefaults] boolForKey:MyKHadSorceApp];
-}
-
-- (NSString *)scoreAlertViewContentText {
-    return _scoreAlertViewContentText ? : @"亲，你觉得怎么样？去评价一下吧。\n我们不完美，但我们会一直努力。\n你的肯定是我们最大的动力。";
-}
-
-- (void)showScoreAlertView
-{
-    UIAlertView * alertView = [UIAlertView alertWithCallBackBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
-    
-        MyAppScoreAlertViewResult result = MyAppScoreAlertViewResultIgnore;
-        if (alertView.cancelButtonIndex == buttonIndex) {
-            result = MyAppScoreAlertViewResultDeny;
-        }else if(alertView.firstOtherButtonIndex == buttonIndex){
-            result = MyAppScoreAlertViewResultGoto;
-        }
-        
-        [self scoreAlertViewCompletedShowWithResult:result];
-        
-    }
-                                                            title:@"给我们评价"
-                                                          message:[self scoreAlertViewContentText]
-                                                 cancelButtonName:@"残忍拒绝"
-                                                otherButtonTitles:@"立即评价",@"稍后提醒", nil];
-    
-    [alertView show];
-}
-
-+ (NSUInteger)appScoreIgnoreTimes {
-    return [[[NSUserDefaults standardUserDefaults] objectForKey:MyKAppIgnoreSorceTimes] unsignedIntegerValue];
-}
-
-- (void)scoreAlertViewCompletedShowWithResult:(MyAppScoreAlertViewResult)result
-{
-    if (result != MyAppScoreAlertViewResultIgnore) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:MyKHadSorceApp];
-        if (result == MyAppScoreAlertViewResultGoto) {
-            [[self class] openInAppStoreReview];
-        }
-    }else {
-        [[NSUserDefaults standardUserDefaults] setObject:@([[self class] appScoreIgnoreTimes] + 1)
-                                                  forKey:MyKAppIgnoreSorceTimes];
-    }
-}
+//+ (BOOL)canShowScoreAlertView {
+//    return ![[NSUserDefaults standardUserDefaults] boolForKey:MyKHadSorceApp];
+//}
+//
+//- (NSString *)scoreAlertViewContentText {
+//    return _scoreAlertViewContentText ? : @"亲，你觉得怎么样？去评价一下吧。\n我们不完美，但我们会一直努力。\n你的肯定是我们最大的动力。";
+//}
+//
+//- (void)showScoreAlertView
+//{
+//    UIAlertView * alertView = [UIAlertView alertWithCallBackBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
+//    
+//        MyAppScoreAlertViewResult result = MyAppScoreAlertViewResultIgnore;
+//        if (alertView.cancelButtonIndex == buttonIndex) {
+//            result = MyAppScoreAlertViewResultDeny;
+//        }else if(alertView.firstOtherButtonIndex == buttonIndex){
+//            result = MyAppScoreAlertViewResultGoto;
+//        }
+//        
+//        [self scoreAlertViewCompletedShowWithResult:result];
+//        
+//    }
+//                                                            title:@"给我们评价"
+//                                                          message:[self scoreAlertViewContentText]
+//                                                 cancelButtonName:@"残忍拒绝"
+//                                                otherButtonTitles:@"立即评价",@"稍后提醒", nil];
+//    
+//    [alertView show];
+//}
+//
+//+ (NSUInteger)appScoreIgnoreTimes {
+//    return [[[NSUserDefaults standardUserDefaults] objectForKey:MyKAppIgnoreSorceTimes] unsignedIntegerValue];
+//}
+//
+//- (void)scoreAlertViewCompletedShowWithResult:(MyAppScoreAlertViewResult)result
+//{
+//    if (result != MyAppScoreAlertViewResultIgnore) {
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:MyKHadSorceApp];
+//        if (result == MyAppScoreAlertViewResultGoto) {
+//            [[self class] openInAppStoreReview];
+//        }
+//    }else {
+//        [[NSUserDefaults standardUserDefaults] setObject:@([[self class] appScoreIgnoreTimes] + 1)
+//                                                  forKey:MyKAppIgnoreSorceTimes];
+//    }
+//}
 
 #pragma mark -
 

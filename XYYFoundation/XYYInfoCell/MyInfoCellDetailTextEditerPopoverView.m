@@ -235,7 +235,8 @@
     }
     
     if (alertText != nil) {
-        showErrorMessage(self.window, nil, self.title.length ? [NSString stringWithFormat:@"%@%@",self.title,alertText] : alertText);
+        [[XYYMessageUtil shareMessageUtil] showErrorMessageInView:self.window withTitle:self.title.length ? [NSString stringWithFormat:@"%@%@",self.title,alertText] : alertText detail:nil duration:0.0 completedBlock:nil];
+        
         return NO;
     }
     

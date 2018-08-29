@@ -413,20 +413,14 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
                                            MySocialSNSManagerLocalizedString(@"VersionUnSupportShare_AlertToUpdateApp") :
                                            MySocialSNSManagerLocalizedString(@"AlertToInstallApp"),appName];
                 
+                
                 //警告视图
-                UIAlertView * alertView = [UIAlertView alertWithCallBackBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
-                    
-                    if (buttonIndex != alertView.cancelButtonIndex) {
+                [[XYYMessageUtil shareMessageUtil] showAlertViewWithTitle:@"提醒" content:alertMessage okText:@"立即去" cancleText:@"取消" actionBlock:^(BOOL ok) {
+                    if (ok) {
                         openURL([NSURL URLWithString:appInstallUrl]);
                     }
-                    
-                }
-                                                                        title:@"提醒"
-                                                                      message:alertMessage
-                                                             cancelButtonName:@"取消"
-                                                            otherButtonTitles:@"立即去", nil];
+                }];
                 
-                [alertView show];
             }
             
         }
@@ -507,17 +501,12 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
                                        MySocialSNSManagerLocalizedString(@"VersionUnSupportSSO_AlertToUpdateApp") :
                                        MySocialSNSManagerLocalizedString(@"AlertToInstallApp"),appName];
             
-            UIAlertView * alertView = [UIAlertView alertWithCallBackBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
-                
-                if (alertView.cancelButtonIndex != buttonIndex) {
+            //警告视图
+            [[XYYMessageUtil shareMessageUtil] showAlertViewWithTitle:@"提醒" content:alertMessage okText:@"立即去" cancleText:@"取消" actionBlock:^(BOOL ok) {
+                if (ok) {
                     openURL([NSURL URLWithString:appInstallUrl]);
                 }
-            }
-                                                                    title:@"提醒"
-                                                                  message:alertMessage
-                                                         cancelButtonName:@"取消"
-                                                        otherButtonTitles:@"立即去", nil];
-            [alertView show];
+            }];
         }
         
     } else {
@@ -583,19 +572,11 @@ typedef NS_ENUM(NSInteger, _MySocialSNSHandleType) {
                                            MySocialSNSManagerLocalizedString(@"AlertToInstallApp"),appName];
                 
                 //警告视图
-                UIAlertView * alertView = [UIAlertView alertWithCallBackBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
-                    
-                    if (buttonIndex != alertView.cancelButtonIndex) {
+                [[XYYMessageUtil shareMessageUtil] showAlertViewWithTitle:@"提醒" content:alertMessage okText:@"立即去" cancleText:@"取消" actionBlock:^(BOOL ok) {
+                    if (ok) {
                         openURL([NSURL URLWithString:appInstallUrl]);
                     }
-                    
-                }
-                                                                        title:@"提醒"
-                                                                      message:alertMessage
-                                                             cancelButtonName:@"取消"
-                                                            otherButtonTitles:@"立即去", nil];
-                
-                [alertView show];
+                }];
             }
         }
         

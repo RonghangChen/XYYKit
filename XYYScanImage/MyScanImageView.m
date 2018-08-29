@@ -1028,7 +1028,7 @@ NSString * const MyScanImageOverlayViewFrameDidInvalidateNotification = @"MyScan
         if (displayingImage != nil) {
             
             //开始保存到相册
-            MBProgressHUD * activityIndicatorView = showHUDWithMyActivityIndicatorView(self.window, nil, @"保存中...");
+            id<XYYProgressViewProtocol> activityIndicatorView = [[XYYMessageUtil shareMessageUtil] showProgressViewInView:self.window withTitle:@"保存中..." animated:YES];
             UIImageWriteToSavedPhotosAlbum(displayingImage, self, @selector(image:didFinishSavingWithError:contextInfo:), ((__bridge void *)activityIndicatorView));
             
             return YES;
@@ -1040,15 +1040,14 @@ NSString * const MyScanImageOverlayViewFrameDidInvalidateNotification = @"MyScan
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
-    MBProgressHUD * activityIndicatorView = (__bridge id)contextInfo;
-    activityIndicatorView.completionBlock = ^{
+    id<XYYProgressViewProtocol> activityIndicatorView = (__bridge id)contextInfo;
+    [activityIndicatorView hideWithAnimated:YES completedBlock:^{
         if (error) {
-            showErrorMessage(self, nil, @"保存失败");
+            [[XYYMessageUtil shareMessageUtil] showErrorMessageInView:self.window withTitle:@"保存失败" detail:nil duration:0.0 completedBlock:nil];
         }else{
-            showSuccessMessage(self, @"保存成功", nil);
+            [[XYYMessageUtil shareMessageUtil] showSuccessMessageInView:self.window withTitle:@"保存成功" detail:nil duration:0.0 completedBlock:nil];
         }
-    };
-    [activityIndicatorView hide:YES];
+    }];
 }
 
 #pragma mark -

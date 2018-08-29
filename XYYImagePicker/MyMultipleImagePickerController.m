@@ -29,7 +29,7 @@
                                                        delegate:(id<DNImagePickerControllerDelegate>)delegate
 {
     if (![self isAuthorizedForImagePicker]) {
-         showAlertView(@"提醒", @"应用无权访问您的相册,请在\"设置->隐私\"中设置");
+        [[XYYMessageUtil shareMessageUtil] showAlertViewWithTitle:@"提醒" content:@"应用无权访问您的相册,请在\"设置->隐私\"中设置"];
     }else {
         
         MyMultipleImagePickerController * imagePickerViewController = [[self alloc] init];

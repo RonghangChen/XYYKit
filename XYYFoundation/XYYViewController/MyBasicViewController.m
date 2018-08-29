@@ -14,7 +14,6 @@
 #import "MyActivityIndicatorView.h"
 #import "MBProgressHUD.h"
 #import "XYYBaseDef.h"
-#import "XYYMessageUtil.h"
 
 //----------------------------------------------------------
 
@@ -79,17 +78,22 @@
 
 - (void)_keyboardWillChangeFrameNotification:(NSNotification *)notification
 {
-    _keyboardEndFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    _keyboardEndFrame = [self.view convertRect:_keyboardEndFrame fromView:self.view.window];
+    CGRect keyboardEndFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyboardEndFrame = [self.view convertRect:_keyboardEndFrame fromView:self.view.window];
     
-    if (_keyboardEndFrame.origin.y >= CGRectGetHeight(self.view.window.bounds)) {
-        _keyboardEndFrame = CGRectZero;
+    if (keyboardEndFrame.origin.y >= CGRectGetHeight(self.view.window.bounds)) {
+        keyboardEndFrame = CGRectZero;
     }
     
     _keyboardAnimationCurve = (UIViewAnimationCurve)[notification.userInfo[UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
     _keyboardAnimationDuration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
 
-    [self keyboardFrameWillChange];
+    if (CGRectEqualToRect(keyboardEndFrame, _keyboardEndFrame)) {
+        [self keyboardFrameWillChange:NO];
+    }else {
+        _keyboardEndFrame = keyboardEndFrame;
+        [self keyboardFrameWillChange:YES];
+    }
 }
 
 - (void)_keyboardDidChangeFrameNotification:(NSNotification *)notification {
@@ -145,33 +149,16 @@ _MUTATOR(mutator, ctype, member)
 
 @implementation MyBasicViewController (Message)
 
-- (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message
-{
-    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:title
-                                                         message:message
-                                                        delegate:nil
-                                               cancelButtonTitle:@"知道了"
-                                               otherButtonTitles:nil];
-    
-    [alertView show];
+- (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message {
+    [[XYYMessageUtil shareMessageUtil] showAlertViewWithTitle:title content:message];
 }
 
-
-- (MBProgressHUD *)progressIndicatorView
-{
-    if (!_progressIndicatorView) {
-        
-        MyActivityIndicatorView * activityIndicatorView = [[MyActivityIndicatorView alloc] initWithStyle:MyActivityIndicatorViewStyleIndeterminate];
-        activityIndicatorView.bounds = CGRectMake(0.f, 0.f, 30.f, 30.f);
-        activityIndicatorView.tintColor = [UIColor whiteColor];
-        [activityIndicatorView startAnimating];
-        _progressIndicatorView = [[MBProgressHUD alloc] initWithView:self.view];
-        _progressIndicatorView.mode = MBProgressHUDModeCustomView;
-        _progressIndicatorView.customView = activityIndicatorView;
-        _progressIndicatorView.removeFromSuperViewOnHide = YES;
-    }
-    
+- (id<XYYProgressViewProtocol>)progressIndicatorView {
     return _progressIndicatorView;
+}
+
+- (UIView *)showProgressIndicatorViewBaseView {
+    return self.view;
 }
 
 - (void)showProgressIndicatorView:(NSString *)title {
@@ -182,23 +169,18 @@ _MUTATOR(mutator, ctype, member)
 {
     [self hideProgressIndicatorViewWithAnimated:NO completedBlock:nil];
     
-    self.progressIndicatorView.labelText = title;
-    self.progressIndicatorView.transform = CGAffineTransformIdentity;
-    self.progressIndicatorView.animationType = MBProgressHUDAnimationFade;
-    [self.view addSubview:self.progressIndicatorView];
-    [self.progressIndicatorView show:animated];
+    _progressIndicatorView = [[XYYMessageUtil shareMessageUtil] showProgressViewInView:[self showProgressIndicatorViewBaseView] withTitle:title animated:animated];
 }
 
 - (void)hideProgressIndicatorView {
     [self hideProgressIndicatorViewWithAnimated:YES completedBlock:nil];
 }
 
-- (void)hideProgressIndicatorViewWithAnimated:(BOOL)animated completedBlock:(void(^)())completedBlock
+- (void)hideProgressIndicatorViewWithAnimated:(BOOL)animated completedBlock:(void(^)(void))completedBlock
 {
-    if (_progressIndicatorView.superview) {
-        _progressIndicatorView.animationType = MBProgressHUDAnimationZoom;
-        _progressIndicatorView.completionBlock = completedBlock;
-        [_progressIndicatorView hide:animated];
+    if (_progressIndicatorView) {
+        [_progressIndicatorView hideWithAnimated:animated completedBlock:completedBlock];
+        _progressIndicatorView = nil;
     }
 }
 
@@ -212,7 +194,7 @@ _MUTATOR(mutator, ctype, member)
 {
     NetworkStatus status = [MyNetReachability currentNetReachabilityStatus];
     if (showMSgWhenNoNetwork && status == NotReachable) {
-        showErrorMessage(nil, nil, @"网络似乎断开了连接");
+        [[XYYMessageUtil shareMessageUtil] showErrorMessageInView:nil withTitle:@"网络似乎断开了连接" detail:nil duration:0.0 completedBlock:nil];
     }
     
     return status;
@@ -324,9 +306,9 @@ _ACCESSOR(adjustFrameBasicKeyboardView, UIView *, _adjustFrameBasicKeyboardView)
 
 }
 
-- (void)keyboardFrameWillChange
+- (void)keyboardFrameWillChange:(BOOL)frameChange
 {
-    if (self.adjustFrameBasicKeyboardView) {
+    if (frameChange && self.adjustFrameBasicKeyboardView) {
         
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:self.keyboardAnimationDuration];
