@@ -206,7 +206,7 @@
     if (!_refreshControl) {
         
         //初始化
-        _refreshControl = (id)[(id<MyRefreshControlProtocol>)[[self defaultRefreshControlClass] ?: [MyRefreshControlManager defaultRefreshControlClass] alloc] initWithType:MyRefreshControlTypeTop];
+        _refreshControl = (id)[[self defaultRefreshControlClass] ?: [MyRefreshControlManager defaultRefreshControlClass] createWithRefreshType:MyRefreshControlTypeTop];
         [_refreshControl addTarget:self
                             action:@selector(refreshHandle)
                   forControlEvents:UIControlEventValueChanged];
@@ -223,7 +223,7 @@
 - (UIControl<MyRefreshControlProtocol> *)loadControl
 {
     if (!_loadControl) {
-        _loadControl = (id)[(id<MyRefreshControlProtocol>)[[self defaultRefreshControlClass] ?: [MyRefreshControlManager defaultRefreshControlClass] alloc] initWithType:MyRefreshControlTypeBottom];
+        _loadControl = [[self defaultRefreshControlClass] ?: [MyRefreshControlManager defaultRefreshControlClass] createWithRefreshType:MyRefreshControlTypeBottom];
         [_loadControl addTarget:self
                          action:@selector(loadHandle)
                forControlEvents:UIControlEventValueChanged];

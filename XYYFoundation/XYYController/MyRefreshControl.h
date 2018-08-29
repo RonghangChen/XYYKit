@@ -41,7 +41,7 @@ typedef NS_ENUM(int, MyRefreshControlStyle){
 
 @protocol MyRefreshControlProtocol <NSObject>
 
-- (id)initWithType:(MyRefreshControlType)type;
++ (instancetype)createWithRefreshType:(MyRefreshControlType)type;
 
 /**
  * 刷新控件的类型
@@ -89,6 +89,7 @@ typedef NS_ENUM(int, MyRefreshControlStyle){
 /**
  * 默认风格为MyRefreshControlStyleArrow
  */
+- (id)initWithType:(MyRefreshControlType)type;
 - (id)initWithType:(MyRefreshControlType)type style:(MyRefreshControlStyle)style;
 
 /**

@@ -35,7 +35,7 @@ static Class _defaultRefreshControlClass = nil;
 }
 
 + (UIControl<MyRefreshControlProtocol> *)createDefaultRefreshControlWithType:(MyRefreshControlType)type {
-    return (id)[(id<MyRefreshControlProtocol>)[[self defaultRefreshControlClass] alloc] initWithType:type];
+    return (id)[[self defaultRefreshControlClass] createDefaultRefreshControlWithType:type];
 }
 
 @end
@@ -70,6 +70,10 @@ static Class _defaultRefreshControlClass = nil;
 - (id)initWithLocation:(MyScrollTriggerViewLocation)location minTriggerDistance:(CGFloat)minTriggerDistance
 {
     return [self initWithType:location == MyScrollTriggerViewLocationBottom ? MyRefreshControlTypeBottom : MyRefreshControlTypeTop];
+}
+
++ (instancetype)createWithRefreshType:(MyRefreshControlType)type {
+    return [[self alloc] initWithType:type];
 }
 
 - (id)initWithType:(MyRefreshControlType)type {
