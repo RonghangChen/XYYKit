@@ -18,7 +18,7 @@
 //共享的
 + (XYYMessageUtil *)shareMessageUtil;
 //设置使用共享的消息工具类，可以设置继承的工具类自定义消息展示
-- (void)setupShareMessageUtil:(XYYMessageUtil *)messageUtil;
++ (void)setupShareMessageUtil:(XYYMessageUtil *)messageUtil;
 
 //自定义视图消息
 - (void)showMessageInView:(UIView *)view

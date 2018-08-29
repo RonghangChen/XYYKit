@@ -18,7 +18,7 @@
 @implementation MyRefreshControlManager
 
 static Class _defaultRefreshControlClass = nil;
-+ (Class<MyRefreshControlProtocol>)defaultRefreshControlClass
++ (Class)defaultRefreshControlClass
 {
     if (!_defaultRefreshControlClass) {
         _defaultRefreshControlClass = [MyRefreshControl class];
@@ -27,15 +27,15 @@ static Class _defaultRefreshControlClass = nil;
     return _defaultRefreshControlClass;
 }
 
-+ (void)setDefaultRefreshControlClass:(Class<MyRefreshControlProtocol>)refreshControlClass
++ (void)setDefaultRefreshControlClass:(Class)refreshControlClass
 {
-    if ([refreshControlClass isKindOfClass:[UIControl class]] && [refreshControlClass conformsToProtocol:@protocol(MyRefreshControlProtocol)]) {
+    if ([refreshControlClass isSubclassOfClass:[UIControl class]] && [refreshControlClass conformsToProtocol:@protocol(MyRefreshControlProtocol)]) {
         _defaultRefreshControlClass = refreshControlClass;
     }
 }
 
 + (UIControl<MyRefreshControlProtocol> *)createDefaultRefreshControlWithType:(MyRefreshControlType)type {
-    return (id)[[self defaultRefreshControlClass] createDefaultRefreshControlWithType:type];
+    return (id)[[self defaultRefreshControlClass] createWithRefreshType:type];
 }
 
 @end

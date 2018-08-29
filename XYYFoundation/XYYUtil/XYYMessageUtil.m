@@ -26,7 +26,7 @@
 - (void)hideWithAnimated:(BOOL)animated completedBlock:(void (^)(void))completedBlock
 {
     self.completionBlock = completedBlock;
-    [self hide:animated];
+    [self hideAnimated:animated];
 }
 
 @end
@@ -45,7 +45,7 @@ static XYYMessageUtil * _shareMessageUtil = nil;
     return _shareMessageUtil;
 }
 
-- (void)setupShareMessageUtil:(XYYMessageUtil *)messageUtil {
++ (void)setupShareMessageUtil:(XYYMessageUtil *)messageUtil {
     _shareMessageUtil = messageUtil;
 }
 
@@ -174,6 +174,8 @@ MBProgressHUD * showCustomMBProgressHUDView(UIView *view,
     progressHUD.label.text = titleText;
     progressHUD.detailsLabel.text =detailText;
     progressHUD.userInteractionEnabled = NO;
+    progressHUD.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    progressHUD.bezelView.color = [UIColor blackColor];
     
     if (!view) {
         
