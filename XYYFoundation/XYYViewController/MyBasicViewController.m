@@ -79,7 +79,7 @@
 - (void)_keyboardWillChangeFrameNotification:(NSNotification *)notification
 {
     CGRect keyboardEndFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    keyboardEndFrame = [self.view convertRect:_keyboardEndFrame fromView:self.view.window];
+    keyboardEndFrame = [self.view convertRect:keyboardEndFrame fromView:self.view.window];
     
     if (keyboardEndFrame.origin.y >= CGRectGetHeight(self.view.window.bounds)) {
         keyboardEndFrame = CGRectZero;
