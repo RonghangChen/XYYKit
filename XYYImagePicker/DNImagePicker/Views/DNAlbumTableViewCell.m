@@ -52,7 +52,7 @@ NSString * const DNAlbumTableViewCellReuseIdentifier = @"DNAlbumTableViewCellReu
                                                if (aspectRatioThumbnail) {
                                                    _self.thumbImageView.image = [UIImage imageWithCGImage:aspectRatioThumbnail];
                                                }else {
-                                                   _self.thumbImageView.image = [UIImage imageNamed:@"assets_placeholder_picture"];
+                                                   _self.thumbImageView.image = [UIImage imageNamed:@"assets_placeholder_picture.png"];
                                                }
                                            }
                                        }

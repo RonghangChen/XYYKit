@@ -72,7 +72,7 @@
 - (UIImageView *)checkImage
 {
     if (!_checkImage) {
-        _checkImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo_check_default"]];
+        _checkImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo_check_default.png"]];
         [self.contentView addSubview:_checkImage];
     }
     
@@ -94,7 +94,7 @@
 {
     if (_image != image) {
         _image = image;
-        self.imageView.image = image ?: [UIImage imageNamed:@"assets_placeholder_picture"];
+        self.imageView.image = image ?: [UIImage imageNamed:@"assets_placeholder_picture.png"];
     }
 }
 
@@ -102,7 +102,7 @@
 {
     if (self.isSelected != selected) {
         [super setSelected:selected];
-        self.checkImage.image = selected ? [UIImage imageNamed:@"photo_check_selected"] : [UIImage imageNamed:@"photo_check_default"];
+        self.checkImage.image = selected ? [UIImage imageNamed:@"photo_check_selected.png"] : [UIImage imageNamed:@"photo_check_default.png"];
     }
 }
 

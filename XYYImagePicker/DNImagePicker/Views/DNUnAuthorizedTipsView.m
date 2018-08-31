@@ -54,7 +54,7 @@
 {
     if (_imageView == nil) {
         _imageView = [UIImageView new];
-        _imageView.image = [UIImage imageNamed:@"image_unAuthorized"];
+        _imageView.image = [UIImage imageNamed:@"image_unAuthorized.pdf"];
         [_imageView setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self addSubview:_imageView];
     }
