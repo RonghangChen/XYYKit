@@ -64,8 +64,10 @@ MyScreenSizeType mainScreenType()
         return _screenSize.height < 500.f ? MyScreenSizeTypeiPhone4 : MyScreenSizeTypeSmall;
     }else if (_screenSize.width <= 400.f){
         return _screenSize.height < 700.f ? MyScreenSizeTypeMiddle : MyScreenSizeTypeiPhoneX;
-    }else{
+    }else if (_screenSize.height < 800.f){
         return MyScreenSizeTypeBig;
+    }else {
+        return MyScreenSizeTypeiPhoneXMax;
     }
 }
 
@@ -98,6 +100,11 @@ NSArray * adaptationResourceNames(NSString * resourceName)
                 
             case MyScreenSizeTypeBig:
                 return @[[resourceName stringByAppendingString:@"@big"]];
+                break;
+                
+            case MyScreenSizeTypeiPhoneXMax:
+                return @[[resourceName stringByAppendingString:@"@iPhoneXMax"],
+                         [resourceName stringByAppendingString:@"@big"]];
                 break;
         }
         

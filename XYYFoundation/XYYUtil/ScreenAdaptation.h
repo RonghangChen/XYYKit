@@ -60,7 +60,9 @@ typedef NS_ENUM(int,MyScreenSizeType) {
     //iPhoneX屏幕尺寸（资源后缀包括@iPhoneX,@middle,优先级依次降低）
     MyScreenSizeTypeiPhoneX,
     //iPhone6-8Plus屏幕尺寸（资源后缀包括@big）
-    MyScreenSizeTypeBig
+    MyScreenSizeTypeBig,
+    //iPhoneXS MAX屏幕尺寸（资源后缀包括@iPhoneXMax,@big,优先级依次降低）
+    MyScreenSizeTypeiPhoneXMax
 };
 
 //屏幕类型
