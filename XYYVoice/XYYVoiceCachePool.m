@@ -10,8 +10,16 @@
 
 #import "XYYVoiceCachePool.h"
 #import "XYYFoundation.h"
-#import "VoiceConverter.h"
-#include "amrFileCodec.h"
+//#import "VoiceConverter.h"
+//#include "amrFileCodec.h"
+
+//----------------------------------------------------------
+
+#define AMR_MAGIC_NUMBER "#!AMR\n"
+
+#define PCM_FRAME_SIZE 160 // 8khz 8000*0.02=160
+#define MAX_AMR_FRAME_SIZE 32
+#define AMR_FRAME_COUNT_PER_SECOND 50
 
 //----------------------------------------------------------
 
@@ -77,33 +85,33 @@
     
     BOOL bRet = NO;
     
-    if ([[self class] _needConvertForData:data]) { //转换格式
+    if ([[self class] _needConvertForData:data]) { //转换格式(暂不支持)
         
-        NSString * tempFileFloder = [[self class] _voiceConverterTempFileFloder];
-        
-        NSString * sourceVoicePath = [tempFileFloder stringByAppendingPathComponent:[NSString uniqueIDString]];
-        NSString * targetVoicePath = [tempFileFloder stringByAppendingPathComponent:[NSString uniqueIDString]];
-        
-        //写入文件
-        if ([data writeToFile:sourceVoicePath atomically:YES]) {
-            
-            //格式转换
-            bRet = [VoiceConverter amrToWav:sourceVoicePath wavSavePath:targetVoicePath];
-
-            
-            if (bRet) { //写入缓存
-                [super cacheDataWithFilePath:targetVoicePath forKey:key async:NO blockQueue:nil completedBlock:nil];
-            }else {
-                NSLog(@"语音格式转换失败");
-            }
-            
-            //删除临时文件
-            [[NSFileManager defaultManager] removeItemAtPath:sourceVoicePath error:NULL];
-            [[NSFileManager defaultManager] removeItemAtPath:targetVoicePath error:NULL];
-            
-        }else{
-            NSLog(@"临时文件写入失败");
-        }
+//        NSString * tempFileFloder = [[self class] _voiceConverterTempFileFloder];
+//
+//        NSString * sourceVoicePath = [tempFileFloder stringByAppendingPathComponent:[NSString uniqueIDString]];
+//        NSString * targetVoicePath = [tempFileFloder stringByAppendingPathComponent:[NSString uniqueIDString]];
+//
+//        //写入文件
+//        if ([data writeToFile:sourceVoicePath atomically:YES]) {
+//
+//            //格式转换
+//            bRet = [VoiceConverter amrToWav:sourceVoicePath wavSavePath:targetVoicePath];
+//
+//
+//            if (bRet) { //写入缓存
+//                [super cacheDataWithFilePath:targetVoicePath forKey:key async:NO blockQueue:nil completedBlock:nil];
+//            }else {
+//                NSLog(@"语音格式转换失败");
+//            }
+//
+//            //删除临时文件
+//            [[NSFileManager defaultManager] removeItemAtPath:sourceVoicePath error:NULL];
+//            [[NSFileManager defaultManager] removeItemAtPath:targetVoicePath error:NULL];
+//
+//        }else{
+//            NSLog(@"临时文件写入失败");
+//        }
         
     }else {
         
@@ -119,7 +127,7 @@
 + (BOOL)_needConvertForData:(NSData *)data
 {
     const int AMR_MAGIC_NUMBER_LENGHT = strlen(AMR_MAGIC_NUMBER);
-    if (data.length > MAX(sizeof(RIFFHEADER), AMR_MAGIC_NUMBER_LENGHT)) {
+    if (data.length > AMR_MAGIC_NUMBER_LENGHT) {
         
         //判断是否为arm
         char buffer[AMR_MAGIC_NUMBER_LENGHT];
@@ -141,9 +149,9 @@
     return NO;
 }
 
-+ (NSString *)_voiceConverterTempFileFloder {
-    return [[self class] cacheFileFloderPathForType:MyPathTypeTemp withCacheFileFloderName:@"VoiceConverterTempFile"];
-}
+//+ (NSString *)_voiceConverterTempFileFloder {
+//    return [[self class] cacheFileFloderPathForType:MyPathTypeTemp withCacheFileFloderName:@"VoiceConverterTempFile"];
+//}
 
 
 @end

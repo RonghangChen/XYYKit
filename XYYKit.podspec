@@ -183,8 +183,8 @@ Pod::Spec.new do |s|
 
  s.subspec 'XYYVoice' do |voice|
 
-    voice.source_files = "XYYVoice/**/*.{h,m,mm}"
-    voice.vendored_libraries = "XYYVoice/**/*.a"
+    voice.source_files = "XYYVoice/**/*.{h,m}"
+#voice.vendored_libraries = "XYYVoice/**/*.a"
     voice.frameworks = "UIKit", "Foundation", "AVFoundation"
 
     voice.dependency 'XYYKit/XYYFoundation'
