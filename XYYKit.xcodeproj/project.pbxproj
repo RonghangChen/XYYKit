@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01F283809CC0FB2DF8227B09 /* libPods-XYYNetConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C520CD5C14CB019176E1A9E /* libPods-XYYNetConnection.a */; };
+		0F0DCB0D9C5F3FEA59F690B3 /* libPods-XYYVoice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5F45060486289495447493 /* libPods-XYYVoice.a */; };
 		180545D44D42ADF7D34E9C0E /* libPods-XYYNetImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C4AB4C2D72BB82D677F6D9 /* libPods-XYYNetImage.a */; };
 		252CC48C72ECFF972F8E3162 /* libPods-XYYModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 814531C38E1923F1FFBB26A6 /* libPods-XYYModel.a */; };
 		2E194A8B5780361C6D5E534D /* libPods-XYYImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25249C4B801AB60EAA6B1DAD /* libPods-XYYImagePicker.a */; };
@@ -23,6 +24,16 @@
 		D735C91520BD4D1A000D4A79 /* XYYKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D735C91220BD4D1A000D4A79 /* XYYKit.h */; };
 		D743CBEE20DDFB9200122177 /* XYYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D743CBED20DDFB9200122177 /* XYYModel.m */; };
 		D743CBEF20DDFB9200122177 /* XYYModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D743CBEC20DDFB9200122177 /* XYYModel.h */; };
+		D7A0D5E32150D6DF000843B3 /* XYYVoice.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7A0D5E02150D6DF000843B3 /* XYYVoice.h */; };
+		D7A0D5EE2150D86D000843B3 /* XYYVoiceCachePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A0D5E82150D86C000843B3 /* XYYVoiceCachePool.m */; };
+		D7A0D5EF2150D86D000843B3 /* XYYVoicePlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A0D5EA2150D86D000843B3 /* XYYVoicePlayManager.m */; };
+		D7A0D5F02150D86D000843B3 /* XYYVoiceRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A0D5ED2150D86D000843B3 /* XYYVoiceRecordManager.m */; };
+		D7A0D6022150D9BB000843B3 /* VoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7A0D5F52150D9BB000843B3 /* VoiceConverter.mm */; };
+		D7A0D6032150D9BB000843B3 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A0D5F72150D9BB000843B3 /* libopencore-amrwb.a */; };
+		D7A0D6042150D9BB000843B3 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A0D5F82150D9BB000843B3 /* libopencore-amrnb.a */; };
+		D7A0D6052150D9BB000843B3 /* wav.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7A0D5FE2150D9BB000843B3 /* wav.mm */; };
+		D7A0D6062150D9BB000843B3 /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7A0D5FF2150D9BB000843B3 /* amrFileCodec.mm */; };
+		D7A0D60C2150E076000843B3 /* XYYVoiceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A0D60B2150E076000843B3 /* XYYVoiceUtil.m */; };
 		D7BAF57820DB775000982A63 /* XYYFoundation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7BAF57520DB775000982A63 /* XYYFoundation.h */; };
 		D7BAF5BD20DB7B4B00982A63 /* XYYCommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF58620DB7B4B00982A63 /* XYYCommonUtil.m */; };
 		D7BAF5BE20DB7B4B00982A63 /* ScreenAdaptation.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BAF58820DB7B4B00982A63 /* ScreenAdaptation.m */; };
@@ -217,6 +228,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7A0D5DC2150D6DF000843B3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D7A0D5E32150D6DF000843B3 /* XYYVoice.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7BAF57120DB775000982A63 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -355,6 +376,7 @@
 		0ADDFE99AE1D8773D210CB5A /* Pods-XYYCodeScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCodeScan.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCodeScan/Pods-XYYCodeScan.release.xcconfig"; sourceTree = "<group>"; };
 		1793719532289EB0218331C3 /* Pods-XYYDeclineMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYDeclineMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYDeclineMenu/Pods-XYYDeclineMenu.release.xcconfig"; sourceTree = "<group>"; };
 		191ED8DEFC79A4775473243A /* libPods-XYYPageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYPageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C41393621E110A1C243B27D /* Pods-XYYVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYVoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYVoice/Pods-XYYVoice.release.xcconfig"; sourceTree = "<group>"; };
 		22D095336A4C211B111960E0 /* Pods-XYYModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYModel.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYModel/Pods-XYYModel.release.xcconfig"; sourceTree = "<group>"; };
 		22EEC9FA388F6EBD9B1380D5 /* Pods-XYYImagePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYImagePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYImagePicker/Pods-XYYImagePicker.debug.xcconfig"; sourceTree = "<group>"; };
 		23C4AB4C2D72BB82D677F6D9 /* libPods-XYYNetImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYNetImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -373,6 +395,7 @@
 		539AB96D5F43113B55011FC8 /* libPods-XYYScanImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYScanImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5708FA00A5EABDB62EBB5223 /* Pods-XYYCodeScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCodeScan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCodeScan/Pods-XYYCodeScan.debug.xcconfig"; sourceTree = "<group>"; };
 		5A198B9E2D37419C1D74F818 /* Pods-XYYSocialSNS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYSocialSNS.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYSocialSNS/Pods-XYYSocialSNS.release.xcconfig"; sourceTree = "<group>"; };
+		5F5F45060486289495447493 /* libPods-XYYVoice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYVoice.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A76927C134B01225E08D0F0 /* Pods-XYYPageView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYPageView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYPageView/Pods-XYYPageView.debug.xcconfig"; sourceTree = "<group>"; };
 		6F6B46FB3E6482539628686C /* Pods-XYYScanImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYScanImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYScanImage/Pods-XYYScanImage.release.xcconfig"; sourceTree = "<group>"; };
 		73D6CF702E79AEB96042E683 /* Pods-XYYFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYFoundation/Pods-XYYFoundation.release.xcconfig"; sourceTree = "<group>"; };
@@ -388,6 +411,7 @@
 		B4F356A2DB37F1AF9A0374AE /* Pods-XYYNetConnection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYNetConnection.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYYNetConnection/Pods-XYYNetConnection.release.xcconfig"; sourceTree = "<group>"; };
 		BBB5797EBA0B1CC05FC2C944 /* Pods-XYYScanImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYScanImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYScanImage/Pods-XYYScanImage.debug.xcconfig"; sourceTree = "<group>"; };
 		C783B67096D93D6C5E0E4C43 /* Pods-XYYModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYModel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYModel/Pods-XYYModel.debug.xcconfig"; sourceTree = "<group>"; };
+		CAC6C8D9FE8911EB07027EA5 /* Pods-XYYVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYVoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYVoice/Pods-XYYVoice.debug.xcconfig"; sourceTree = "<group>"; };
 		CF8534831A7DBA473D53E5A3 /* libPods-XYYCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYCache.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38CD46ACB8355A0F0E5BB13 /* libPods-XYYDeclineMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYYDeclineMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C6E6E7617A23E436E158F2 /* Pods-XYYCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYYCache.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYYCache/Pods-XYYCache.debug.xcconfig"; sourceTree = "<group>"; };
@@ -406,6 +430,29 @@
 		D743CBEA20DDFB9200122177 /* libXYYModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D743CBEC20DDFB9200122177 /* XYYModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYModel.h; sourceTree = "<group>"; };
 		D743CBED20DDFB9200122177 /* XYYModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYYModel.m; sourceTree = "<group>"; };
+		D7A0D5DE2150D6DF000843B3 /* libXYYVoice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYVoice.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7A0D5E02150D6DF000843B3 /* XYYVoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYVoice.h; sourceTree = "<group>"; };
+		D7A0D5E72150D7A3000843B3 /* XYYKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XYYKit.podspec; sourceTree = "<group>"; };
+		D7A0D5E82150D86C000843B3 /* XYYVoiceCachePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYYVoiceCachePool.m; sourceTree = "<group>"; };
+		D7A0D5E92150D86C000843B3 /* XYYVoiceCachePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYYVoiceCachePool.h; sourceTree = "<group>"; };
+		D7A0D5EA2150D86D000843B3 /* XYYVoicePlayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYYVoicePlayManager.m; sourceTree = "<group>"; };
+		D7A0D5EB2150D86D000843B3 /* XYYVoicePlayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYYVoicePlayManager.h; sourceTree = "<group>"; };
+		D7A0D5EC2150D86D000843B3 /* XYYVoiceRecordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYYVoiceRecordManager.h; sourceTree = "<group>"; };
+		D7A0D5ED2150D86D000843B3 /* XYYVoiceRecordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYYVoiceRecordManager.m; sourceTree = "<group>"; };
+		D7A0D5F32150D9BB000843B3 /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
+		D7A0D5F42150D9BB000843B3 /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
+		D7A0D5F52150D9BB000843B3 /* VoiceConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VoiceConverter.mm; sourceTree = "<group>"; };
+		D7A0D5F72150D9BB000843B3 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		D7A0D5F82150D9BB000843B3 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		D7A0D5F92150D9BB000843B3 /* VoiceConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConverter.h; sourceTree = "<group>"; };
+		D7A0D5FB2150D9BB000843B3 /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
+		D7A0D5FC2150D9BB000843B3 /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
+		D7A0D5FE2150D9BB000843B3 /* wav.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = wav.mm; sourceTree = "<group>"; };
+		D7A0D5FF2150D9BB000843B3 /* amrFileCodec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = amrFileCodec.mm; sourceTree = "<group>"; };
+		D7A0D6002150D9BB000843B3 /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
+		D7A0D6012150D9BB000843B3 /* wav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wav.h; sourceTree = "<group>"; };
+		D7A0D60A2150E076000843B3 /* XYYVoiceUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYVoiceUtil.h; sourceTree = "<group>"; };
+		D7A0D60B2150E076000843B3 /* XYYVoiceUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYYVoiceUtil.m; sourceTree = "<group>"; };
 		D7BAF57320DB775000982A63 /* libXYYFoundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYFoundation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BAF57520DB775000982A63 /* XYYFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYFoundation.h; sourceTree = "<group>"; };
 		D7BAF57D20DB7B4B00982A63 /* XYYCommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYYCommonUtil.h; sourceTree = "<group>"; };
@@ -806,6 +853,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D7A0D5DB2150D6DF000843B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7A0D6032150D9BB000843B3 /* libopencore-amrwb.a in Frameworks */,
+				D7A0D6042150D9BB000843B3 /* libopencore-amrnb.a in Frameworks */,
+				0F0DCB0D9C5F3FEA59F690B3 /* libPods-XYYVoice.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D7BAF57020DB775000982A63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -946,6 +1003,8 @@
 				F06DA14B82E4E67F10DD855D /* Pods-XYYPageView.release.xcconfig */,
 				C783B67096D93D6C5E0E4C43 /* Pods-XYYModel.debug.xcconfig */,
 				22D095336A4C211B111960E0 /* Pods-XYYModel.release.xcconfig */,
+				CAC6C8D9FE8911EB07027EA5 /* Pods-XYYVoice.debug.xcconfig */,
+				1C41393621E110A1C243B27D /* Pods-XYYVoice.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -968,6 +1027,7 @@
 				D38CD46ACB8355A0F0E5BB13 /* libPods-XYYDeclineMenu.a */,
 				191ED8DEFC79A4775473243A /* libPods-XYYPageView.a */,
 				814531C38E1923F1FFBB26A6 /* libPods-XYYModel.a */,
+				5F5F45060486289495447493 /* libPods-XYYVoice.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -975,6 +1035,7 @@
 		D735C90620BD4D1A000D4A79 = {
 			isa = PBXGroup;
 			children = (
+				D7A0D5E72150D7A3000843B3 /* XYYKit.podspec */,
 				D735C91120BD4D1A000D4A79 /* XYYKit */,
 				D7BAF57420DB775000982A63 /* XYYFoundation */,
 				D7BAF82D20DC9B5900982A63 /* XYYCache */,
@@ -990,6 +1051,7 @@
 				D7BAF84320DC9CA300982A63 /* XYYDeclineMenu */,
 				D7BAF85B20DCDCCA00982A63 /* XYYPageView */,
 				D743CBEB20DDFB9200122177 /* XYYModel */,
+				D7A0D5DF2150D6DF000843B3 /* XYYVoice */,
 				D735C91020BD4D1A000D4A79 /* Products */,
 				6399C03EAB79F3EEDE2CECD4 /* Pods */,
 				C2BA7A3A95922AEE4D5787BC /* Frameworks */,
@@ -1014,6 +1076,7 @@
 				D7BAF84220DC9CA300982A63 /* libXYYDeclineMenu.a */,
 				D7BAF85A20DCDCCA00982A63 /* libXYYPageView.a */,
 				D743CBEA20DDFB9200122177 /* libXYYModel.a */,
+				D7A0D5DE2150D6DF000843B3 /* libXYYVoice.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1033,6 +1096,74 @@
 				D743CBED20DDFB9200122177 /* XYYModel.m */,
 			);
 			path = XYYModel;
+			sourceTree = "<group>";
+		};
+		D7A0D5DF2150D6DF000843B3 /* XYYVoice */ = {
+			isa = PBXGroup;
+			children = (
+				D7A0D5E02150D6DF000843B3 /* XYYVoice.h */,
+				D7A0D60A2150E076000843B3 /* XYYVoiceUtil.h */,
+				D7A0D60B2150E076000843B3 /* XYYVoiceUtil.m */,
+				D7A0D5E92150D86C000843B3 /* XYYVoiceCachePool.h */,
+				D7A0D5E82150D86C000843B3 /* XYYVoiceCachePool.m */,
+				D7A0D5EB2150D86D000843B3 /* XYYVoicePlayManager.h */,
+				D7A0D5EA2150D86D000843B3 /* XYYVoicePlayManager.m */,
+				D7A0D5EC2150D86D000843B3 /* XYYVoiceRecordManager.h */,
+				D7A0D5ED2150D86D000843B3 /* XYYVoiceRecordManager.m */,
+				D7A0D5F12150D9BB000843B3 /* VoiceConvert */,
+			);
+			path = XYYVoice;
+			sourceTree = "<group>";
+		};
+		D7A0D5F12150D9BB000843B3 /* VoiceConvert */ = {
+			isa = PBXGroup;
+			children = (
+				D7A0D5F22150D9BB000843B3 /* opencore-amrwb */,
+				D7A0D5F52150D9BB000843B3 /* VoiceConverter.mm */,
+				D7A0D5F62150D9BB000843B3 /* lib */,
+				D7A0D5F92150D9BB000843B3 /* VoiceConverter.h */,
+				D7A0D5FA2150D9BB000843B3 /* opencore-amrnb */,
+				D7A0D5FD2150D9BB000843B3 /* amrwapper */,
+			);
+			path = VoiceConvert;
+			sourceTree = "<group>";
+		};
+		D7A0D5F22150D9BB000843B3 /* opencore-amrwb */ = {
+			isa = PBXGroup;
+			children = (
+				D7A0D5F32150D9BB000843B3 /* if_rom.h */,
+				D7A0D5F42150D9BB000843B3 /* dec_if.h */,
+			);
+			path = "opencore-amrwb";
+			sourceTree = "<group>";
+		};
+		D7A0D5F62150D9BB000843B3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				D7A0D5F72150D9BB000843B3 /* libopencore-amrwb.a */,
+				D7A0D5F82150D9BB000843B3 /* libopencore-amrnb.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		D7A0D5FA2150D9BB000843B3 /* opencore-amrnb */ = {
+			isa = PBXGroup;
+			children = (
+				D7A0D5FB2150D9BB000843B3 /* interf_dec.h */,
+				D7A0D5FC2150D9BB000843B3 /* interf_enc.h */,
+			);
+			path = "opencore-amrnb";
+			sourceTree = "<group>";
+		};
+		D7A0D5FD2150D9BB000843B3 /* amrwapper */ = {
+			isa = PBXGroup;
+			children = (
+				D7A0D5FE2150D9BB000843B3 /* wav.mm */,
+				D7A0D5FF2150D9BB000843B3 /* amrFileCodec.mm */,
+				D7A0D6002150D9BB000843B3 /* amrFileCodec.h */,
+				D7A0D6012150D9BB000843B3 /* wav.h */,
+			);
+			path = amrwapper;
 			sourceTree = "<group>";
 		};
 		D7BAF57420DB775000982A63 /* XYYFoundation */ = {
@@ -1699,6 +1830,24 @@
 			productReference = D743CBEA20DDFB9200122177 /* libXYYModel.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		D7A0D5DD2150D6DF000843B3 /* XYYVoice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7A0D5E62150D6DF000843B3 /* Build configuration list for PBXNativeTarget "XYYVoice" */;
+			buildPhases = (
+				5624027C29B693B675C0D965 /* [CP] Check Pods Manifest.lock */,
+				D7A0D5DA2150D6DF000843B3 /* Sources */,
+				D7A0D5DB2150D6DF000843B3 /* Frameworks */,
+				D7A0D5DC2150D6DF000843B3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYYVoice;
+			productName = XYYVoice;
+			productReference = D7A0D5DE2150D6DF000843B3 /* libXYYVoice.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		D7BAF57220DB775000982A63 /* XYYFoundation */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7BAF57920DB775000982A63 /* Build configuration list for PBXNativeTarget "XYYFoundation" */;
@@ -1948,6 +2097,9 @@
 					D743CBE920DDFB9200122177 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					D7A0D5DD2150D6DF000843B3 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					D7BAF57220DB775000982A63 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -2017,6 +2169,7 @@
 				D7BAF84120DC9CA300982A63 /* XYYDeclineMenu */,
 				D7BAF85920DCDCCA00982A63 /* XYYPageView */,
 				D743CBE920DDFB9200122177 /* XYYModel */,
+				D7A0D5DD2150D6DF000843B3 /* XYYVoice */,
 			);
 		};
 /* End PBXProject section */
@@ -2106,6 +2259,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-XYYPageView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5624027C29B693B675C0D965 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYYVoice-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2307,6 +2478,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D743CBEE20DDFB9200122177 /* XYYModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7A0D5DA2150D6DF000843B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7A0D60C2150E076000843B3 /* XYYVoiceUtil.m in Sources */,
+				D7A0D6052150D9BB000843B3 /* wav.mm in Sources */,
+				D7A0D5EF2150D86D000843B3 /* XYYVoicePlayManager.m in Sources */,
+				D7A0D5EE2150D86D000843B3 /* XYYVoiceCachePool.m in Sources */,
+				D7A0D6062150D9BB000843B3 /* amrFileCodec.mm in Sources */,
+				D7A0D5F02150D86D000843B3 /* XYYVoiceRecordManager.m in Sources */,
+				D7A0D6022150D9BB000843B3 /* VoiceConverter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2735,6 +2920,43 @@
 			};
 			name = Release;
 		};
+		D7A0D5E42150D6DF000843B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAC6C8D9FE8911EB07027EA5 /* Pods-XYYVoice.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XYYVoice/VoiceConvert/lib",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7A0D5E52150D6DF000843B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C41393621E110A1C243B27D /* Pods-XYYVoice.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XYYVoice/VoiceConvert/lib",
+				);
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D7BAF57A20DB775000982A63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 37F75039E29D7A2ED0095E67 /* Pods-XYYFoundation.debug.xcconfig */;
@@ -3125,6 +3347,15 @@
 			buildConfigurations = (
 				D743CBF020DDFB9200122177 /* Debug */,
 				D743CBF120DDFB9200122177 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7A0D5E62150D6DF000843B3 /* Build configuration list for PBXNativeTarget "XYYVoice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7A0D5E42150D6DF000843B3 /* Debug */,
+				D7A0D5E52150D6DF000843B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

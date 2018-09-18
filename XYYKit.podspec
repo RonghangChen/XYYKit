@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XYYKit"
-  s.version      = "1.1.2"
+  s.version      = "1.1.3"
   s.summary      = "框架库"
 
   s.author       =  { "LeslieChen" => "102731887@qq.com" }
@@ -45,7 +45,6 @@ Pod::Spec.new do |s|
     foundation.frameworks = "UIKit", "Foundation", "Accelerate", "CoreFoundation"
 
     foundation.dependency 'TTTAttributedLabel'
-    # foundation.dependency 'MBProgressHUD' , '~> 0.9.1'
     foundation.dependency 'MBProgressHUD'
     foundation.dependency 'XYYKit/XYYKit'
 
@@ -175,13 +174,24 @@ Pod::Spec.new do |s|
 
   s.subspec 'XYYModel' do |model|
 
-    model.source_files = "XYYKit/*.h","XYYModel/**/*.{h,m}" 
+    model.source_files = "XYYModel/**/*.{h,m}"
     model.frameworks = "UIKit", "Foundation"
 
     model.dependency 'XYYKit/XYYKit'
 
   end
 
+ s.subspec 'XYYVoice' do |voice|
+
+    voice.source_files = "XYYVoice/**/*.{h,m,mm}"
+    voice.vendored_libraries = "XYYVoice/**/*.a"
+    voice.frameworks = "UIKit", "Foundation", "AVFoundation"
+
+    voice.dependency 'XYYKit/XYYFoundation'
+    voice.dependency 'XYYKit/XYYCache'
+    voice.dependency 'XYYKit/XYYNetConnection'
+
+ end
 
 
 end
