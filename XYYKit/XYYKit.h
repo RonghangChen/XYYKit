@@ -67,4 +67,8 @@
 #import "XYYPageView.h"
 #endif
 
+#if __has_include("XYYVoice.h")
+#import "XYYVoice.h"
+#endif
+
 #endif

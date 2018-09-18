@@ -12,5 +12,6 @@
 #import "XYYVoiceUtil.h"
 #import "XYYVoiceCachePool.h"
 #import "XYYVoicePlayManager.h"
+#import "XYYVoiceRecordManager.h"
 
 #endif
