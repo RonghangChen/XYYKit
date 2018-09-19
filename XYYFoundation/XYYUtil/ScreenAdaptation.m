@@ -30,10 +30,10 @@ CGSize screenSize()
     static CGSize _screenSize;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        CGSize _screenSize_ = [UIScreen mainScreen].bounds.size;
-        _screenSize.width = MIN(_screenSize_.width, _screenSize_.height);
-        _screenSize.height = MAX(_screenSize_.width, _screenSize_.height);
-        
+        CGSize _screenSize = [UIScreen mainScreen].currentMode.size;
+        CGFloat scale = [UIScreen mainScreen].scale;
+        _screenSize.width /= scale;
+        _screenSize.height /= scale;
     });
     
     return _screenSize;
