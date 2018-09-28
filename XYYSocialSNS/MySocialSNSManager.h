@@ -215,7 +215,7 @@ typedef NS_ENUM(NSInteger, MySocialSNSPayResultStatus) {
 /**
  * 开始第三方授权
  * @param target target为需要授权的目标
- * @param showWebViewIfNeed showWebViewIfNeed指示是否显示web登陆如果没有安装应用或版本过低不支持授权,默认为YES
+ * @param showWebViewIfNeed showWebViewIfNeed指示是否显示web登录如果没有安装应用或版本过低不支持授权,默认为YES
  * @param showAppInstallPageIfNeed showAppInstallPageIfNeed指示当应用没有安装时显示应用安装链接,默认为YES
  * @param viewController viewController为当前的视图控制器
  * @param delegate delegate为回调的代理

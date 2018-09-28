@@ -21,6 +21,14 @@
 @optional
 
 /**
+ * 是否信任导入的证书
+ * @param manager manager是当前连接的管理对象
+ * @param task task是当前任务
+ * @return 是否信任，YES是是，否则使用默认策略，默认是NO
+ */
+- (BOOL)urlConnectionManager:(URLConnectionManager *)manager needTrustCredentialWithtask:(NSURLSessionTask *)task;
+
+/**
  * 发送过程委托方法
  * @param manager manager是当前连接的管理对象
  * @param task task是当前任务
@@ -105,6 +113,10 @@ typedef void(^MyURLConnectionCompletionBlcok)(NSURLResponse * response, NSData *
  * 默认管理器，单例模式
  */
 + (URLConnectionManager *)defaultManager;
+
+
+//是否信任证书,线程安全
+@property(atomic) BOOL needTrustCredential;
 
 /**
  * 开始URL请求,线程安全

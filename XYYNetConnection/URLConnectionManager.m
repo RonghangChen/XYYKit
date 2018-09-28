@@ -531,14 +531,16 @@ static pthread_mutex_t d_lock = PTHREAD_MUTEX_INITIALIZER;
    didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
      completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler
 {
-    completionHandler(NSURLSessionAuthChallengePerformDefaultHandling,nil);
-    
-//    if ([challenge previousFailureCount] == 0){
-//        NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
-//        completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
-//    }else{
-//        completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge,nil);
-//    }
+    if (self.needTrustCredential) { //信任
+        if ([challenge previousFailureCount] == 0){
+            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+            completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+        }else{
+            completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge,nil);
+        }
+    }else { //默认策略
+        completionHandler(NSURLSessionAuthChallengePerformDefaultHandling,nil);
+    }
 }
 
 @end

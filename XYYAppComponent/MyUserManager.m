@@ -347,7 +347,7 @@ NSString * const MyCurrentUserChangedInfoUserInfoKey = @"MyUserManager_MyCurrent
         {
             MyAssert(self.currentUserStatus == MyUserStatusNone && info);
             
-            //获取的信息与登陆信息合并
+            //获取的信息与登录信息合并
             NSMutableDictionary * userInfo = [NSMutableDictionary dictionaryWithDictionary:self.currentLoginInfo];
             [userInfo addEntriesFromDictionary:info];
             info = userInfo;
@@ -430,7 +430,7 @@ NSString * const MyCurrentUserChangedInfoUserInfoKey = @"MyUserManager_MyCurrent
     [userInfo setValue:@(handleType) forKey:MyUserHandleTypeUserInfoKey];
     if (error) [userInfo setValue:error forKey:MyUserHandleFailErrorUserInfoKey];
     
-    //发送并清空登陆信息
+    //发送并清空登录信息
     if (handleType == MyUserHandleTypeLogin && self.currentLoginInfo.count) {
         NSMutableDictionary * tempInfo = [NSMutableDictionary dictionaryWithDictionary:info];
         [tempInfo addEntriesFromDictionary:self.currentLoginInfo];

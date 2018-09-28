@@ -18,24 +18,24 @@
 //错误描述
 "SNSTargetUnInstallErrorDescription" = "未安装%@";
 "SNSTargetUnSupportShareErrorDescription" = "%@不支持分享功能";
-"SNSTargetUnSupportSSOErrorDescription" = "%@不支持登陆授权";
+"SNSTargetUnSupportSSOErrorDescription" = "%@不支持登录授权";
 "SNSTargetUnSupportPayErrorDescription" = "%@不支持支付功能";
 "SNSTargetVersionUnSupportShareErrorDescription" = "%@版本过低,不支持分享功能";
-"SNSTargetVersionUnSupportSSOErrorDescription" = "%@版本过低,不支持登陆授权";
+"SNSTargetVersionUnSupportSSOErrorDescription" = "%@版本过低,不支持登录授权";
 "SNSTargetVersionUnSupportPayErrorDescription" = "%@版本过低,不支持支付功能";
 "ShareMessageErrorDescription" = "分享的信息不完整或不符合要求";
 "UserCancleShareErrorDescription" = "用户取消分享";
-"UserCancleSSOErrorDescription" = "用户取消授权登陆";
+"UserCancleSSOErrorDescription" = "用户取消授权登录";
 "UserCanclePayErrorDescription" = "用户取消支付";
 "ShareFailErrorDescription" = "分享失败";
-"SSOFailErrorDescription" = "登陆授权失败";
+"SSOFailErrorDescription" = "登录授权失败";
 "PayFailErrorDescription" = "支付失败";
 
 
 //提示信息
 "AlertToInstallApp" = "您还未安装%@,是否立即去安装?";
 "VersionUnSupportShare_AlertToUpdateApp" = "您安装的%@版本过低,不支持分享功能,是否立即去更新?";
-"VersionUnSupportSSO_AlertToUpdateApp" = "您安装的%@版本过低,不支持登陆授权,是否立即去更新?";
+"VersionUnSupportSSO_AlertToUpdateApp" = "您安装的%@版本过低,不支持登录授权,是否立即去更新?";
 "VersionUnSupportPay_AlertToUpdateApp" = "您安装的%@版本过低,不支持支付功能,是否立即去更新?";
 
 
