@@ -132,7 +132,7 @@
 }
 
 - (BOOL)isShowing {
-    return self.popoverView.isShowing;
+    return self.popoverView.isShowing || [[MyAlertViewManager sharedManager] isShowAlertView:self];
 }
 
 #pragma mark -
@@ -207,15 +207,24 @@
         popoverView.blurEffectStyle = self.blurEffectStyle;
         popoverView.blurEffectAlpha = self.blurEffectAlpha;
 #endif
-        
-        [popoverView showInView:nil animated:YES completedBlock:completedBlock];
+        [[MyAlertViewManager sharedManager] showAlertView:self withBlock:^{
+           [popoverView showInView:nil animated:YES completedBlock:completedBlock];
+        }];
     }
     
 }
 
+- (void)hide:(void (^)(void))completedBlock
+{
+    if ([[MyAlertViewManager sharedManager] isShowAlertView:self]) {
+        [[MyAlertViewManager sharedManager] hideAlertView:self withAnimated:YES completedBlock:completedBlock];
+    }else {
+        [self hideAlertViewWithAnimated:YES completedBlock:completedBlock];
+    }
+}
 
-- (void)hide:(void (^)(void))completedBlock {
-    [self.popoverView hide:YES completedBlock:completedBlock];
+- (void)hideAlertViewWithAnimated:(BOOL)animated completedBlock:(void (^)(void))completedBlock {
+     [self.popoverView hide:animated completedBlock:completedBlock];
 }
 
 - (BOOL)customAnimationForPopoverView:(MyPopoverView *)popoverView

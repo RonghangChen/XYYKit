@@ -55,7 +55,7 @@
 #pragma mark -
 
 - (BOOL)isEditting {
-    return [self.popoverView isShowing];
+    return [self.popoverView isShowing] || [[MyAlertViewManager sharedManager] isShowAlertView:self];
 }
 
 - (void)startEditForInfoCellAtIndexPath:(NSIndexPath *)indexPath
@@ -77,17 +77,23 @@
     popoverView.contentViewAnchorPoint = self.contentAnchorPoint;
     popoverView.locationAnchorPoint = self.locationAnchorPoint;
     
-    [popoverView showInView:nil animated:animated completedBlock:completedBlock];
+    [[MyAlertViewManager sharedManager] showAlertView:self withBlock:^{
+        [popoverView showInView:nil animated:animated completedBlock:completedBlock];
+    }];
 }
 
 - (void)endEditWithAnimated:(BOOL)animated completedBlock:(void (^)(void))completedBlock
 {
-    if (!self.isEditting) {
-        return;
+    if ([[MyAlertViewManager sharedManager] isShowAlertView:self]) {
+        [[MyAlertViewManager sharedManager] hideAlertView:self withAnimated:animated completedBlock:completedBlock];
+    }else {
+        [self hideAlertViewWithAnimated:animated completedBlock:completedBlock];
     }
-    [self.popoverView hide:animated completedBlock:completedBlock];
 }
 
+- (void)hideAlertViewWithAnimated:(BOOL)animated completedBlock:(void (^)(void))completedBlock {
+    [self.popoverView hide:animated completedBlock:completedBlock];
+} 
 
 #pragma mark -
 

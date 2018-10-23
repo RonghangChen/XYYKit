@@ -24,6 +24,8 @@
 		D735C91520BD4D1A000D4A79 /* XYYKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D735C91220BD4D1A000D4A79 /* XYYKit.h */; };
 		D743CBEE20DDFB9200122177 /* XYYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D743CBED20DDFB9200122177 /* XYYModel.m */; };
 		D743CBEF20DDFB9200122177 /* XYYModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D743CBEC20DDFB9200122177 /* XYYModel.h */; };
+		D74C60A4217191E200CB8CCE /* MyAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D74C60A3217191E200CB8CCE /* MyAlertViewManager.m */; };
+		D76F8835217ED1DF001378FB /* NSObject+DeallocObserve.m in Sources */ = {isa = PBXBuildFile; fileRef = D76F8834217ED1DF001378FB /* NSObject+DeallocObserve.m */; };
 		D7A0D5E32150D6DF000843B3 /* XYYVoice.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7A0D5E02150D6DF000843B3 /* XYYVoice.h */; };
 		D7A0D5EE2150D86D000843B3 /* XYYVoiceCachePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A0D5E82150D86C000843B3 /* XYYVoiceCachePool.m */; };
 		D7A0D5EF2150D86D000843B3 /* XYYVoicePlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A0D5EA2150D86D000843B3 /* XYYVoicePlayManager.m */; };
@@ -425,6 +427,10 @@
 		D743CBEA20DDFB9200122177 /* libXYYModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D743CBEC20DDFB9200122177 /* XYYModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYModel.h; sourceTree = "<group>"; };
 		D743CBED20DDFB9200122177 /* XYYModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYYModel.m; sourceTree = "<group>"; };
+		D74C60A2217191E200CB8CCE /* MyAlertViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAlertViewManager.h; sourceTree = "<group>"; };
+		D74C60A3217191E200CB8CCE /* MyAlertViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAlertViewManager.m; sourceTree = "<group>"; };
+		D76F8833217ED1DF001378FB /* NSObject+DeallocObserve.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+DeallocObserve.h"; sourceTree = "<group>"; };
+		D76F8834217ED1DF001378FB /* NSObject+DeallocObserve.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DeallocObserve.m"; sourceTree = "<group>"; };
 		D7A0D5DE2150D6DF000843B3 /* libXYYVoice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXYYVoice.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A0D5E02150D6DF000843B3 /* XYYVoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYYVoice.h; sourceTree = "<group>"; };
 		D7A0D5E72150D7A3000843B3 /* XYYKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XYYKit.podspec; sourceTree = "<group>"; };
@@ -1079,6 +1085,15 @@
 			path = XYYModel;
 			sourceTree = "<group>";
 		};
+		D74C60A1217191B500CB8CCE /* MyAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				D74C60A2217191E200CB8CCE /* MyAlertViewManager.h */,
+				D74C60A3217191E200CB8CCE /* MyAlertViewManager.m */,
+			);
+			path = MyAlertView;
+			sourceTree = "<group>";
+		};
 		D7A0D5DF2150D6DF000843B3 /* XYYVoice */ = {
 			isa = PBXGroup;
 			children = (
@@ -1196,6 +1211,8 @@
 				D7BAF59F20DB7B4B00982A63 /* UIFont+SystemFont.m */,
 				D7BAF5B320DB7B4B00982A63 /* NSDate+MyCategory.h */,
 				D7BAF5A120DB7B4B00982A63 /* NSDate+MyCategory.m */,
+				D76F8833217ED1DF001378FB /* NSObject+DeallocObserve.h */,
+				D76F8834217ED1DF001378FB /* NSObject+DeallocObserve.m */,
 			);
 			path = XYYCategories;
 			sourceTree = "<group>";
@@ -1217,6 +1234,7 @@
 		D7BAF60F20DB96AE00982A63 /* XYYView */ = {
 			isa = PBXGroup;
 			children = (
+				D74C60A1217191B500CB8CCE /* MyAlertView */,
 				D7BAF61C20DB96AE00982A63 /* MyPopoverView */,
 				D7BAF64520DB96AE00982A63 /* MyBlurredView */,
 				D7BAF62720DB96AE00982A63 /* XYYView.h */,
@@ -2442,6 +2460,7 @@
 				D7BAF6A320DB9B4B00982A63 /* MyBasicViewControllerAnimatedTransitioning.m in Sources */,
 				D7BAF68220DB986600982A63 /* MyMediaProgressBar.m in Sources */,
 				D7BAF6F720DB9D6A00982A63 /* MyCellContext.m in Sources */,
+				D74C60A4217191E200CB8CCE /* MyAlertViewManager.m in Sources */,
 				D7BAF6A420DB9B4B00982A63 /* MyNavigationTransitioningDelegate.m in Sources */,
 				D7BAF66520DB96AF00982A63 /* UIView+IntervalAnimation.m in Sources */,
 				D7BAF5EA20DB932A00982A63 /* MyNetReachability.m in Sources */,
@@ -2521,6 +2540,7 @@
 				D7BAF68320DB986600982A63 /* MyScrollTriggerView.m in Sources */,
 				D7BAF5D420DB7B4B00982A63 /* UIImage+Representation.m in Sources */,
 				D7BAF5BF20DB7B4B00982A63 /* MyRedoHandleManager.m in Sources */,
+				D76F8835217ED1DF001378FB /* NSObject+DeallocObserve.m in Sources */,
 				D7BAF6AA20DB9CA400982A63 /* Reachability.m in Sources */,
 				D7BAF6EC20DB9D6A00982A63 /* MyBasicTextViewInfoCell.m in Sources */,
 				D7BAF6F420DB9D6A00982A63 /* MyContentViewCellController.m in Sources */,

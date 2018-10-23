@@ -7,8 +7,9 @@
 //
 
 #import "MyBasicInfoCellEditerView.h"
+#import "MyAlertViewManager.h"
 
-@interface MyBasicInfoCellEditerPopoverView : MyBasicInfoCellEditerView
+@interface MyBasicInfoCellEditerPopoverView : MyBasicInfoCellEditerView <MyAlertViewProtocol>
 
 //内容的锚点，默认是（0.5f，0.5f）中心
 @property(nonatomic) CGPoint contentAnchorPoint;

@@ -40,4 +40,6 @@
 #import "MyContentView.h"
 #import "MyScrollViewImageHeaderView.h"
 
+#import "MyAlertViewManager.h"
+
 #endif

@@ -35,7 +35,7 @@
 
 //----------------------------------------------------------
 
-@interface MySocialShareTargetItemsPopoverView : UIView <MyBlurredBackgroundProtocol>
+@interface MySocialShareTargetItemsPopoverView : UIView <MyBlurredBackgroundProtocol,MyAlertViewProtocol>
 
 //自定义的分享项目
 - (id)initWithShareTargetItems:(NSArray *)shareTargetItems;

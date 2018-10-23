@@ -39,12 +39,27 @@
         configBlock(popoverView);
     }
     
-    [popoverView showInView:view animated:animated completedBlock:completedBlock];
+    if (view == nil) {
+        [[MyAlertViewManager sharedManager] showAlertView:self withBlock:^{
+            [popoverView showInView:nil animated:animated completedBlock:completedBlock];
+        }];
+    }else {
+        [popoverView showInView:view animated:animated completedBlock:completedBlock];
+    }
     
     return popoverView;
 }
 
-- (void)hideWithAnimted:(BOOL)animated completedBlock:(void(^)(void))completedBlock {
+- (void)hideWithAnimted:(BOOL)animated completedBlock:(void(^)(void))completedBlock
+{
+    if ([[MyAlertViewManager sharedManager] isShowAlertView:self]) {
+        [[MyAlertViewManager sharedManager] hideAlertView:self withAnimated:animated completedBlock:completedBlock];
+    }else {
+        [self hideAlertViewWithAnimated:animated completedBlock:completedBlock];
+    }
+}
+
+- (void)hideAlertViewWithAnimated:(BOOL)animated completedBlock:(void (^)(void))completedBlock {
     [self.popoverView hide:animated completedBlock:completedBlock];
 }
 

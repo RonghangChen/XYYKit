@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MyPopoverView.h"
 #import "MyContentView.h"
+#import "MyAlertViewManager.h"
 
-@interface MyBasicPopoverAlertView : MyContentView
+@interface MyBasicPopoverAlertView : MyContentView <MyAlertViewProtocol>
 
 - (MyPopoverView *)showWithConfigBlock:(void(^)(MyPopoverView * popoverView))configBlock
                                animated:(BOOL)animated

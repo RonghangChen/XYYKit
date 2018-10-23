@@ -17,7 +17,7 @@
 #import "NSURL+MyCategory.h"
 #import "UIAlertView+Block.h"
 #import "UIActionSheet+Block.h"
-#import "NSString+hash.h"
+#import "NSString+Hash.h"
 #import "NSString+Base64.h"
 #import "NSString+Extend.h"
 #import "NSString+CitySort.h"
@@ -37,6 +37,7 @@
 #import "UIFont+SystemFont.h"
 #import "UILabel+CaculaterShowSize.h"
 #import "NSObject+runtime.h"
+#import "NSObject+DeallocObserve.h"
 
 
 #endif /* XYYCategories_h */
