@@ -399,7 +399,8 @@ end:
                 NSInvocation * invocation = [NSInvocation invocationWithMethodSignature:[[self class] instanceMethodSignatureForSelector:setter]];
                 
                 //读取值
-                void * pValue = malloc(invocation.methodSignature.methodReturnLength);
+                void * pValue = malloc(propertyData->_typeSize);
+                memset(pValue, 0, propertyData->_typeSize);
                 [(NSValue *)value getValue:pValue];
                 
                 //设置参数
@@ -841,7 +842,7 @@ end:
                     case _MyPropertyTypeNumber: //数字
                     {
                         void * location = (((char *)(__bridge void *)self) + ivar_getOffset(propertyData->_ivar));
-                        _MyPropertyNumberValue numberValue;
+                        _MyPropertyNumberValue numberValue = {0};
                         memcpy(&numberValue, location, propertyData->_typeSize);
                         
                         value = [NSObject xyy_boxValue:&numberValue typeEncoding:propertyData->_typeEncoding.UTF8String];
@@ -885,7 +886,7 @@ end:
                     [invocation invokeWithTarget:self];
                     
                     if (propertyData->_type == _MyPropertyTypeNumber) { //数字
-                        _MyPropertyNumberValue numberValue;
+                        _MyPropertyNumberValue numberValue = {0};
                         [invocation getReturnValue:&numberValue];
                         
                         //装箱
@@ -1334,7 +1335,7 @@ end:
                 
             case _MyPropertyTypeNumber: //C语言数字类型
             {
-                _MyPropertyNumberValue buffer;
+                _MyPropertyNumberValue buffer = {0};
                 [self getReturnValue:&buffer];
                 
                 returnValue = [NSObject xyy_boxValue:&buffer typeEncoding:self.methodSignature.methodReturnType];
