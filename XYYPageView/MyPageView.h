@@ -59,8 +59,13 @@ typedef NS_ENUM(NSInteger,MyPageViewScrollDirection) {
 @interface MyPageView : UIView 
 
 - (id)initWithFrame:(CGRect)frame scrollDirection:(MyPageViewScrollDirection)scrollDirection;
+- (id)initWithFrame:(CGRect)frame scrollDirection:(MyPageViewScrollDirection)scrollDirection containerScrollView:(UIScrollView *)containerScrollView;
+
 //滑动的方向，默认为水平方向
 @property(nonatomic,readonly) MyPageViewScrollDirection scrollDirection;
+
+//容器滑动视图
+@property(nonatomic,assign,readonly) UIScrollView * containerScrollView;
 
 //页面间距（默认为0），设置小于0的值会以0处理
 @property(nonatomic) CGFloat pageMargin;
@@ -103,5 +108,14 @@ typedef NS_ENUM(NSInteger,MyPageViewScrollDirection) {
 
 @property(nonatomic,weak) id<MyPageViewDataSource> dataSource;
 @property(nonatomic,weak) id<MyPageViewDelegate> delegate;
+
+@end
+
+//----------------------------------------------------------
+
+
+@interface UICollectionViewCell (MyPageView)
+
+- (UIScrollView *)subPageContentScrollView;
 
 @end

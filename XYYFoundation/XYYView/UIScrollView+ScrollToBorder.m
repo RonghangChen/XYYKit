@@ -20,9 +20,20 @@
 
 - (void)scrollToBoder:(MyScrollBorder)border offset:(CGPoint)offset animated:(BOOL)animated
 {
+    CGPoint contentOffset = [self contentOffsetForScrollToBorder:border];
+    
+    contentOffset.x += offset.x;
+    contentOffset.y += offset.y;
+    
+    [self setContentOffset:contentOffset animated:animated];
+}
+
+- (CGPoint)contentOffsetForScrollToBorder:(MyScrollBorder)border
+{
+    CGPoint contentOffset = self.contentOffset;
+    
     if (border) {
-     
-        CGPoint contentOffset = self.contentOffset;
+        
         UIEdgeInsets contentInset;
         if (@available(iOS 11.0, *)) {
             contentInset = self.adjustedContentInset;
@@ -57,12 +68,9 @@
                 contentOffset.x = contentSize.width + contentInset.right - size.width;
             }
         }
-        
-        contentOffset.x += offset.x;
-        contentOffset.y += offset.y;
-        
-        [self setContentOffset:contentOffset animated:animated];
     }
+    
+    return contentOffset;
 }
 
 @end

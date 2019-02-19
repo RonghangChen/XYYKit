@@ -10,6 +10,63 @@
 
 #import "MyPageView.h"
 #import "XYYFoundation.h"
+#import <objc/runtime.h>
+
+//----------------------------------------------------------
+
+static char PageContainerScrollViewKey;
+static BOOL defaultGestureRecognizerSimultaneouslyHandle(id object, SEL sel, UIGestureRecognizer * gestureRecognizer, UIGestureRecognizer * otherGestureRecognizer) {
+    return NO;
+}
+
+//----------------------------------------------------------
+
+@interface UIScrollView(MyPageViewHook)<UIGestureRecognizerDelegate>
+
+@property(nonatomic,weak) UIScrollView * pageContainerScrollView;
+
+@end
+
+//----------------------------------------------------------
+
+@implementation UIScrollView(MyPageViewHook)
+
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        SEL sel1 = @selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
+        SEL sel2 = @selector(_MyPageView_gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:);
+        
+        Method method1 = class_getInstanceMethod(self, sel1);
+        if (method1 == NULL) {
+            class_addMethod([UIScrollView class], sel1, (IMP)defaultGestureRecognizerSimultaneouslyHandle, method_getTypeEncoding(class_getInstanceMethod(self, sel2)));
+        }
+        
+        //交换
+        [UIScrollView exchangeInstanceMethodIMPWithSel1:sel1 sel2:sel2];
+    });
+}
+
+- (void)setPageContainerScrollView:(UIScrollView *)pageContainerScrollView {
+    objc_setAssociatedObject(self, &PageContainerScrollViewKey, pageContainerScrollView, OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (UIScrollView *)pageContainerScrollView {
+    return objc_getAssociatedObject(self, &PageContainerScrollViewKey);
+}
+
+- (BOOL)_MyPageView_gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    if (self.pageContainerScrollView == otherGestureRecognizer.view) {
+        return YES;
+    }
+    
+    return [self _MyPageView_gestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+}
+
+@end
 
 //----------------------------------------------------------
 
@@ -17,6 +74,9 @@
                            UICollectionViewDataSource >
 
 @property(nonatomic,strong) UICollectionView * collectionView;
+
+@property(nonatomic) BOOL needScrollPageCell;
+@property(nonatomic,strong,readonly) NSMutableArray<UIScrollView *> * pageContentScrollViews;
 
 @end
 
@@ -27,10 +87,13 @@
     //数据是否有效
     BOOL _dataVaild;
     BOOL _ignoreScroll;
+    
+    UIScrollView * __unsafe_unretained  _containerScrollView;
 }
 
 @synthesize pagesCount = _pagesCount;
 @synthesize dispalyPageIndex = _dispalyPageIndex;
+@synthesize pageContentScrollViews = _pageContentScrollViews;
 
 #pragma mark -
 
@@ -48,11 +111,30 @@
     return [self initWithFrame:frame scrollDirection:MyPageViewScrollDirectionHorizontal];
 }
 
-- (id)initWithFrame:(CGRect)frame scrollDirection:(MyPageViewScrollDirection)scrollDirection
+- (id)initWithFrame:(CGRect)frame scrollDirection:(MyPageViewScrollDirection)scrollDirection {
+    return [self initWithFrame:frame scrollDirection:scrollDirection containerScrollView:nil];
+}
+
+- (id)initWithFrame:(CGRect)frame scrollDirection:(MyPageViewScrollDirection)scrollDirection containerScrollView:(UIScrollView *)containerScrollView
 {
     self = [super initWithFrame:frame];
     if (self) {
         _scrollDirection = scrollDirection;
+        
+        if (containerScrollView) {
+            __weak typeof(self) weak_self = self;
+            containerScrollView.deallocBlock = ^{
+                 __strong typeof(self) strong_self = weak_self;
+                if (strong_self) {
+                    [strong_self _containerScrollViewInvaild];
+                }
+            };
+            _containerScrollView = containerScrollView;
+            
+            //注册观察
+            [self addObserver:containerScrollView forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:NULL];
+            
+        }
         [self _setup_MyPageView];
     }
     
@@ -66,7 +148,7 @@
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = (self.scrollDirection == MyPageViewScrollDirectionHorizontal) ? UICollectionViewScrollDirectionHorizontal : UICollectionViewScrollDirectionVertical;
     layout.minimumLineSpacing = 0.f;
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
+    self.collectionView = [[UICollectionView alloc] initWithFrame:[self _collectionViewFrame] collectionViewLayout:layout];
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.collectionView.pagingEnabled = YES;
     self.collectionView.scrollsToTop = NO;
@@ -83,6 +165,131 @@
     configurationContentScrollViewForAdaptation(self.collectionView);
     
     [self addSubview:self.collectionView];
+    
+}
+
+- (void)dealloc {
+    [self _containerScrollViewInvaild];
+}
+
+#pragma mark-
+
+- (UIScrollView *)containerScrollView {
+    return _containerScrollView;
+}
+
+- (NSMutableArray<UIScrollView *> *)pageContentScrollViews
+{
+    if (!_pageContentScrollViews) {
+        _pageContentScrollViews = [NSMutableArray array];
+    }
+    
+    return _pageContentScrollViews;
+}
+
+
+- (void)_containerScrollViewInvaild
+{
+    if (_containerScrollView) {
+        [self removeObserver:_containerScrollView forKeyPath:@"contentOffset"];
+        _containerScrollView = nil;
+    }
+    
+    [self _clearAllPageCells];
+}
+
+- (void)_clearAllPageCells
+{
+    if (_pageContentScrollViews.count) {
+        for (UIScrollView * scrollView in _pageContentScrollViews) {
+            scrollView.pageContainerScrollView = nil;
+            [self removeObserver:scrollView forKeyPath:@"contentOffset"];
+        }
+        [_pageContentScrollViews removeAllObjects];
+    }
+}
+
+- (void)_addPageCellIfNeed:(UICollectionViewCell *)pageCell
+{
+    UIScrollView * scrollView = [pageCell subPageContentScrollView];
+    if (scrollView && [self.pageContentScrollViews indexOfObjectIdenticalTo:scrollView] == NSNotFound) {
+        scrollView.pageContainerScrollView = _containerScrollView;
+        [self addObserver:scrollView forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:(void *)pageCell];
+        [self.pageContentScrollViews addObject:scrollView];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"contentOffset"]) {
+        
+        if (object == _containerScrollView) {
+            
+            if (_ignoreScroll) {
+                return;
+            }
+            
+            UIScrollView * scrollView = object;
+            
+            CGPoint contentOffset = [scrollView contentOffsetForScrollToBorder:self.scrollDirection == MyPageViewScrollDirectionHorizontal ? MyScrollBorderBottom : MyScrollBorderRight];
+            
+            _ignoreScroll = YES;
+            if (self.needScrollPageCell) {
+                scrollView.contentOffset = contentOffset;
+            }else {
+            
+                if (self.scrollDirection == MyPageViewScrollDirectionHorizontal) {
+                    if (scrollView.contentOffset.y >= contentOffset.y) {
+                        scrollView.contentOffset = contentOffset;
+                        self.needScrollPageCell = NO;
+                    }
+                }else {
+                    if (scrollView.contentOffset.x >= contentOffset.x) {
+                        scrollView.contentOffset = contentOffset;
+                        self.needScrollPageCell = NO;
+                    }
+                }
+                
+            }
+            _ignoreScroll = NO;
+            
+            return;
+            
+        }else if ([self.pageContentScrollViews indexOfObjectIdenticalTo:object] != NSNotFound) {
+            
+            if (_ignoreScroll) {
+                return;
+            }
+            
+            UIScrollView * scrollView = object;
+            
+            CGPoint contentOffset = [scrollView contentOffsetForScrollToBorder:self.scrollDirection == MyPageViewScrollDirectionHorizontal ? MyScrollBorderTop : MyScrollBorderLeft];
+            
+            _ignoreScroll = YES;
+            if (!self.needScrollPageCell) {
+                scrollView.contentOffset = contentOffset;
+            }else {
+                
+                if (self.scrollDirection == MyPageViewScrollDirectionHorizontal) {
+                    if (scrollView.contentOffset.y <= contentOffset.y) {
+                        scrollView.contentOffset = contentOffset;
+                        self.needScrollPageCell = YES;
+                    }
+                }else {
+                    if (scrollView.contentOffset.x <= contentOffset.x) {
+                        scrollView.contentOffset = contentOffset;
+                        self.needScrollPageCell = YES;
+                    }
+                }
+                
+            }
+            _ignoreScroll = NO;
+            
+            return;
+        }
+    }
+    
+    [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 #pragma mark -
@@ -91,6 +298,7 @@
 {
     if (!_dataVaild) {
         _dataVaild = YES;
+        self.needScrollPageCell = NO;
         
         id<MyPageViewDataSource> dataSource = self.dataSource;
         ifRespondsSelector(dataSource, @selector(numberOfPagesInPageView:)) {
@@ -191,6 +399,7 @@
         NSUInteger dispalyPageIndex = _dispalyPageIndex;
         
         //重新加载数据
+        [self _clearAllPageCells];
         [self.collectionView reloadData];
         
         //移动到目标位置
@@ -257,6 +466,7 @@
         _ignoreScroll = YES;
         
         //重新加载数据并移动到目标位置
+        self.needScrollPageCell = NO;
         [self.collectionView reloadData];
         self.collectionView.frame = collectionViewFrame;
         BOOL scrollEnabled = self.collectionView.scrollEnabled;
@@ -323,6 +533,24 @@
         @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                        reason:@"pageView:cellForPageAtIndex:必须返回非nil的cell"
                                      userInfo:nil];
+    }
+    
+    if (_containerScrollView) {
+        
+        UIScrollView * contentScrollView = [cell subPageContentScrollView];
+        if (contentScrollView) {
+            if (!self.needScrollPageCell) {
+                if (self.scrollDirection == MyPageViewScrollDirectionHorizontal) {
+                    [contentScrollView scrollToBoder:MyScrollBorderTop];
+                }else {
+                    [contentScrollView scrollToBoder:MyScrollBorderLeft];
+                }
+            }
+        }else {
+            self.needScrollPageCell = NO;
+        }
+        
+        [self _addPageCellIfNeed:cell];
     }
     
     return cell;
@@ -446,6 +674,15 @@
     }else {
         return [super forwardingTargetForSelector:aSelector];
     }
+}
+
+@end
+
+
+@implementation UICollectionViewCell (MyPageView)
+
+- (UIScrollView *)subPageContentScrollView {
+    return nil;
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "MyScrollContentPageCell.h"
 #import "XYYCache.h"
 #import "MBProgressHUD.h"
+#import "MyPageView.h"
 
 //-------------------------------------------------
 
@@ -183,6 +184,10 @@
             [self _updateContentScrollViewInset];
         }
     }
+}
+
+- (UIScrollView *)subPageContentScrollView {
+    return _contentScrollView;
 }
 
 - (void)_updateContentScrollViewInset
