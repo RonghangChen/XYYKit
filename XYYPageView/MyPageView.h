@@ -1,6 +1,6 @@
 //
 //  MyPageView.h
-//  
+//
 //
 //  Created by LeslieChen on 15/11/7.
 //  Copyright © 2015年 ED. All rights reserved.
@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger,MyPageViewScrollDirection) {
 @optional
 
 //将要显示page
-- (void)pageView:(MyPageView *)pageView willDisplayPageCell:(UICollectionViewCell *)pageCell atIndex:(NSUInteger)pageIndex NS_AVAILABLE_IOS(8_0);
+- (void)pageView:(MyPageView *)pageView willDisplayPageCell:(UICollectionViewCell *)pageCell atIndex:(NSUInteger)pageIndex;
 
 //显示了page(手动更改显示的page和重新加载数据时不会有该代理消息)
 - (void)pageView:(MyPageView *)pageView didDisplayPageAtIndex:(NSUInteger)pageIndex;
@@ -56,7 +56,8 @@ typedef NS_ENUM(NSInteger,MyPageViewScrollDirection) {
 
 //----------------------------------------------------------
 
-@interface MyPageView : UIView 
+NS_CLASS_AVAILABLE_IOS(8_0)
+@interface MyPageView : UIView
 
 - (id)initWithFrame:(CGRect)frame scrollDirection:(MyPageViewScrollDirection)scrollDirection;
 - (id)initWithFrame:(CGRect)frame scrollDirection:(MyPageViewScrollDirection)scrollDirection containerScrollView:(UIScrollView *)containerScrollView;
@@ -65,7 +66,7 @@ typedef NS_ENUM(NSInteger,MyPageViewScrollDirection) {
 @property(nonatomic,readonly) MyPageViewScrollDirection scrollDirection;
 
 //容器滑动视图
-@property(nonatomic,assign,readonly) UIScrollView * containerScrollView;
+@property(nonatomic,weak,readonly) UIScrollView * containerScrollView;
 
 //页面间距（默认为0），设置小于0的值会以0处理
 @property(nonatomic) CGFloat pageMargin;
